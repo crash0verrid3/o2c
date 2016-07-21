@@ -1,12 +1,12 @@
-21:39:19 **** Incremental Build of configuration Debug for project O2C2016Template ****
+17:27:19 **** Incremental Build of configuration Debug for project O2C2016Template ****
 Info: Internal Builder is used for build
-arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Kett/wpilib/cpp/current/include" "-IC:\\Users\\Kevin Forbin\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\O2C2016Template\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Navigator.o" "..\\src\\Navigator.cpp" 
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Kett/wpilib/cpp/current/include" "-IC:\\Users\\Kevin Forbin\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\O2C2016Template\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\AutoPilot.o" "..\\src\\AutoPilot.cpp" 
 In file included from C:\Users\Kett/wpilib/cpp/current/include/ChipObject/NiRio.h:6:0,
                  from C:\Users\Kett/wpilib/cpp/current/include/SensorBase.h:10,
                  from C:\Users\Kett/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:10,
                  from C:\Users\Kevin Forbin\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\O2C2016Template\src/Definitions.h:5,
-                 from C:\Users\Kevin Forbin\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\O2C2016Template\src/Navigator.h:4,
-                 from ..\src\Navigator.cpp:1:
+                 from C:\Users\Kevin Forbin\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\O2C2016Template\src/AutoPilot.h:11,
+                 from ..\src\AutoPilot.cpp:8:
 C:\Users\Kett/wpilib/cpp/current/include/ChipObject/NiFpga.h:68:5: error: #error Unsupported architecture.
     #error Unsupported architecture.
      ^
@@ -14,8 +14,8 @@ In file included from C:\Users\Kett/wpilib/cpp/current/include/ErrorBase.h:12:0,
                  from C:\Users\Kett/wpilib/cpp/current/include/SensorBase.h:11,
                  from C:\Users\Kett/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:10,
                  from C:\Users\Kevin Forbin\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\O2C2016Template\src/Definitions.h:5,
-                 from C:\Users\Kevin Forbin\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\O2C2016Template\src/Navigator.h:4,
-                 from ..\src\Navigator.cpp:1:
+                 from C:\Users\Kevin Forbin\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\O2C2016Template\src/AutoPilot.h:11,
+                 from ..\src\AutoPilot.cpp:8:
 C:\Users\Kett/wpilib/cpp/current/include/Error.h:13:21: fatal error: vxWorks.h: No such file or directory
  #include <vxWorks.h>
                      ^

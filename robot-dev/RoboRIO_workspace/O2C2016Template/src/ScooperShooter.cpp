@@ -101,7 +101,7 @@ void SCOOPER :: Initialize_Scooper()
 void SCOOPER :: GetElevator()
 	{
 	right_encoder = pRightScooperEncoder->Get();
-	right_encoder = left_encoder = pLeftScooperEncoder->Get();
+	left_encoder = pLeftScooperEncoder->Get();
 	left_delta = left_encoder - prev_left;
 	right_delta = right_encoder - prev_right;
 	SmartDashboard::PutNumber("left_encoder",left_encoder);
@@ -149,7 +149,7 @@ void SCOOPER :: RunElevator()
 				}
 			}
 //		}
-	pLeftElevator->Set(0 - (left_elevator_power/100));  			// Set scooper power to converge to target position.
+	pLeftElevator->Set(-(left_elevator_power/100));  			// Set scooper power to converge to target position.
 	pRightElevator->Set((right_elevator_power/100));  		// Set scooper power to converge to target position.
 	}
 

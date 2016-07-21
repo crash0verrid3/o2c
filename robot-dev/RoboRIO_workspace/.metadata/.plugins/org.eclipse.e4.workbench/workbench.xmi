@@ -11,6 +11,7 @@
     <persistedState key="isRestored" value="true"/>
     <persistedState key="show_in_time" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;show_in_time/>"/>
     <tags>topLevel</tags>
+    <tags>shellMaximized</tags>
     <children xsi:type="basic:PartSashContainer" xmi:id="_DsBSEk7eEea0WNU26dJTtQ" selectedElement="_DsBSE07eEea0WNU26dJTtQ" horizontal="true">
       <children xsi:type="advanced:PerspectiveStack" xmi:id="_DsBSE07eEea0WNU26dJTtQ" elementId="org.eclipse.ui.ide.perspectivestack" containerData="7500" selectedElement="_DsBSFE7eEea0WNU26dJTtQ">
         <children xsi:type="advanced:Perspective" xmi:id="_DsBSFE7eEea0WNU26dJTtQ" elementId="org.eclipse.cdt.ui.CPerspective" selectedElement="_DsBSFU7eEea0WNU26dJTtQ" label="C/C++" iconURI="platform:/plugin/org.eclipse.cdt.ui/icons/view16/c_pers.gif">
@@ -270,7 +271,7 @@
           </menus>
         </children>
         <children xsi:type="basic:Part" xmi:id="_DsBTX07eEea0WNU26dJTtQ" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="ScooperShooter.cpp" iconURI="platform:/plugin/org.eclipse.cdt.ui/icons/obj16/c_file_obj.gif" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;ScooperShooter.cpp&quot; partName=&quot;ScooperShooter.cpp&quot; title=&quot;ScooperShooter.cpp&quot; tooltip=&quot;O2C2016Template/src/ScooperShooter.cpp&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/O2C2016Template/src/ScooperShooter.cpp&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;566&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;5863&quot; selectionTopPixel=&quot;1814&quot;/>&#xD;&#xA;&lt;/editor>"/>
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;ScooperShooter.cpp&quot; partName=&quot;ScooperShooter.cpp&quot; title=&quot;ScooperShooter.cpp&quot; tooltip=&quot;O2C2016Template/src/ScooperShooter.cpp&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/O2C2016Template/src/ScooperShooter.cpp&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;11507&quot; selectionTopPixel=&quot;1938&quot;/>&#xD;&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>org.eclipse.cdt.ui.editor.CEditor</tags>
           <tags>removeOnHide</tags>
@@ -338,7 +339,7 @@
           </menus>
         </children>
         <children xsi:type="basic:Part" xmi:id="_DsBTa07eEea0WNU26dJTtQ" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="Definitions.h" iconURI="platform:/plugin/org.eclipse.cdt.ui/icons/obj16/c_file_obj.gif" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;Definitions.h&quot; partName=&quot;Definitions.h&quot; title=&quot;Definitions.h&quot; tooltip=&quot;O2C2016Template/src/Definitions.h&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/O2C2016Template/src/Definitions.h&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;630&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;9125&quot; selectionTopPixel=&quot;3315&quot;/>&#xD;&#xA;&lt;/editor>"/>
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;Definitions.h&quot; partName=&quot;Definitions.h&quot; title=&quot;Definitions.h&quot; tooltip=&quot;O2C2016Template/src/Definitions.h&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/O2C2016Template/src/Definitions.h&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;9993&quot; selectionTopPixel=&quot;3655&quot;/>&#xD;&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>org.eclipse.cdt.ui.editor.CEditor</tags>
           <tags>removeOnHide</tags>
@@ -360,7 +361,7 @@
           </menus>
         </children>
         <children xsi:type="basic:Part" xmi:id="_2EOJME7pEeadsusDzL76LQ" elementId="org.eclipse.e4.ui.compatibility.editor" contributionURI="bundleclass://org.eclipse.ui.workbench/org.eclipse.ui.internal.e4.compatibility.CompatibilityEditor" label="ScooperShooter.h" iconURI="platform:/plugin/org.eclipse.cdt.ui/icons/obj16/c_file_obj.gif" closeable="true">
-          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;ScooperShooter.h&quot; partName=&quot;ScooperShooter.h&quot; title=&quot;ScooperShooter.h&quot; tooltip=&quot;O2C2016Template/src/ScooperShooter.h&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/O2C2016Template/src/ScooperShooter.h&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;1318&quot; selectionTopPixel=&quot;420&quot;/>&#xD;&#xA;&lt;/editor>"/>
+          <persistedState key="memento" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xD;&#xA;&lt;editor id=&quot;org.eclipse.cdt.ui.editor.CEditor&quot; name=&quot;ScooperShooter.h&quot; partName=&quot;ScooperShooter.h&quot; title=&quot;ScooperShooter.h&quot; tooltip=&quot;O2C2016Template/src/ScooperShooter.h&quot;>&#xD;&#xA;&lt;input factoryID=&quot;org.eclipse.ui.part.FileEditorInputFactory&quot; path=&quot;/O2C2016Template/src/ScooperShooter.h&quot;/>&#xD;&#xA;&lt;editorState selectionHorizontalPixel=&quot;0&quot; selectionLength=&quot;0&quot; selectionOffset=&quot;1318&quot; selectionTopPixel=&quot;340&quot;/>&#xD;&#xA;&lt;/editor>"/>
           <tags>Editor</tags>
           <tags>org.eclipse.cdt.ui.editor.CEditor</tags>
           <tags>removeOnHide</tags>
@@ -919,7 +920,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_DsB5u07eEea0WNU26dJTtQ" elementId="org.eclipse.ui.workbench.file">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_2FLd8E9WEea2N_ViykHnrw" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_DsE-UU7eEea0WNU26dJTtQ"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_caYccE-SEeayNeF4qzPbAg" elementId="print" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/print_edit.png" tooltip="Print" command="_DsE-UU7eEea0WNU26dJTtQ"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_DsB5y07eEea0WNU26dJTtQ" elementId="additions" toBeRendered="false">
         <tags>toolbarSeparator</tags>
@@ -946,7 +947,7 @@
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_DsB6E07eEea0WNU26dJTtQ" elementId="org.eclipse.ui.workbench.navigate">
         <tags>Draggable</tags>
-        <children xsi:type="menu:HandledToolItem" xmi:id="_2FSLoE9WEea2N_ViykHnrw" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_DsE9w07eEea0WNU26dJTtQ"/>
+        <children xsi:type="menu:HandledToolItem" xmi:id="_cadU8E-SEeayNeF4qzPbAg" elementId="org.eclipse.ui.window.pinEditor" visible="false" iconURI="platform:/plugin/org.eclipse.ui/icons/full/etool16/pin_editor.png" tooltip="Pin Editor" type="Check" command="_DsE9w07eEea0WNU26dJTtQ"/>
       </children>
       <children xsi:type="menu:ToolBar" xmi:id="_DsB6Hk7eEea0WNU26dJTtQ" elementId="group.editor" toBeRendered="false">
         <tags>toolbarSeparator</tags>
