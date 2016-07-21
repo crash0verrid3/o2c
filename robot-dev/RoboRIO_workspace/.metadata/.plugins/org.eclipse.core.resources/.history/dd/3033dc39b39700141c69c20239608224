@@ -1,0 +1,73 @@
+#ifndef Navigator_H
+#define Navigator_H
+//mid-level actions
+
+#include "Definitions.h"
+#include "math.h"
+#include "WPILib.h"
+#include "HAL/Semaphore.hpp"
+
+class Notifier;
+class NAVIGATOR
+{
+
+public:
+	NAVIGATOR();
+	void Init();
+	void Zero();
+	double GetRobotHeading();
+	
+private:
+	AnalogInput MyGyro;
+	//Accelerometer	Accelerometer;		//not currently coded
+
+	Notifier *SampleGyro;		// independent loop to sample gyro at defined intervals
+	Notifier *CalibrateGyro;	// independent loop to calibrate gyro samples at defined intervals until start of match
+	Notifier *SampleAccel;		// independent loop to sample accelerometer at defined intervals
+	Notifier *CalibrateAccel;	// independent loop to calibrate accelerometer samples at defined intervals until start of match
+	Notifier *INSupdate;		// independent loop to update Inertial Navigation System (position, orientation, speed, spin) at defined intervals
+
+	Timer NavTimer;
+
+	void InitMyGyro();
+	void InitMyAccelerometer();
+	static void CallOversampleGyro(void *controller);
+	void OversampleGyro();
+	static void CallCageGyro(void *controller);
+	void CageGyro();
+	void CageAccelerometer();
+	void Cage();
+	void UpdatePosition();
+	void UpdateHeading();
+	void Calculate();			// Calculate Position, Heading, Speed, Spin
+	static void CallCalculate(void *controller);
+
+	SEM_ID gyro_semaphore, accel_semaphore, INS_semaphore;
+	
+//	double GyroRate;
+	double GyroDrift;
+	bool GyroTilt;
+	int noisycnt;
+	double GyroHeading;	// the robot's heading calculated by correcting GyroRawAngle for the drift
+
+	double GyroRawRate;
+	double GyroCenter;
+	double GyroOversample;
+	int OversampleCount;
+	double Gyro_VoltageCenter;
+	double Calibrated_GyroVoltageCenter;
+	double GyroSample;
+	double RobotHeading;
+
+	int initcnt;
+	int NavLoopCnt;
+	int i;
+
+//	double NavStartTime;
+	double NavElapsedTime;
+
+
+};
+
+
+#endif

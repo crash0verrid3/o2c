@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Move &apos;Navigator.Analog.cpp.save, Navigator.Analog.h.save, Navigator.gyro.cpp.save, Navigator.gyro.h.save&apos; to &apos;I2Ctest&apos;" description="Move 4 resources to &apos;I2Ctest&apos;" destination="/I2Ctest" element1="/MockBot2014/src/Navigator.Analog.cpp.save" element2="/MockBot2014/src/Navigator.Analog.h.save" element3="/MockBot2014/src/Navigator.gyro.cpp.save" element4="/MockBot2014/src/Navigator.gyro.h.save" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="4" stamp="1420883553374" updateReferences="true"/>
+</session>

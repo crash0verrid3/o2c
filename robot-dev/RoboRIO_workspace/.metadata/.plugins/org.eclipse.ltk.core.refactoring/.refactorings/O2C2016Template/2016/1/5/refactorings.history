@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;O2C2016Template/src/Autonomous.h&apos; to &apos;AutoPilot.h&apos;" description="Rename resource &apos;Autonomous.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/Autonomous.h" name="AutoPilot.h" stamp="1453779592045" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;O2C2016Template/src/Autonomous.cpp&apos; to &apos;AutoPilot.cpp&apos;" description="Rename resource &apos;Autonomous.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/Autonomous.cpp" name="AutoPilot.cpp" stamp="1453779604915" updateReferences="true"/>
+</session>

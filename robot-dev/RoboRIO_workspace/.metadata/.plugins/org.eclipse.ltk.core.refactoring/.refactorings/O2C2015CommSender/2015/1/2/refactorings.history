@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;DevNAV/src/Navigator.Analog.h&apos; to &apos;Navigator.Dev.h&apos;" description="Rename resource &apos;Navigator.Analog.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/Navigator.Analog.h" name="Navigator.Dev.h" stamp="1420906452249" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;DevNAV/src/Navigator.Analog.cpp&apos; to &apos;Navigator.Dev.cpp&apos;" description="Rename resource &apos;Navigator.Analog.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/Navigator.Analog.cpp" name="Navigator.Dev.cpp" stamp="1420906649922" updateReferences="true"/>
+</session>

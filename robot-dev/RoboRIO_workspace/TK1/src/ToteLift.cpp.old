@@ -1,0 +1,141 @@
+#include <ToteLift.h>
+
+TOTELIFT :: TOTELIFT()
+{
+	initcnt = 0;
+	pToteLiftMotor = new Victor(LIFTVICTORCHANNEL);
+	pLiftEncoder = new Encoder(LIFT_DIO_PORT1, LIFT_DIO_PORT2, LIFT_REVERSE_DIRECTION, Encoder::k4X);
+	pLiftEncoder->SetReverseDirection(LIFT_REVERSE_DIRECTION);
+	Lift_ticks = 0;
+	LiftTarget = 0;
+	LiftPower = 0;
+
+}
+
+void TOTELIFT :: Init(RobotStateBuffer *pRobotState, INPUT *pInput)
+{
+	SmartDashboard::PutNumber("ToteLiftInit", ++initcnt);
+	pMyRobotState = pRobotState;
+	pMyInput = pInput;
+
+
+#ifndef JOYLIFT
+
+	LiftPower = LIFT_DN_POWER;
+	int Last_ToteLift_Position;
+
+	pToteLiftMotor->Set(LiftPower);  // Start  the Motor DN.
+
+	do 	{  // Wait 'til we hit bottom
+			Wait (0.1);
+			Last_ToteLift_Position = pMyRobotState->ToteLift_Position;
+
+		}
+	while ((pMyRobotState->ToteLift_Position = pLiftEncoder->Get()) != Last_ToteLift_Position);
+	pLiftEncoder->Reset();
+	pToteLiftMotor->Set(0); //Stop the Lift Power
+
+#endif
+	SmartDashboard::PutNumber("ToteLiftInit", ++initcnt);
+}
+
+void TOTELIFT :: Run()
+	{
+
+
+
+#ifdef JOYLIFT
+
+//	if (pMyInput->ToteLift > 0) LiftPower = LIFT_DN_POWER * pMyInput->ToteLift; // Joy>0 is DN.   Positive to Motor Goes DN.
+//	else LiftPower = -1 * LIFT_UP_POWER * pMyInput->ToteLift;  // Joy<0 is UP.  Negative to Motor Goes UP.  The extra -1 removes the negative the define of the up power that is not needed because the joystick goes negative.
+	if (fabs(LiftPower) < 0.03) LiftPower = 0;
+	pToteLiftMotor->Set(LiftPower);
+
+	SmartDashboard::PutNumber("ToteLiftPower", LiftPower);
+	pMyRobotState->ToteLift_Position = Lift_ticks = pLiftEncoder->Get();
+	SmartDashboard::PutNumber("ToteLiftTicks", Lift_ticks);
+
+#endif
+
+#ifndef JOYLIFT
+
+
+	if (pMyInput->ToteUPBtn == true)
+		{
+
+ 		pMyRobotState->ToteLift_Direction = LIFT_UP;
+		switch (LiftTarget)
+			{
+			case LIFT_LIMIT_DN:
+				if (pMyRobotState->ToteLift_Position <= LIFT_STEP_UP) LiftTarget = LIFT_STEP_UP;
+				break;
+
+			case LIFT_STEP_UP:
+				if (pMyRobotState->ToteLift_Position <= LIFT_TOTE_UP) LiftTarget = LIFT_TOTE_UP;
+				break;
+
+			case LIFT_TOTE_UP:
+				if (pMyRobotState->ToteLift_Position < LIFT_TOTESTEP_UP) LiftTarget = LIFT_TOTESTEP_UP;
+				break;
+
+			case LIFT_TOTESTEP_UP:
+				if (pMyRobotState->ToteLift_Position < LIFT_LIMIT_UP) LiftTarget = LIFT_LIMIT_UP;
+				break;
+
+			case LIFT_LIMIT_UP:
+				break;
+			}
+		if (pMyRobotState->ToteLift_Position > LiftTarget) LiftPower = LIFT_DN_POWER;
+		if (abs(pMyRobotState->ToteLift_Position - LiftTarget) < LIFT_CLOSE) LiftPower /= 2;
+		}
+
+	else if (pMyInput->ToteDNBtn == true)
+		{
+		pMyRobotState->ToteLift_Direction = LIFT_DN;
+		switch (LiftTarget)
+			{
+			case LIFT_LIMIT_DN:
+				break;
+
+			case LIFT_STEP_UP:
+				if (pMyRobotState->ToteLift_Position <= LIFT_STEP_UP) LiftTarget = LIFT_LIMIT_DN;
+				break;
+
+			case LIFT_TOTE_UP:
+				if (pMyRobotState->ToteLift_Position < LIFT_TOTE_UP) LiftTarget = LIFT_STEP_UP;
+				break;
+
+			case LIFT_TOTESTEP_UP:
+				if (pMyRobotState->ToteLift_Position < LIFT_TOTESTEP_UP) LiftTarget = LIFT_TOTE_UP;
+				break;
+
+			case LIFT_LIMIT_UP:
+				if (pMyRobotState->ToteLift_Position <= LIFT_LIMIT_UP) LiftTarget = LIFT_TOTESTEP_UP;
+				break;
+			}
+
+		if (pMyRobotState->ToteLift_Position < LiftTarget) LiftPower = LIFT_UP_POWER;
+		if (abs(pMyRobotState->ToteLift_Position - LiftTarget) < LIFT_CLOSE) LiftPower /= 2;
+		}
+	else
+		{
+		pMyRobotState->ToteLift_Direction = LIFT_HOLD;
+		LiftPower = LIFT_MAXHOLD_POWER + (pMyRobotState->ToteLift_Position - LiftTarget) / 50;
+		}
+
+	pToteLiftMotor->Set(LiftPower);
+
+	SmartDashboard::PutNumber("ToteLiftPower", LiftPower);
+
+	SmartDashboard::PutNumber("ToteLiftTicks", Lift_ticks);
+
+	#endif
+ /*
+#define LIFT_LIMIT_DN		0
+#define LIFT_STEP_UP		265
+#define LIFT_TOTE_UP		418
+#define LIFT_TOTESTEP_UP	526
+#define LIFT_LIMIT_UP		575
+ */
+
+	}

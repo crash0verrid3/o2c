@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;O2C2015FRC/src/Navigator.cpp&apos; to &apos;OldNavigator.cpp&apos;" description="Rename resource &apos;Navigator.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/Navigator.cpp" name="OldNavigator.cpp" stamp="1454975657119" updateReferences="true"/>
+</session>

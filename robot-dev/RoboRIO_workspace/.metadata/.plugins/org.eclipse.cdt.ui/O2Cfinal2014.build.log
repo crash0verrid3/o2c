@@ -1,0 +1,6 @@
+16:43:30 **** Build of configuration Default for project O2Cfinal2014 ****
+make all 
+make: *** No rule to make target `all'.  Stop.
+
+16:43:30 Build Finished (took 186ms)
+

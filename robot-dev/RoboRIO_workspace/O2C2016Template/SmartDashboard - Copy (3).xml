@@ -1,0 +1,167 @@
+<xml version="1.0">
+<dashboard>
+	<widget field="Defense1" type="String Chooser" class="edu.wpi.first.smartdashboard.gui.elements.Chooser">
+		<location x="5" y="94"/>
+		<property name="Use Radio Buttons" value="false"/>
+	</widget>
+	<widget field="Defense2" type="String Chooser" class="edu.wpi.first.smartdashboard.gui.elements.Chooser">
+		<location x="6" y="117"/>
+		<property name="Use Radio Buttons" value="false"/>
+	</widget>
+	<widget field="Defense3" type="String Chooser" class="edu.wpi.first.smartdashboard.gui.elements.Chooser">
+		<location x="6" y="140"/>
+		<property name="Use Radio Buttons" value="false"/>
+	</widget>
+	<widget field="Defense4" type="String Chooser" class="edu.wpi.first.smartdashboard.gui.elements.Chooser">
+		<location x="7" y="162"/>
+		<property name="Use Radio Buttons" value="false"/>
+	</widget>
+	<widget field="Defense0" type="String Chooser" class="edu.wpi.first.smartdashboard.gui.elements.Chooser">
+		<location x="50" y="72"/>
+		<property name="Use Radio Buttons" value="false"/>
+	</widget>
+	<static-widget class="edu.wpi.first.smartdashboard.gui.elements.Label">
+		<location x="204" y="70"/>
+		<property name="Text" value="Target"/>
+	</static-widget>
+	<static-widget class="edu.wpi.first.smartdashboard.gui.elements.Label">
+		<location x="123" y="67"/>
+		<property name="Text" value="Start Position"/>
+	</static-widget>
+	<static-widget class="edu.wpi.first.smartdashboard.gui.elements.Label">
+		<location x="53" y="64"/>
+		<property name="Text" value="Defenses"/>
+	</static-widget>
+	<widget field="DriftAngle" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="645" y="105"/>
+	</widget>
+	<widget field="Drive_Rright" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="633" y="57"/>
+	</widget>
+	<widget field="Drive_Left" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="485" y="56"/>
+	</widget>
+	<widget field="Drive_Orientation" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="308" y="81"/>
+	</widget>
+	<widget field="Drive_SpinCorrection" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="517" y="134"/>
+	</widget>
+	<widget field="Drive_Spin_Control" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="300" y="57"/>
+	</widget>
+	<widget field="SpinRate" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="495" y="107"/>
+	</widget>
+	<widget field="Roll" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="892" y="276"/>
+	</widget>
+	<widget field="Pitch" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="885" y="251"/>
+	</widget>
+	<widget field="Power_Consumption" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="229" y="9"/>
+	</widget>
+	<widget field="Battery_Voltage" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="47" y="7"/>
+	</widget>
+	<widget field="Speed" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="824" y="81"/>
+	</widget>
+	<widget field="MainLoopRate" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="5" y="489"/>
+	</widget>
+	<widget field="TestRuns" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="785" y="513"/>
+	</widget>
+	<widget field="TeleopRuns" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="636" y="513"/>
+	</widget>
+	<widget field="AutonomousRuns" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="458" y="512"/>
+	</widget>
+	<widget field="EnabledRuns" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="304" y="513"/>
+	</widget>
+	<widget field="NavInit" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="286" y="540"/>
+	</widget>
+	<static-widget class="edu.wpi.first.smartdashboard.gui.elements.ConnectionIndicator">
+		<location x="0" y="0"/>
+	</static-widget>
+	<widget field="Xcoord" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="879" y="318"/>
+	</widget>
+	<widget field="AutoInit" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="549" y="539"/>
+	</widget>
+	<widget field="Drive_Speed_Control" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="292" y="108"/>
+	</widget>
+	<widget field="Autonomous Steps" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="28" y="279"/>
+	</widget>
+	<widget field="Action Timeout" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="45" y="375"/>
+	</widget>
+	<widget field="Start_Y" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="81" y="256"/>
+	</widget>
+	<widget field="Start_X" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="81" y="234"/>
+	</widget>
+	<widget field="DisabledRuns" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="149" y="514"/>
+	</widget>
+	<widget field="Start_Heading" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="48" y="209"/>
+	</widget>
+	<widget field="RobotInit" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="4" y="539"/>
+	</widget>
+	<widget field="Autonomous Command" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="8" y="329"/>
+	</widget>
+	<widget field="Autonomous Action" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="25" y="352"/>
+	</widget>
+	<widget field="Ycoord" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="881" y="339"/>
+	</widget>
+	<widget field="CommsInit" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="143" y="540"/>
+	</widget>
+	<widget field="TotalLoops" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="4" y="514"/>
+	</widget>
+	<widget field="Heading" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="572" y="32"/>
+	</widget>
+	<widget field="Start Position" type="String Chooser" class="edu.wpi.first.smartdashboard.gui.elements.Chooser">
+		<location x="123" y="72"/>
+	</widget>
+	<widget field="DriveInit" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="415" y="540"/>
+	</widget>
+	<widget field="Drive_Heading" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="784" y="104"/>
+	</widget>
+	<widget field="Comms GetCount" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="687" y="540"/>
+	</widget>
+	<widget field="Version" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="908" y="539"/>
+	</widget>
+	<widget field="Direction" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="812" y="128"/>
+	</widget>
+	<widget field="Goal" type="String Chooser" class="edu.wpi.first.smartdashboard.gui.elements.Chooser">
+		<location x="176" y="72"/>
+	</widget>
+	<widget field="Drive_SprintFactor" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="525" y="82"/>
+	</widget>
+</dashboard>
+<live-window>
+</live-window>
+</xml>

@@ -1,0 +1,44 @@
+19:47:17 **** Incremental Build of configuration Debug for project Dev2015FRC ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Rod/wpilib/cpp/current/include" "-IC:\\Users\\Rod\\RoboRIO_workspace\\Dev2015FRC\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Pincer.o" "..\\src\\Pincer.cpp" 
+..\src\Pincer.cpp: In constructor 'PINCER::PINCER()':
+..\src\Pincer.cpp:8:30: error: 'PINCERUM_CHANNEL' was not declared in this scope
+  pPincerUMmotor = new Victor(PINCERUM_CHANNEL);
+                              ^
+..\src\Pincer.cpp:9:30: error: 'PINCERLM_CHANNEL' was not declared in this scope
+  pPincerLMmotor = new Victor(PINCERLM_CHANNEL);
+                              ^
+..\src\Pincer.cpp: In member function 'void PINCER::Run()':
+..\src\Pincer.cpp:25:16: error: 'struct INPUT' has no member named 'PincerUM'
+  if (pMyInput->PincerUM > 0) PincerUMpower = PINCERUM_DN_POWER * pMyInput->PincerUM; // Joy>0 is DN.   Positive to Motor Goes DN.
+                ^
+..\src\Pincer.cpp:25:46: error: 'PINCERUM_DN_POWER' was not declared in this scope
+  if (pMyInput->PincerUM > 0) PincerUMpower = PINCERUM_DN_POWER * pMyInput->PincerUM; // Joy>0 is DN.   Positive to Motor Goes DN.
+                                              ^
+..\src\Pincer.cpp:25:76: error: 'struct INPUT' has no member named 'PincerUM'
+  if (pMyInput->PincerUM > 0) PincerUMpower = PINCERUM_DN_POWER * pMyInput->PincerUM; // Joy>0 is DN.   Positive to Motor Goes DN.
+                                                                            ^
+..\src\Pincer.cpp:26:29: error: 'PINCERUM_UP_POWER' was not declared in this scope
+   else PincerUMpower = -1 * PINCERUM_UP_POWER * pMyInput->PincerUM;  // Joy<0 is UP.  Negative to Motor Goes UP.  The extra -1 removes the negative the define of the up power that is not needed because the joystick goes negative.
+                             ^
+..\src\Pincer.cpp:26:59: error: 'struct INPUT' has no member named 'PincerUM'
+   else PincerUMpower = -1 * PINCERUM_UP_POWER * pMyInput->PincerUM;  // Joy<0 is UP.  Negative to Motor Goes UP.  The extra -1 removes the negative the define of the up power that is not needed because the joystick goes negative.
+                                                           ^
+..\src\Pincer.cpp:30:16: error: 'struct INPUT' has no member named 'PincerLM'
+  if (pMyInput->PincerLM > 0) PincerLMpower = PINCERLM_DN_POWER * pMyInput->PincerLM; // Joy>0 is DN.   Positive to Motor Goes DN.
+                ^
+..\src\Pincer.cpp:30:46: error: 'PINCERLM_DN_POWER' was not declared in this scope
+  if (pMyInput->PincerLM > 0) PincerLMpower = PINCERLM_DN_POWER * pMyInput->PincerLM; // Joy>0 is DN.   Positive to Motor Goes DN.
+                                              ^
+..\src\Pincer.cpp:30:76: error: 'struct INPUT' has no member named 'PincerLM'
+  if (pMyInput->PincerLM > 0) PincerLMpower = PINCERLM_DN_POWER * pMyInput->PincerLM; // Joy>0 is DN.   Positive to Motor Goes DN.
+                                                                            ^
+..\src\Pincer.cpp:31:29: error: 'PINCERLM_UP_POWER' was not declared in this scope
+   else PincerLMpower = -1 * PINCERLM_UP_POWER * pMyInput->PincerLM;  // Joy<0 is UP.  Negative to Motor Goes UP.  The extra -1 removes the negative the define of the up power that is not needed because the joystick goes negative.
+                             ^
+..\src\Pincer.cpp:31:59: error: 'struct INPUT' has no member named 'PincerLM'
+   else PincerLMpower = -1 * PINCERLM_UP_POWER * pMyInput->PincerLM;  // Joy<0 is UP.  Negative to Motor Goes UP.  The extra -1 removes the negative the define of the up power that is not needed because the joystick goes negative.
+                                                           ^
+
+19:47:19 Build Finished (took 2s.150ms)
+

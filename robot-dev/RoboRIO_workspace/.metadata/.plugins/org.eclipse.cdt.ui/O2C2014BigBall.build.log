@@ -1,0 +1,99 @@
+20:20:58 **** Incremental Build of configuration Debug for project O2C2014BigBall ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Kett/wpilib/cpp/current/include" "-IC:\\Users\\Kett\\RoboRIO_workspace\\O2C2014BigBall\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Robot.o" "..\\src\\Robot.cpp" 
+..\src\Robot.cpp: In member function 'void ROBOT::AutoInit(INPUT*)':
+..\src\Robot.cpp:48:59: error: no matching function for call to 'SmartDashboard::GetNumber(const char [12])'
+  TwoBallMode = int(SmartDashboard::GetNumber("TwoBallMode")); // default to 0 if not input
+                                                           ^
+..\src\Robot.cpp:48:59: note: candidate is:
+In file included from ..\src\Definitions.h:5:0,
+                 from ..\src\Robot.h:5,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Kett/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:30:17: note: static double SmartDashboard::GetNumber(llvm::StringRef, double)
+   static double GetNumber(llvm::StringRef keyName, double defaultValue);
+                 ^
+C:\Users\Kett/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:30:17: note:   candidate expects 2 arguments, 1 provided
+..\src\Robot.cpp: In member function 'void ROBOT::TestInit()':
+..\src\Robot.cpp:239:59: error: no matching function for call to 'SmartDashboard::GetNumber(const char [12])'
+  TwoBallMode = int(SmartDashboard::GetNumber("TwoBallMode")); // default to 0 if not input
+                                                           ^
+..\src\Robot.cpp:239:59: note: candidate is:
+In file included from ..\src\Definitions.h:5:0,
+                 from ..\src\Robot.h:5,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Kett/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:30:17: note: static double SmartDashboard::GetNumber(llvm::StringRef, double)
+   static double GetNumber(llvm::StringRef keyName, double defaultValue);
+                 ^
+C:\Users\Kett/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:30:17: note:   candidate expects 2 arguments, 1 provided
+..\src\Robot.cpp: In member function 'void ROBOT::TestClaw()':
+..\src\Robot.cpp:313:52: error: no matching function for call to 'SmartDashboard::GetNumber(const char [10])'
+  forktarget = SmartDashboard::GetNumber("ClawState");
+                                                    ^
+..\src\Robot.cpp:313:52: note: candidate is:
+In file included from ..\src\Definitions.h:5:0,
+                 from ..\src\Robot.h:5,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Kett/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:30:17: note: static double SmartDashboard::GetNumber(llvm::StringRef, double)
+   static double GetNumber(llvm::StringRef keyName, double defaultValue);
+                 ^
+C:\Users\Kett/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:30:17: note:   candidate expects 2 arguments, 1 provided
+..\src\Robot.cpp: In member function 'void ROBOT::TestDrive(INPUT*)':
+..\src\Robot.cpp:323:52: error: no matching function for call to 'SmartDashboard::GetNumber(const char [7])'
+  input->DriveX = SmartDashboard::GetNumber("DriveX");
+                                                    ^
+..\src\Robot.cpp:323:52: note: candidate is:
+In file included from ..\src\Definitions.h:5:0,
+                 from ..\src\Robot.h:5,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Kett/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:30:17: note: static double SmartDashboard::GetNumber(llvm::StringRef, double)
+   static double GetNumber(llvm::StringRef keyName, double defaultValue);
+                 ^
+C:\Users\Kett/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:30:17: note:   candidate expects 2 arguments, 1 provided
+..\src\Robot.cpp:324:52: error: no matching function for call to 'SmartDashboard::GetNumber(const char [7])'
+  input->DriveY = SmartDashboard::GetNumber("DriveY");
+                                                    ^
+..\src\Robot.cpp:324:52: note: candidate is:
+In file included from ..\src\Definitions.h:5:0,
+                 from ..\src\Robot.h:5,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Kett/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:30:17: note: static double SmartDashboard::GetNumber(llvm::StringRef, double)
+   static double GetNumber(llvm::StringRef keyName, double defaultValue);
+                 ^
+C:\Users\Kett/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:30:17: note:   candidate expects 2 arguments, 1 provided
+..\src\Robot.cpp:325:52: error: no matching function for call to 'SmartDashboard::GetNumber(const char [7])'
+  input->DriveR = SmartDashboard::GetNumber("DriveR");
+                                                    ^
+..\src\Robot.cpp:325:52: note: candidate is:
+In file included from ..\src\Definitions.h:5:0,
+                 from ..\src\Robot.h:5,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Kett/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:30:17: note: static double SmartDashboard::GetNumber(llvm::StringRef, double)
+   static double GetNumber(llvm::StringRef keyName, double defaultValue);
+                 ^
+C:\Users\Kett/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:30:17: note:   candidate expects 2 arguments, 1 provided
+..\src\Robot.cpp: In member function 'void ROBOT::TestFire(INPUT*)':
+..\src\Robot.cpp:331:62: error: no matching function for call to 'SmartDashboard::GetBoolean(const char [9])'
+  input->fire_catapult = SmartDashboard::GetBoolean("TestFire");
+                                                              ^
+..\src\Robot.cpp:331:62: note: candidate is:
+In file included from ..\src\Definitions.h:5:0,
+                 from ..\src\Robot.h:5,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Kett/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:27:15: note: static bool SmartDashboard::GetBoolean(llvm::StringRef, bool)
+   static bool GetBoolean(llvm::StringRef keyName, bool defaultValue);
+               ^
+C:\Users\Kett/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:27:15: note:   candidate expects 2 arguments, 1 provided
+..\src\Robot.cpp:332:59: error: no matching function for call to 'SmartDashboard::GetBoolean(const char [10])'
+  input->catmanual = SmartDashboard::GetBoolean("ManualCat");
+                                                           ^
+..\src\Robot.cpp:332:59: note: candidate is:
+In file included from ..\src\Definitions.h:5:0,
+                 from ..\src\Robot.h:5,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Kett/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:27:15: note: static bool SmartDashboard::GetBoolean(llvm::StringRef, bool)
+   static bool GetBoolean(llvm::StringRef keyName, bool defaultValue);
+               ^
+C:\Users\Kett/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:27:15: note:   candidate expects 2 arguments, 1 provided
+
+20:20:59 Build Finished (took 1s.180ms)
+

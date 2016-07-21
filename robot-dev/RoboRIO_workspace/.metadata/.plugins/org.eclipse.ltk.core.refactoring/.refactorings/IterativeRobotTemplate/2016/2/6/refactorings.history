@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;IterativeRobotTemplate/src/Robot.cpp&apos; to &apos;IterativeRobot.cpp&apos;" description="Rename resource &apos;Robot.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/Robot.cpp" name="IterativeRobot.cpp" stamp="1454629393203" updateReferences="true"/>
+</session>

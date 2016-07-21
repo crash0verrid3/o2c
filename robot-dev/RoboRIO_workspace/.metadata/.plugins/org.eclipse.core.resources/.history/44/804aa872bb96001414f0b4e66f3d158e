@@ -1,0 +1,165 @@
+#include "Claw.h"
+
+O2CClaw :: O2CClaw() : ClawMotor(CLAWMOTORCHANNEL), ClawEncoder(CLAWENCODERMOD1, CLAWENCODERCHAN1, CLAWENCODERMOD2, CLAWENCODERCHAN2)
+{
+	clawinitcnt = 0;
+	clwpwr = 0;
+	breakpwr = 0;
+	clwpwrlim = 0;
+	forkencoder = 0;
+	forkencoder1 = 0;
+	forkencoder2 = 0;
+	difference = 0;
+	direction = 0;
+	ClawMode = 0;
+	TargetAngle = 0;
+	State = 0;
+}
+
+void O2CClaw :: Init()
+{
+	clawinitcnt++;
+	SmartDashboard::PutNumber("ClawInit", clawinitcnt);
+	State = CLAWANGLE_START;
+	//ClawEncoder.StartLiveWindowMode();
+	//ClawEncoder.Start();
+	ClawEncoder.Reset();
+	TargetAngle = forkencoder = forkencoder1 = forkencoder2 = 0;
+	//ClawMode = CLAW_DOWN;
+	SmartDashboard::PutNumber("ClawState", State);
+	SmartDashboard::PutNumber("ClawEncoder", 0);
+	SmartDashboard::PutNumber("ClawPower", 0);
+	clawinitcnt++;
+	SmartDashboard::PutNumber("ClawInit", clawinitcnt);
+}
+
+double O2CClaw::GetClawEncoder()
+{
+	return ClawEncoder.Get();
+}
+
+void O2CClaw::Test(double power)
+{
+	ClawMotor.Set(power);
+}
+
+
+void O2CClaw::Run(INPUT* input)
+	{
+	forkencoder = ClawEncoder.Get();
+	SmartDashboard::PutNumber("ClawEncoder", forkencoder);
+	SmartDashboard::PutBoolean("GoToStart", false);
+	SmartDashboard::PutBoolean("GoToCatapult", false);
+	SmartDashboard::PutBoolean("GoToScore", false);
+	SmartDashboard::PutBoolean("GoToDown", false);
+	clwpwr = 0;
+	if (input->gotostart)
+		{
+		TargetAngle = CLAWANGLE_START;						// Finite state, encoder = 0
+		SmartDashboard::PutBoolean("GoToStart", true);
+		}
+	else if (input->gotocatapult)
+		{
+		TargetAngle = CLAWANGLE_LOAD_BALL;					// Finite state, encoder = 60
+		SmartDashboard::PutBoolean("GoToCatapult", true);
+		}
+	else if (input->gotoscore)
+		{
+		TargetAngle = CLAWANGLE_FIRE_CAT;					// Finite state, encoder = 75
+		SmartDashboard::PutBoolean("GoToScore", true);
+		}
+	else if (input->gotodown)
+		{
+		TargetAngle = CLAWANGLE_DOWN;						// Finite state, encoder = 195
+		SmartDashboard::PutBoolean("GoToDown", true);
+		}
+	else if (input->clawmandown)							// Relative state, add 40 encoder ticks
+		{
+		TargetAngle = fmin(TargetAngle + 40, CLAWANGLE_DOWN);
+		}
+	else if (input->clawmanup)								// Relative state, substract 40 encoder ticks
+		{
+		TargetAngle = fmax(TargetAngle - 40, CLAWANGLE_START);
+		}
+	else if (fabs(input->clawmanpower) > 0.025)				// Infinite state set by moving the right vertical joystick
+		{
+/*
+ * 		new plan...
+ * 		Rather than setting the clwpwr directly from the joystick movement,
+ * 		we will set a new TargetAngle based on the joystick movement and
+ * 		then let the same state transition algorithm move the forklift
+ * 		claws to the desired TargetAngle.
+ */
+		if (input->clawmanpower < 0)			// if lowering forklift, % between current position and full down
+			{
+			TargetAngle = forkencoder + ((forkencoder - CLAWANGLE_DOWN) * input->clawmanpower / 2);
+			}
+		else									// otherwise % between current position and full up
+			{
+			TargetAngle = forkencoder + ((CLAWANGLE_START - forkencoder) * input->clawmanpower / 2);
+			}
+		TargetAngle = fmax(fmin(TargetAngle, CLAWANGLE_DOWN),CLAWANGLE_START);	// sanity check on limits
+		}
+	SmartDashboard::PutNumber("ClawState", TargetAngle);
+/*
+ * 	Once the TargetAngle is set, it is up to the state machine to move the forklift to that
+ * 	position and keep the forklift at the TargetAngle (adjusting power as needed).
+ */
+	difference = forkencoder - TargetAngle;
+
+	// start with a value that represents the power needed to hold the ball at the current position.
+//	clwpwr += (0.25 + (difference/50)) * sin((forkencoder - CLAWANGLE_FIRE_CAT)/120);
+
+	// then add some power to move from the current position to the TargetAngle.
+	clwpwr += (difference * 0.008) + (int((PlusMin(difference) + 1.1) / 2) * 0.25);
+
+	// adjust the power setting to achieve a controlled speed.
+	// 4 encoder ticks per 20msec cycle would allow the forklift to travel from full down
+	// to full up in one second.  That would be way too fast and would throw the ball.
+	// So, the fastest we want to move the forklift is about 2 encoder ticks per cycle.
+	// That's not a lot of granularity for speed control.  So, what we'll do is measure
+	// encoder ticks per double cycle.
+
+	double proper_speed = PlusMin(difference) * ((1.2 * fabs(difference)) + SLOWZONE) / SLOWZONE;
+	double actual_speed = forkencoder2 - forkencoder;
+	SmartDashboard::PutNumber("ActiveState", proper_speed);
+	SmartDashboard::PutNumber("ActivePower", actual_speed);
+	double speed_diff = proper_speed - actual_speed;
+	clwpwr += speed_diff * 0.005;
+
+	/*	clwpwr range limits as a function of position
+	 * forkencoder		not less than			not more than
+	 * 		190				-0.1					1
+	 * 		160				-0.25					1
+	 * 		130				-0.4					1
+	 * 		100				-0.55					1
+	 * 		70				-0.7					0.75
+	 * 		40				-0.85					0.5
+	 * 		10				-1						0.25
+	 * 					f/400 - 0.5				(f+10)/100
+	 */
+	clwpwr = fmin(fmax(fmin(fmax(clwpwr, (forkencoder/400) - 0.5), (forkencoder + 10)/100), -1), 1);
+
+	SmartDashboard::PutNumber("ClawPower", clwpwr);
+	ClawMotor.Set(clwpwr);
+
+	forkencoder2 = forkencoder1;
+	forkencoder1 = forkencoder;
+	}
+
+
+int O2CClaw::PlusMin(double value)
+{
+	if (value > 0)
+	{
+		return 1;
+	}
+	else if (value < 0)
+	{
+		return -1;
+	}
+	else
+	{
+	return 0;
+	}
+}

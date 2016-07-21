@@ -1,0 +1,11 @@
+14:46:25 **** Incremental Build of configuration Debug for project Diagnose ****
+make all 
+Building file: ../src/Comms.cpp
+Invoking: Cross G++ Compiler
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -MMD -MP -MF"src/Comms.d" -MT"src/Comms.o" -o "src/Comms.o" "../src/Comms.cpp"
+/bin/sh: g++: command not found
+src/subdir.mk:27: recipe for target `src/Comms.o' failed
+make: *** [src/Comms.o] Error 127
+
+14:46:26 Build Finished (took 560ms)
+

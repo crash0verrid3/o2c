@@ -1,0 +1,86 @@
+<xml version="1.0">
+<dashboard>
+	<widget field="OrientMode" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.FormattedField">
+		<location x="23" y="5"/>
+		<property name="Foreground" value="255.255.255.255"/>
+		<property name="Background" value="0.0.0.255"/>
+		<property name="Font Size" value="14"/>
+	</widget>
+	<widget field="SprintMode" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.FormattedField">
+		<location x="209" y="7"/>
+		<property name="Foreground" value="255.255.255.255"/>
+		<property name="Background" value="0.0.0.255"/>
+	</widget>
+	<widget field="OrientModeBtn" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="7" y="51"/>
+	</widget>
+	<widget field="NextSprintMode" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="187" y="32"/>
+	</widget>
+	<widget field="SprintModeBtn" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="194" y="58"/>
+	</widget>
+	<widget field="NextOrientMode" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="0" y="30"/>
+	</widget>
+	<static-widget class="edu.wpi.first.smartdashboard.gui.elements.Label">
+		<location x="638" y="11"/>
+		<property name="Text" value="COMMS"/>
+	</static-widget>
+	<static-widget class="edu.wpi.first.smartdashboard.gui.elements.ConnectionIndicator">
+		<location x="682" y="2"/>
+	</static-widget>
+	<widget field="OrientAgle" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="28" y="73"/>
+	</widget>
+	<widget field="DriveR" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="7" y="334"/>
+		<height>20</height>
+	</widget>
+	<widget field="DriveY" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="9" y="307"/>
+		<width>126</width>
+	</widget>
+	<widget field="DriveX" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="9" y="280"/>
+		<height>23</height>
+	</widget>
+	<widget field="CommsGetCount" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="549" y="64"/>
+	</widget>
+	<widget field="TotalLoops" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="576" y="39"/>
+	</widget>
+	<widget field="TestRuns" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="586" y="206"/>
+	</widget>
+	<widget field="TeleopRuns" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="574" y="177"/>
+	</widget>
+	<widget field="RobotInit" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="585" y="326"/>
+	</widget>
+	<widget field="EnabledRuns" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="568" y="117"/>
+		<height>20</height>
+	</widget>
+	<widget field="DriveInit" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="589" y="348"/>
+	</widget>
+	<widget field="DisabledRuns" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="565" y="90"/>
+	</widget>
+	<widget field="CommsInit" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="580" y="304"/>
+	</widget>
+	<widget field="AutonomousRuns" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="546" y="147"/>
+		<height>20</height>
+	</widget>
+</dashboard>
+<live-window>
+</live-window>
+	<hidden field="LastOrientMode"/>
+	<hidden field="RoboInit"/>
+	<hidden field="OrientModeButton"/>
+</xml>

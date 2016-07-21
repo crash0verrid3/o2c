@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;DevNAV&apos; to &apos;O2C2015FRC&apos;" description="Rename resource &apos;DevNAV&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/DevNAV" name="O2C2015FRC" stamp="1425341378738" updateReferences="true"/>
+</session>

@@ -1,0 +1,62 @@
+20:20:59 **** Incremental Build of configuration Debug for project O2C2015CommSender ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Kett/wpilib/cpp/current/include" "-IC:\\Users\\Kett\\RoboRIO_workspace\\O2C2015CommSender\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Autonomous.o" "..\\src\\Autonomous.cpp" 
+In file included from C:\Users\Kett\RoboRIO_workspace\O2C2015CommSender\src/Autonomous.h:11:0,
+                 from ..\src\Autonomous.cpp:8:
+C:\Users\Kett\RoboRIO_workspace\O2C2015CommSender\src/xDefinitions.h:783:0: warning: "XWHEEL_IN_PER_TICK_FWD" redefined
+  #define XWHEEL_IN_PER_TICK_FWD 0.0467 // 19.2 encoder ticks equals 1 inch of travel
+ ^
+C:\Users\Kett\RoboRIO_workspace\O2C2015CommSender\src/xDefinitions.h:768:0: note: this is the location of the previous definition
+  #define XWHEEL_IN_PER_TICK_FWD 0.0518 // 19.2 encoder ticks equals 1 inch of travel
+ ^
+C:\Users\Kett\RoboRIO_workspace\O2C2015CommSender\src/xDefinitions.h:784:0: warning: "XWHEEL_IN_PER_TICK_REV" redefined
+  #define XWHEEL_IN_PER_TICK_REV 0.05222 // 19.8 encoder ticks equals 1 inch of travel (wheel slips less in reversed direction)
+ ^
+C:\Users\Kett\RoboRIO_workspace\O2C2015CommSender\src/xDefinitions.h:769:0: note: this is the location of the previous definition
+  #define XWHEEL_IN_PER_TICK_REV 0.0517 // 19.8 encoder ticks equals 1 inch of travel (wheel slips less in reversed direction)
+ ^
+C:\Users\Kett\RoboRIO_workspace\O2C2015CommSender\src/xDefinitions.h:785:0: warning: "YWHEEL_IN_PER_TICK_FWD" redefined
+  #define YWHEEL_IN_PER_TICK_FWD 0.05215 // 22.1 encoder ticks equals 1 inch of travel
+ ^
+C:\Users\Kett\RoboRIO_workspace\O2C2015CommSender\src/xDefinitions.h:770:0: note: this is the location of the previous definition
+  #define YWHEEL_IN_PER_TICK_FWD 0.0507 // 22.1 encoder ticks equals 1 inch of travel
+ ^
+C:\Users\Kett\RoboRIO_workspace\O2C2015CommSender\src/xDefinitions.h:786:0: warning: "YWHEEL_IN_PER_TICK_REV" redefined
+  #define YWHEEL_IN_PER_TICK_REV 0.05151 // 19.6 encoder ticks equals 1 inch of travel
+ ^
+C:\Users\Kett\RoboRIO_workspace\O2C2015CommSender\src/xDefinitions.h:771:0: note: this is the location of the previous definition
+  #define YWHEEL_IN_PER_TICK_REV 0.05034 // 19.6 encoder ticks equals 1 inch of travel
+ ^
+C:\Users\Kett\RoboRIO_workspace\O2C2015CommSender\src/xDefinitions.h:787:0: warning: "XWHEEL_ANGLE_OFFSET" redefined
+  #define XWHEEL_ANGLE_OFFSET  -3.0  // X wheel is -2 degrees off relative to robot directional reference
+ ^
+C:\Users\Kett\RoboRIO_workspace\O2C2015CommSender\src/xDefinitions.h:772:0: note: this is the location of the previous definition
+  #define XWHEEL_ANGLE_OFFSET  -1   // X wheel is -1 degrees off relative to robot directional reference
+ ^
+C:\Users\Kett\RoboRIO_workspace\O2C2015CommSender\src/xDefinitions.h:788:0: warning: "YWHEEL_ANGLE_OFFSET" redefined
+  #define YWHEEL_ANGLE_OFFSET  -3.0  // Y wheel is -2 degrees off relative to robot directional reference
+ ^
+C:\Users\Kett\RoboRIO_workspace\O2C2015CommSender\src/xDefinitions.h:773:0: note: this is the location of the previous definition
+  #define YWHEEL_ANGLE_OFFSET  -1   // Y wheel is -1 degrees off relative to robot directional reference
+ ^
+..\src\Autonomous.cpp: In member function 'void AUTONOMOUS::ExecWait4()':
+..\src\Autonomous.cpp:412:107: error: no matching function for call to 'SmartDashboard::GetString(const char [19])'
+  SmartDashboard::PutString("Autonomous Command", "Wait4_" + SmartDashboard::GetString("Autonomous Command"));
+                                                                                                           ^
+..\src\Autonomous.cpp:412:107: note: candidate is:
+In file included from C:\Users\Kett\RoboRIO_workspace\O2C2015CommSender\src/xDefinitions.h:25:0,
+                 from C:\Users\Kett\RoboRIO_workspace\O2C2015CommSender\src/Autonomous.h:11,
+                 from ..\src\Autonomous.cpp:8:
+C:\Users\Kett/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:33:22: note: static std::string SmartDashboard::GetString(llvm::StringRef, llvm::StringRef)
+   static std::string GetString(llvm::StringRef keyName,
+                      ^
+C:\Users\Kett/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:33:22: note:   candidate expects 2 arguments, 1 provided
+In file included from C:\Users\Kett\RoboRIO_workspace\O2C2015CommSender\src/Autonomous.h:11:0,
+                 from ..\src\Autonomous.cpp:8:
+C:\Users\Kett\RoboRIO_workspace\O2C2015CommSender\src/xDefinitions.h: At global scope:
+C:\Users\Kett\RoboRIO_workspace\O2C2015CommSender\src/xDefinitions.h:238:20: warning: 'TestStateBuffer' defined but not used [-Wunused-variable]
+ static StatusValue TestStateBuffer[Buffer_Length] = {
+                    ^
+
+20:21:00 Build Finished (took 740ms)
+

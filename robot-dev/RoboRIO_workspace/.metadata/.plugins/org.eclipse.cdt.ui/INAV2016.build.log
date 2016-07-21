@@ -1,0 +1,15 @@
+01:54:32 **** Rebuild of configuration Debug for project INAV2016 ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Rod/wpilib/cpp/current/include" "-IC:\\Users\\Rod\\RoboRIO_workspace\\INAV2016\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Field.o" "..\\src\\Field.cpp" 
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Rod/wpilib/cpp/current/include" "-IC:\\Users\\Rod\\RoboRIO_workspace\\INAV2016\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Comms.o" "..\\src\\Comms.cpp" 
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Rod/wpilib/cpp/current/include" "-IC:\\Users\\Rod\\RoboRIO_workspace\\INAV2016\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Autonomous.o" "..\\src\\Autonomous.cpp" 
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Rod/wpilib/cpp/current/include" "-IC:\\Users\\Rod\\RoboRIO_workspace\\INAV2016\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Robot.o" "..\\src\\Robot.cpp" 
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Rod/wpilib/cpp/current/include" "-IC:\\Users\\Rod\\RoboRIO_workspace\\INAV2016\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Navigator.o" "..\\src\\Navigator.cpp" 
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Rod/wpilib/cpp/current/include" "-IC:\\Users\\Rod\\RoboRIO_workspace\\INAV2016\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ToteLift.o" "..\\src\\ToteLift.cpp" 
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Rod/wpilib/cpp/current/include" "-IC:\\Users\\Rod\\RoboRIO_workspace\\INAV2016\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ToteWheels.o" "..\\src\\ToteWheels.cpp" 
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Rod/wpilib/cpp/current/include" "-IC:\\Users\\Rod\\RoboRIO_workspace\\INAV2016\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\MecanumDrivetrain.o" "..\\src\\MecanumDrivetrain.cpp" 
+arm-frc-linux-gnueabi-g++ "-LC:\\Users\\Rod/wpilib/cpp/current/lib" -Wl,-rpath,/opt/GenICam_v2_3/bin/Linux_armv7-a -o FRCUserProgram "src\\ToteWheels.o" "src\\ToteLift.o" "src\\Robot.o" "src\\Navigator.o" "src\\MecanumDrivetrain.o" "src\\Field.o" "src\\Comms.o" "src\\Autonomous.o" -lwpi 
+c:/frc/bin/../lib/gcc/arm-frc-linux-gnueabi/4.9.1/../../../../arm-frc-linux-gnueabi/bin/ld.exe: warning: libstdc++.so.6, needed by C:\Users\Rod/wpilib/cpp/current/lib\libFRC_NetworkCommunication.so.1.5.0, not found (try using -rpath or -rpath-link)
+
+01:54:56 Build Finished (took 24s.129ms)
+

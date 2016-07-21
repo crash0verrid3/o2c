@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;TK2/src/Naviagator.h&apos; to &apos;Navigator.h&apos;" description="Rename resource &apos;Naviagator.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/Naviagator.h" name="Navigator.h" stamp="1421696748305" updateReferences="true"/>
+</session>

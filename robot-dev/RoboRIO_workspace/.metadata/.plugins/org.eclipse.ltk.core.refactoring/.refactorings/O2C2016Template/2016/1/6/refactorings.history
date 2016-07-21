@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Rename resource &apos;O2C2016Template/src/TankDrive.h&apos; to &apos;DriveTrain.h&apos;" description="Rename resource &apos;TankDrive.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/TankDrive.h" name="DriveTrain.h" stamp="1454258179237" updateReferences="true"/>&#x0A;<refactoring comment="Rename resource &apos;O2C2016Template/src/TankDrive.cpp&apos; to &apos;DriveTrain.cpp&apos;" description="Rename resource &apos;TankDrive.cpp&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="src/TankDrive.cpp" name="DriveTrain.cpp" stamp="1454258195274" updateReferences="true"/>
+</session>

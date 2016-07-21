@@ -1,0 +1,540 @@
+#ifndef Definitions_H
+#define Definitions_H
+
+#include "SmartDashboard/SendableChooser.h"
+#include "SmartDashboard/SmartDashboard.h"
+#include "math.h"
+#include "Timer.h"
+#include "WPILib.h"
+
+#define HALF_PI						1.57079632679489661923132169163975
+#define PI							3.1415926535897932384626433832795
+#define TWO_PI						6.283185307179586476925286766559
+#define DEGREES_TO_RADIANS			0.01745329251994329576923690768489
+#define RADIANS_TO_DEGREES			57.295779513082320876798154814105
+
+// Drivetrain Options (Note:  Only TankDriveTrain and MecanumDriveTrain are currently coded)
+#define TankDriveTrain			1
+#define MecanumDriveTrain		2
+#define HolonomicDriveTrain		3
+#define KiwiDriveTrain			4
+#define SwerveDriveTrain		5
+#define NanoDriveTrain			6
+
+// DriveControl Options
+#define TankDriveControl		1
+#define ArcadeDriveControl		2
+
+// ROBOT		Select your Robot
+//#define PRACTICEBOT
+#define REALBOT
+
+#ifdef REALBOT
+//	#define ITG3200_GYRO
+//	#define ADXL345_ACCEL
+//	#define BUILTIN_ACCEL
+//	#define BNO055_9DOF
+	#define MPU6050_6DOF
+	#define XYWHEELS
+	#define DRIVETRAINTYPE	TankDriveTrain
+	#define DRIVECONTROL	TankDriveControl
+	#define MINIMUM_POWER_TO_MOVE	10			// less than 10% does not overcome friction/inertia
+	#define INVERT_Y_AXIS_INPUT		-1
+	#define ACTIVESENSE 0.25					// Spin Control correction factor.  Lower numbers correct more violently.
+	#define SPIN_RATE_STABILITY_THRESHOLD 1.0	// uncommanded spin rate less than 1 dps will activate SpinControl
+#endif
+
+#ifdef PRACTICEBOT
+	#define MPU6050_6DOF
+	#define BNO055_9DOF
+//	#define BUILTIN_ACCEL
+	#define XYWHEELS
+	#define DRIVETRAINTYPE	TankDriveTrain
+	#define DRIVECONTROL	TankDriveControl
+	#define MINIMUM_POWER_TO_MOVE	10		// less than 10% does not overcome friction/inertia
+	#define INVERT_Y_AXIS_INPUT	1
+	#define ACTIVESENSE 250		// Spin Control correction factor.  Lower numbers correct more violently.
+	#define SPIN_RATE_STABILITY_THRESHOLD 3.0	// uncommanded spin rate less than 3 dps will activate SpinControl
+#endif
+
+
+#define AUTONOMOUS_PERIOD		15000	// 15 seconds Autonomous Time Period
+#define AUTOPILOT_MAX_STEPS	100		// Really!  How many steps can you do in 15 seconds anyway?
+#define AUTO_DEFAULT_SCENARIO	0
+
+// Field loop configuration
+#define LOOPSPERSEC 50
+#define	LOOPPERIOD 0.02
+#define	LOOPPERIODMIN 0.0001		// 0.00015 is as fast as the cRio can run
+
+
+
+
+// Optical Sensor for hot goal detection
+#define PHOTOCHANNEL 3
+
+// Ultrasonic Sensor to detect ball near forklift (used in two-ball autonomous)
+#define ULTRASONICCHANNEL 3
+#define ULTRASONICVOLTSPERINCH 0.0098
+#define ULTRASONICSETBACK 6.5
+#define ULTRASONICOVERSAMPLEBITS 6
+#define ULTRASONICAVERAGEBITS 6
+
+
+#if DRIVETRAINTYPE==TankDriveTrain
+	#define LEFTDRIVEMOTORCHANNEL 0
+	#define RIGHTDRIVEMOTORCHANNEL 1
+	#define DRIVEPOWERBALANCEFACTOR	1.0			// Adjustment to left drive power to match performance of right drive
+	#define DRIVEPOWERBALANCEOFFSET	0.0			// Adjustment to left drive power to match center point of right drive
+	#define	INVERTLEFTDRIVEMOTORPOWER	false
+	#define	INVERTRIGHTDRIVEMOTORPOWER	false	// Right motor power is inverted by default.  Set this to true to put it back.
+#elif DRIVETRAINTYPE==MecanumDriveTrain
+	#define LEFTFRONTDRIVEMOTORCHANNEL 0
+	#define LEFTBACKDRIVEMOTORCHANNEL 1
+	#define RIGHTFRONTDRIVEMOTORCHANNEL 2
+	#define RIGHTBACKDRIVEMOTORCHANNEL 3
+	#define XPOWERFACTOR	3.0		// It takes 2 to 3 times more power to move sideways with mecanum wheels
+	#define	INVERTLEFTFRONTDRIVEMOTORPOWER	false
+	#define	INVERTRIGHTFRONTDRIVEMOTORPOWER	true
+	#define	INVERTLEFTREARDRIVEMOTORPOWER	false
+	#define	INVERTRIGHTREARDRIVEMOTORPOWER	true
+#endif
+
+
+//DRIVETRAIN state machine
+#define ORIENT_BTNHELD 0
+#define ORIENT_ROBOT 1
+#define ORIENT_FIELD 2
+#define SPRINT_INVALID 0
+#define SPRINT_HALF 50
+#define SPRINT_FULL 100
+
+//Pincer Defines
+#define PINCERUM_CHANNEL 8
+#define PINCERLM_CHANNEL 7
+#define PINCERUM_UP_POWER -100
+#define PINCERLM_UP_POWER -100
+#define PINCERUM_DN_POWER 55
+#define PINCERLM_DN_POWER 55
+
+// Lift Defines
+
+#define LIFTVICTORCHANNEL 9
+#define LIFT_DIO_PORT1	4
+#define LIFT_DIO_PORT2	5
+#define LIFT_REVERSE_DIRECTION false
+#define LIFT_MAX_INIT_CYCLES 25
+#ifdef DEBUG_LIFT_INIT
+#define LIFT_UP_POWER 	-75					// -75%  Negative is up.
+#define LIFT_DN_POWER 	60					// +25%
+#endif
+#ifndef DEBUG_LIFT_INIT
+#define LIFT_DN_POWER 	25					// +25%
+#define LIFT_UP_POWER 	-75					// -75%  Negative is up.
+#endif
+#define LIFT_NO_POWER 	0.00
+#define LIFT_MINHOLD_POWER 	0.0				//Negative is up.
+
+#define	LIFT_JOY_OFF	0
+#define LIFT_JOY_ON		1
+#define LIFT_UP			1
+#define LIFT_HOLD		0
+#define LIFT_DN 		-1
+#define LIFT_CLOSE		40
+#define LIFT_HOLD_WINDOW 5
+#define LIFT_HOLD_POWER_WINDOW 40
+#define LIFT_LIMIT_DN		0
+#define LIFT_STEP_UP		285
+#define LIFT_TOTE_UP		445
+#define LIFT_TOTESTEP_UP	550
+#define LIFT_LIMIT_UP		600
+//#define JOYLIFT // Variable Lift and no State Machine.
+//#define LIFT_MAXHOLD_POWER	-0.5
+
+
+#define WHEELS_LEFT_ARM_FWD_CHANNEL		0
+#define WHEELS_LEFT_ARM_REV_CHANNEL		1
+#define WHEELS_RIGHT_ARM_FWD_CHANNEL	2
+#define WHEELS_RIGHT_ARM_REV_CHANNEL	3
+#define TOTEWHEEL_LEFT_CHANNEL			7
+#define TOTEWHEEL_RIGHT_CHANNEL			8
+#define WHEELARMS_INIT_DUTY_CYCLE	10		// 10% duty cycle to control actuator speed during robot initialization
+#define	WHEELARMS_DUTY_CYCLE		50		// 45% duty cycle to control actuator speed
+#define WHEELARMS_MAX_CYCLES		15		// 15 on cycles * 20msec/cycle = 0.3sec/duty_cycle = 0.67sec to open/close arms
+#define	TOTEWHEEL_LEFT_IN_POWER		100		// pulling totes in can be reasonably quick as it is generally done 1 at a time
+#define TOTEWHEEL_RIGHT_IN_POWER	-100
+#define TOTEWHEEL_LEFT_OUT_POWER	60		// pushing totes out requires care, as it may be a stack of many totes
+#define TOTEWHEEL_RIGHT_OUT_POWER	-60
+#define WHEELARMS_WIDE_OPEN			0		// tote wheel arm positions
+#define WHEELARMS_WIDE_TOTE			5
+#define WHEELARMS_NORMAL			7
+#define WHEELARMS_CLOSED			9
+#define WHEELARMS_PINCHED			12
+#define WHEELARMS_GRIP				15
+
+//typedef unsigned char byte;  // make it more Arduino like
+typedef uint8_t byte;  // make it more Arduino like
+//typedef char* string;
+
+enum SpeedControl {Slow=1, Normal=2, Fast=3, Speedy=4};
+enum DriveOrientation {Robot=0, Field=1};
+
+
+#define REPORT_FIELD_STATUS
+#define REPORT_FIELD_DEBUG
+#define REPORT_ROBOT_STATUS
+#define REPORT_COMMS_STATUS
+#define REPORT_DRIVE_STATUS
+//#define REPORT_AUTO_STATUS
+//#define REPORT_LIFT_STATUS
+//#define REPORT_NAV_STATUS
+//#define REPORT_WHEEL_STATUS
+//#define REPORT_PINCER_STATUS
+//#define REPORT_INPUT_STATUS
+#define REPORT_ROBOT_DEBUG
+#define REPORT_COMMS_DEBUG
+#define REPORT_DRIVE_DEBUG
+//#define REPORT_AUTO_DEBUG
+//#define REPORT_LIFT_DEBUG
+//#define REPORT_NAV_DEBUG
+//#define REPORT_GYRO_DEBUG
+//#define REPORT_ACCEL_DEBUG
+//#define REPORT_WHEEL_DEBUG
+//#define REPORT_PINCER_DEBUG
+//#define REPORT_INPUT_DEBUG
+
+static struct RobotStateBuffer	// holds the state of all Robot Subsystems
+	{
+	int		Field_Disabledruns;			// Count the disabled run cycles
+	int		Field_Enabledruns;			// Count the enabled run cycles
+	int		Field_Totalruns;			// Count the run cycles (theoretically equals Disabledruns + Enabledruns)
+	int		Field_Autoruns;				// Count the autonomous run cycles
+	int		Field_Teleruns;				// Count the TeleOp run cycles
+	int		Field_Testruns;				// Count the Test run cycles
+	int		Field_LoopTime;				// number of milliseconds per run cycle
+	int		Field_Defense[5];			// index into the string array of defense names for each of 5 positions
+
+	int		Robot_Init;					// Subsystem Initialization values
+	int		Comms_Init;
+	int		DriveTrain_Init;
+	int		Autonomous_Init;
+	int		Navigator_Init;
+
+	double	Robot_Heading;				// Measured (by Navigator) orientation of robot relative to field (preset by DS)
+	double	Robot_Direction;			// Measured (by Navigator) direction of mevement on the field (field oriented)
+	double	Robot_Speed;				// Measured (by Navigator) speed of the Robot in inches/second
+	double	Robot_Position_X;			// Measured (by Navigator) X coordinate of Robot Position (preset by DS)
+	double	Robot_Position_Y;			// Measured (by Navigator) Y coordinate of Robot Position (preset by DS)
+	double	Robot_Spin_Rate;			// Measured (by Navigator) used to set Drivetrain_Heading when emerging from a spin
+	double	Robot_Pitch;				// Measured (by Navigator) orientation of robot relative to longitudinal level (+/- 180 degrees)
+	double	Robot_Roll;					// Measured (by Navigator) orientation of robot relative to latteral level (+/- 90 degrees)
+
+	int		Auto_State;					// 0=uninit; 1=scenario_selected; 2=running; 3=finished.
+	int		Auto_Step;
+	int		Auto_Scenario_Selection;
+	int		Auto_Scenario_Steps;
+	int		Auto_Start_X;
+	int		Auto_Start_Y;
+	int		Auto_Start_Z;
+	int		Auto_Start_Heading;
+	int		Auto_Start_Position;
+	int		Auto_Goal;
+
+	/*
+ 		AutoTarget.Robot_Position_X = pMyRobotState->Robot_Position_X;
+		AutoTarget.Robot_Position_Y = pMyRobotState->Robot_Position_Y;
+		AutoTarget.Robot_Heading = pMyRobotState->Robot_Heading;
+		AutoTarget.Robot_Speed = 0;
+	 */
+
+	int		Comms_GetCount;				// Count input packets from driver station
+
+	double	Battery_Voltage;			// Measured Battery Voltage (Analog input or CAN bus interrogation of PDP)
+	double	Power_Consumption;			// Measured Power Consumption (from CAN bus interrogation of PDP)
+
+	#if DRIVETRAINTYPE==TankDriveTrain
+	double	Drivetrain_Left_Motor_Power;
+	double	Drivetrain_Right_Motor_Power;
+	#elif DRIVETRAINTYPE==MecanumDriveTrain
+	double	Drivetrain_FL_Motor_Power;
+	double	Drivetrain_FR_Motor_Power;
+	double	Drivetrain_BL_Motor_Power;
+	double	Drivetrain_BR_Motor_Power;
+	#endif
+	SpeedControl	Drivetrain_Speed_Control;	// motor = pwr * Drivetrain_Speed_Control / 4
+	bool	Drivetrain_Spin_Control;	// enabled/disabled by gamepad button input
+	double	Drivetrain_Heading;			// if == 0 && Drivetrain_Spin_Control, set to Navigation_Heading;
+	double	Drivetrain_DriftAngle;		// Difference between the Robot Heading and the Drivetrain_Heading;
+	DriveOrientation	Drivetrain_Directional_Orientation;
+	double	Drivetrain_SprintFactor;
+	double	Drivetrain_SpinCorrection;
+
+	int		Shooter_Elevation;			// encoder ticks.  0=lowered all the way down.  ?=full elevation
+	int		Shooter_Elevation_Speed;	// speed of the shooter elevator movement (ticks/second)
+	int		Shooter_Conveyor_Power;		// power setting applied to the ball conveyor motors (negative draws the ball back; positive pushes the ball forward)
+	int		Shooter_Launch_Power;		// power setting applied to the ball launcher motors
+
+	bool	Nav_Robot_Lost;				// autorun needs to check this and if set, disable all motors and wait for teleop
+	bool	Nav_Gyro_Tilt;				// gyro_spin exceeded maximum range
+	int		Nav_Temp;					// degrees celsius
+	/*
+	 * The following Gyro tuning parameters are obtained from the SmartDashboard if REPORT_GYRO_DEBUG is defined.
+	 * The default values are defined below.  Tune the Gryo by defining REPORT_GYRO_DEBUG and modifying these
+	 * parameters to obtain the best gyro performance at various speeds and different directions.  Then take
+	 * the final values and set them as the new default values below.  When the tuning process is complete,
+	 * undefine REPORT_GYRO_DEBUG and remove the items from the SmartDashboard display.
+	 */
+	double	Nav_Gyro_Noise_Base;		// we filter gyro signals below this base level
+	double	Nav_Gyro_Squelch;			// signal levels below Noise Base are squelched by this factor
+	double	Nav_Gyro_Noise_Limit;		// robot was moved during calibration -- reset and start calibration over
+	double	Nav_Gyro_Noisy_Count;		// number of times gyro exceeded Noise Limit during calibration
+	double	Nav_Gyro_X_Sensitivity;		// convert raw gyro value into dps
+	double	Nav_Gyro_Y_Sensitivity;		// convert raw gyro value into dps
+	double	Nav_Gyro_Z_CW_Sensitivity;	// convert raw gyro Clockwise value into dps
+	double	Nav_Gyro_Z_CCW_Sensitivity;	// convert raw gyro Counter-Clockwise value into dps
+	double	Nav_Gyro_Z_CW_Spin_Effect;	// correct for non-linear spin rate values
+	double	Nav_Gyro_Z_CCW_Spin_Effect;	// correct for non-linear spin rate values
+	double	Nav_Gyro_X_Center;			// raw gyro reading when stationary
+	double	Nav_Gyro_Y_Center;			// raw gyro reading when stationary
+	double	Nav_Gyro_Z_Center;			// raw gyro reading when stationary
+	double	Nav_Gyro_H_Center;			// raw gyro reading when stationary
+	double	Nav_Gyro_R_Center;			// raw gyro reading when stationary
+	double	Nav_Gyro_P_Center;			// raw gyro reading when stationary
+	double	Nav_Gyro_Temp_Adjust;		// correction factor for off-center temperature values
+	double	Nav_Gyro_X_Raw;				// raw X
+	double	Nav_Gyro_Y_Raw;				// raw Y
+	double	Nav_Gyro_Z_Raw;				// raw Z
+	double	IMU_Gyro_H_Compensate_CW;	// Compensation for inaccurate Euler Angle reporting
+	double	IMU_Gyro_H_Compensate_CCW;	// Compensation for inaccurate Euler Angle reporting
+	double	IMU_Gyro_H_Spin_CW;			// Compensation for inaccurate Euler Angle reporting
+	double	IMU_Gyro_H_Spin_CCW;		// Compensation for inaccurate Euler Angle reporting
+	double	IMU_Gyro_R_Compensate;
+	double	IMU_Gyro_P_Compensate;
+	//	end of Gyro Tuning Parameters.
+
+	/*
+	 * The following accelerometer tuning parameters are obtained from the SmartDashboard if REPORT_ACCEL_DEBUG is defined.
+	 * The default values are defined below.  Tune the accelerometer by defining REPORT_ACCEL_DEBUG and modifying these
+	 * parameters to obtain the best accelerometer performance at various speeds and different directions.  Then take
+	 * the final values and set them as the new default values below.  When the tuning process is complete,
+	 * undefine REPORT_ACCEL_DEBUG and remove the items from the SmartDashboard display.
+	 */
+	double	Nav_Acc_Noise_Base;			// we filter gyro signals below this base level
+	double	Nav_Acc_Squelch;			// signal levels below Noise Base are squelched by this factor
+	double	Nav_Acc_Noise_Limit;		// robot was moved during calibration -- reset and start calibration over
+	double	Nav_Acc_X_Sensitivity;		// convert raw accelerometer value into m/s/s
+	double	Nav_Acc_Y_Sensitivity;		// convert raw accelerometer value into m/s/s
+	double	Nav_Acc_Z_Sensitivity;		// convert raw accelerometer value into m/s/s
+	double	Nav_Acc_X_Center;			// raw accelerometer value when stationary
+	double	Nav_Acc_Y_Center;			// raw accelerometer value when stationary
+	double	Nav_Acc_Z_Center;			// raw accelerometer value when stationary
+	double	Nav_Acc_Temp_Adjust;		// correction factor for off-center temperature values
+	double	Nav_Acc_X_Align;			// angular deviation from perpendicular alignment of mems device axis
+	double	Nav_Acc_Y_Align;			// angular deviation from perpendicular alignment of mems device axis
+	double	Nav_Acc_Z_Align;			// angular deviation from perpendicular alignment of mems device axis
+	double	Nav_Acc_X_Raw;				// raw X
+	double	Nav_Acc_Y_Raw;				// raw Y
+	double	Nav_Acc_Z_Raw;				// raw Z
+	//	end of accelerometer Tuning Parameters.
+
+	/*
+	 * The following Navigation values are displayed on the SmartDashboard if REPORT_NAV_DEBUG is defined.
+	 * When the Navigator is fully debugged, undefine REPORT_NAV_DEBUG and remove the items from the SmartDashboard display.
+	 */
+	double	datarate;					// rate in Hz of IMU data collections
+	double	updaterate;					// rate in Hz of Navigation Updates
+	double	dataspeed;					// time in msec of IMU data collections
+	double	updatespeed;				// time in msec of Navigation Updates
+	double	Nav_Gyro_Heading;			// Euler Angle Heading
+	double	Nav_Gyro_Roll;				// Euler Angle Roll
+	double	Nav_Gyro_Pitch;				// Euler Angle Pitch
+	double	Nav_Drift_Heading;			// Euler Angle Heading Drift Rate
+	double	Nav_Drift_Roll;				// Euler Angle Roll Drift Rate
+	double	Nav_Drift_Pitch;			// Euler Angle Pitch Drift Rate
+	double	Nav_Acc_Lin_X;				// Linear X (minus gravity)
+	double	Nav_Acc_Lin_Y;				// Linear Y (minus gravity)
+	double	Nav_Acc_Lin_Z;				// Linear Z (minus gravity)
+	int		Nav_IMU_Temp_Center;		// Normal operating temperature of the BNO055
+	double	Nav_Timestamp;				// These next seven values hold the current positional state of the INS
+	double	Nav_X_Coord;
+	double	Nav_Y_Coord;
+	double	Nav_X_Speed;
+	double	Nav_Y_Speed;
+	double	Nav_X_Accel;
+	double	Nav_Y_Accel;
+	int		IMU_ChipID;
+	int		IMU_CalStat;
+	int		IMU_SelfTest;
+	int		IMU_IntrStat;
+	int		IMU_ClockStat;
+	int		IMU_SystemStat;
+	int		IMU_SystemError;
+	int		IMU_Accel_X_Offset;
+	int		IMU_Accel_Y_Offset;
+	int		IMU_Accel_Z_Offset;
+	int		IMU_Mag_X_Offset;
+	int		IMU_Mag_Y_Offset;
+	int		IMU_Mag_Z_Offset;
+	int		IMU_Gyro_X_Offset;
+	int		IMU_Gyro_Y_Offset;
+	int		IMU_Gyro_Z_Offset;
+	int		IMU_Acc_Radius;
+	int		IMU_Mag_Radius;
+	} *pMyRobotState;
+
+#define BTN_SPRINTCONTROL	11
+#define BTN_SPINCONTROL		12
+#define BTN_FORK_UP			 5
+#define BTN_FORK_DOWN		 7
+#define BTN_SHOOTER_UP		 6
+#define BTN_SHOOTER_DOWN	 8
+#define BTN_SHOOTER_FIRE	 2
+#if DRIVETRAINTYPE==MecanumDriveTrain
+	#define BTN_ORIENTMODE	 3
+#endif
+#define BTN_NAV_RESET		 ?
+#define BTN_HOOK_UP			 ?
+#define BTN_HOOK_DOWN		 ?
+#define BTN_HOOK_EXTEND		 ?
+#define BTN_HOOK_RETRACT	 ?
+#if DRIVECONTROL==TankDriveControl
+	#define AXIS_DRIVEL 1
+	#define AXIS_DRIVER 3
+#elif DRIVECONTROL==ArcadeDriveControl
+	#define AXIS_DRIVEX 0
+	#define AXIS_DRIVEY 1
+	#define AXIS_DRIVER 2
+	#define AXIS_LIFTER	3
+#endif
+
+
+
+static struct INPUT //holds all the input from the driverstation/dashboard
+	{
+	//drive inputs
+
+	#if DRIVECONTROL==TankDriveControl
+		double DriveL; 				//drive Left
+		double DriveR; 				//drive Right
+	#elif DRIVECONTROL==ArcadeDriveControl
+		double DriveX; 				//drive x
+		double DriveY; 				//drive y
+		double DriveRotation; 				//drive z/spin
+	#endif
+
+	#if DRIVETRAINTYPE==MecanumDriveTrain
+		bool OrientModeBtn;
+	#endif
+	bool SprintModeBtn;
+	bool SpinControlBtn;
+
+	bool ShooterUpBtn;
+	bool ShooterDnBtn;
+
+	} *pMyInput;
+
+	/*
+	// Structure for holding input
+	#define GAMEPAD_COUNT	1
+	struct GAMEPAD_INPUTS
+		{
+		double	Axis[4];
+		bool	Button[12];
+		} GamePad[GAMEPAD_COUNT];
+	GAMEPAD_INPUTS			*pMyInput;
+
+	#define AXIS(controller,axis) = pMyInput[controller].Axis[axis]
+	#define BUTTON(controller,button) = pMyInput[controller].Button[button]
+
+	//Drive Controls
+	#define BTN_SPRINTCONTROL	BUTTON(0,11)
+	#define BTN_SPINCONTROL		BUTTON(0,12)
+	#define BTN_FORK_UP			BUTTON(0,5)
+	#define BTN_FORK_DOWN		BUTTON(0,7)
+	#define BTN_SHOOTER_UP		BUTTON(0,6)
+	#define BTN_SHOOTER_DOWN	BUTTON(0,8)
+	#define BTN_SHOOTER_FIRE	BUTTON(0,2)
+	#if DRIVETRAINTYPE==MecanumDriveTrain
+		#define BTN_ORIENTMODE	BUTTON(0,3)
+	#endif
+	#define BTN_NAV_RESET		BUTTON(0,?)
+	#define BTN_HOOK_UP			BUTTON(0,?)
+	#define BTN_HOOK_DOWN		BUTTON(0,?)
+	#define BTN_HOOK_EXTEND		BUTTON(0,?)
+	#define BTN_HOOK_RETRACT	BUTTON(0,?)
+	#if DRIVECONTROL==TankDriveControl
+		#define AXIS_DRIVEL		AXIS(0,1)
+		#define AXIS_DRIVER		AXIS(0,3)
+	#elif DRIVECONTROL==ArcadeDriveControl
+		#define AXIS_DRIVEX		AXIS(0,0)
+		#define AXIS_DRIVEY		AXIS(0,1)
+		#define AXIS_DRIVER		AXIS(0,2)
+		#define AXIS_LIFTER		AXIS(0,3)
+	#endif
+	*/
+
+
+
+struct OUTPUT //holds all the output from the robot to the dashboard
+{
+
+};
+
+
+#ifdef BNO055_9DOF
+	#define GYRO_THERMO_SENSITIVITY 	0.03		//	%/K typical
+	#define GYRO_THERMO_CENTER 			25			// per manual 25dC is the value for zero sensitivity offset
+	#define GYRO_NOISE_BASE 			0.0
+	#define GYRO_NOISE_SQUELCH			1.000		// Any signals below the base threshold are multiplied by the squelch factor
+	#define	GYRO_NOISELIMIT 			500			// robot was moved during calibration -- start over
+	#define GYRO_X_SENSITIVITY			900			// convert raw to radians per second
+	#define GYRO_Y_SENSITIVITY			900
+	#define GYRO_CW_SENSITIVITY			804.000
+	#define GYRO_CCW_SENSITIVITY		804.000
+	#define GYRO_CW_SPIN_CORRECTION		1.001		// Offset to Gyro_Sensitivity to account for data loss during high speed spins
+	#define GYRO_CCW_SPIN_CORRECTION	1.001		// Offset to Gyro_Sensitivity to account for data loss during high speed spins
+	#define GYRO_RATELIMIT				 3			// 3r/10msec exceeds 90% of the gyro rate limit of 2000dps -- flag it
+	#define GYRO_X_OFFSET				-1
+	#define GYRO_Y_OFFSET				-2
+	#define GYRO_Z_OFFSET				0
+	//#define GYRO_READ_CNT 6							// need to acquire all three axes due to tipping effect causes accelerometer drift
+												// also grab the Low Order Byte of the temperature
+	#define GYRO_RADIANS				900.000
+	#define GYRO_DEGREES				16.000
+	#define GYRO_DEGREES_TO_RADIANS		916.73247220931713402877047702568
+	#define	GYRO_EULER_H_DRIFT_CW		15.312
+	#define	GYRO_EULER_H_DRIFT_CCW		15.433
+	#define GYRO_EULER_H_SPIN_CW		-0.100
+	#define GYRO_EULER_H_SPIN_CCW		-0.100
+	#define	GYRO_EULER_P_DRIFT			15.312
+	#define	GYRO_EULER_R_DRIFT			15.312
+
+	#define ACCEL_READ_CNT				6			// 2 bytes per axis
+	#define ACCEL_NOISE_BASE 			0.075
+	#define ACCEL_NOISE_SQUELCH			0.001		// Any signals below the base threshold are multiplied by the squelch factor
+	#define	ACCEL_NOISELIMIT 			500.0		// robot was moved during calibration -- start over
+	#define ACCEL_X_SENSITIVITY 		1			// convert raw to mg
+	#define ACCEL_Y_SENSITIVITY 		1
+	#define ACCEL_Z_SENSITIVITY 		1
+	#define ACCEL_THERMO_SENSITIVITY 	0.03		//	%/K typical
+	#define ACCEL_X_ALIGN				2.000		// Typical alignment error gyro axis vs accel axis in degrees
+	#define ACCEL_Y_ALIGN				2.000
+	#define ACCEL_Z_ALIGN				2.000
+	#define ACCEL_FRICTION				0.000		// percent of velocity loss due to friction that is lost in the Noise Cancellation
+	#define ACCEL_MPS2					100.0
+	#define ACCEL_X_OFFSET				0
+	#define ACCEL_Y_OFFSET				-1
+	#define ACCEL_Z_OFFSET				0
+
+	#define MAG_X_OFFSET				0
+	#define MAG_Y_OFFSET				0
+	#define MAG_Z_OFFSET				0
+	#define ACCEL_RADIUS	1000
+	#define MAG_RADIUS		0
+
+
+#endif	// BNO055_9DOF
+
+
+
+#endif	// Definitions_H

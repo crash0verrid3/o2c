@@ -1,0 +1,275 @@
+#ifndef Definitions_H
+#define Definitions_H
+
+#include "SmartDashboard/SendableChooser.h"
+#include "SmartDashboard/SmartDashboard.h"
+
+#define LOOPSPERSEC 50
+#define	LOOPPERIOD 0.02
+#define	LOOPPERIODMIN 0.0001		// 0.00015 is as fast as the cRio can run
+
+
+//CONTROLS //should be in Dinput, mode off
+#define AXIS_DRIVEX 1
+#define AXIS_DRIVEY 2
+#define AXIS_DRIVER 3
+#define BTN_ACTIVEROT 12
+#define BTN_ACTIVEOFF 9
+#define BTN_DRIVEMODE 3
+#define BTN_DRIVESPRINT 7
+
+#define BTN_CATSHOOT 1 //fire shooter
+#define BTN_CATRESET 24 //reset shooter
+#define BTN_CATSTATEOFF 10
+#define BTN_CATSTATEON 9
+//#define BTN_CATKILL 11 //stop the firing sequence, go to idle state
+#define BTN_CATMANUAL_OPERATION 2	//remove state machine operation and run catapult manually
+
+#define AXIS_CLAWMANPOWER 5
+#define BTN_CLAWSTART 22
+#define BTN_CLAWSCORE 21
+#define BTN_CLAWDOWN 24
+#define BTN_CLAWCATAPULT 25
+#define BTN_CLAWMANDOWN 8
+#define BTN_CLAWMANUP 6
+
+//AUTONOMOUS
+#define AUTO_MOVETIME 1.75
+#define AUTO_STOPTIME 0
+#define AUTO_RESETTIME 0
+#define AUTO_FIRETIME 1.78
+#define AUTO_FIREDONE 10
+
+// Optical Sensor for hot goal detection
+#define PHOTOCHANNEL 3
+
+// Ultrasonic Sensor to detect ball near forklift (used in two-ball autonomous)
+#define ULTRASONICCHANNEL 3
+#define ULTRASONICVOLTSPERINCH 0.0098
+#define ULTRASONICSETBACK 6.5
+#define ULTRASONICOVERSAMPLEBITS 6
+#define ULTRASONICAVERAGEBITS 6
+
+// Forklift
+#define CLAWMOTORCHANNEL 6
+#define CLAWENCODERCHAN1 1
+#define CLAWENCODERCHAN2 2
+
+// Forklift Encoder Values (why not use these as the actual state values?)
+#define CLAWANGLE_START		0		// fully retracted
+#define CLAWANGLE_HOLD_BALL	30		// hold ball in place while manuevering
+#define CLAWANGLE_FIRE_CAT	75		// keep arms and hands away from the firing mechanism
+#define CLAWANGLE_LOAD_BALL	60		// load the ball onto the catapult
+#define CLAWANGLE_CARRY		100		// carry the ball on the forklift
+#define CLAWANGLE_SCORE		100		// push ball into low goal
+#define CLAWANGLE_DOWN		195		// all the way down on the ground
+#define SLOWZONE			60		// slow down so you don't throw the ball
+#define CLAWPRECISION 5
+
+// Forklift states
+//#define CLAW_START 1
+//#define CLAW_SCORE 2
+//#define CLAW_DOWN 3
+//#define CLAW_CATAPULT 4
+//#define CLAW_GOINGSTART 5
+//#define CLAW_GOINGSCORE 6
+//#define CLAW_GOINGDOWN 7
+//#define CLAW_GOINGCATAPULT 8
+
+#define CLAW_MANUAL 1			// use Y-axis of spin controller for manual forklift operation
+#define CLAW_STATE 2			// run forklift as state machine (in autonomous mode)
+
+//DRIVETRAIN
+#define LDRIVEVICTORCHANNEL 3
+#define RDRIVEVICTORCHANNEL 2
+#define BDRIVEVICTORCHANNEL 1
+//drive state machines
+#define MOSEY_ALONG 1
+#define CRAZY_IVAN 2
+#define ORIENT_FIELD 1
+#define ORIENT_ROBOT 2
+#define ORIENT_BTNHELD 3
+
+// Inertial Navigation System
+#define GYRO_OVERSAMPLECNT 10	// average each 10 samples to achieve a stable value
+#define	GYRO_NOISELIMIT 500.0	// robot was moved during calibration -- start over
+#define GYRO_CENTERVOLTAGE 2.258
+#define GYRO_OVERSAMPLEBITS 10
+#define GYRO_SAMPLEAVGBITS 1
+#define GYRO_RATECENTER 19.0
+#define GYRO_SAMPLECOUNT 1000	// gyro drift is not constant.  Calculate drift on this many most recent samples.
+#define GYRO_SENSITIVITY 0.0001926	// convert gyro raw signal to degrees
+#define GYRO_RATELIMIT 200		// 20d/10msec exceeds the gyro rate limit of 2000d/s -- flag it
+#define GYRO_DEGREESPERVOLT 5.78
+
+#define GYRO_ANALOGCHANNEL 0
+
+#define GYRO_I2C_TX	208
+#define GYRO_I2C_RX 209
+#define GYRO_I2C_MODULE 1
+#define GYRO_I2C_Reg_WhoAmI	0	//7:I2C_IF_DIS; 1-6: ID; 0:R/W
+#define GYRO_I2C_Reg_XoffsH	12	//0-7:DC bias
+#define GYRO_I2C_Reg_XoffsL	13	//0-7:subtracted from sensor value
+#define GYRO_I2C_Reg_YoffsH	14	//0-7:before going into sensor registers
+#define GYRO_I2C_Reg_YoffsL	15
+#define GYRO_I2C_Reg_ZoffsH	16
+#define GYRO_I2C_Reg_ZoffsL	17
+#define GYRO_I2C_Reg_FIFOen	18	//7:temp_out; 6:gyro_Xout; 5:gyro_Yout; 4:gyro_Zout
+								//3:aux_Xout: 2:aux_Yout; 1:aux_Zout; 0:FIFO_footer
+#define GYRO_I2C_Reg_AUXdio	19	//2:1=VDD, 0=VLOGIC; 0-1,3-7:=0
+#define GYRO_I2C_Reg_AUXadr	20	//7:clkout_en; 0-6:AuxID
+#define GYRO_I2C_Reg_RtDiv	21	//0-7:sample rate divider
+#define GYRO_I2C_Reg_DLPF	22	//5-7:ext_sync_set; 3-4:FS_sel; 0-2:DLPF_CFG
+					//ext sync: 0=none; 1=temp_out; 2=gyro_Xout; 3=gyro_Yout
+					//ext sync: 4=gyro_Zout; 5=aux_Xout; 6=aux_Yout; 7=auxZ_out
+					//FS_sel: 0=250d/s; 1=500d/s; 2=1000d/s; 3=2000d/s
+					//DLPF_CFG: Sample Rate: 0=8kHz; 1-6=1kHz;
+					//DLPF_CFG: Low Pass Filter: 0=256Hz; 1=188Hz; 2=98Hz; 3=42Hz
+					//DLPF_CFG: Low Pass Filter: 4=20Hz; 5=10Hz; 6=5Hz
+#define GYRO_I2C_Reg_Intr	23	//7:ACTL; 6:OPEN; 5:Latch_Int_en; 4:Int_anyRD
+								//3:0; 2:MPU_Rdy_en; 1:DMP_done_en; 0:Raw_Rdy_en
+#define GYRO_I2C_Reg_AuxBur	24	//0-7: Burst Address
+#define GYRO_I2C_Reg_IntSta	26	//2:MPU_Rdy; 1:DMP_done; 0:Raw_Rdy
+#define GYRO_I2C_Reg_TempH	27	//0-7: high 8-bits of 16-bit data
+#define GYRO_I2C_Reg_TempL	28	//0-7: low 8-bits of 16-bit data
+#define GYRO_I2C_Reg_GyroXH	29
+#define GYRO_I2C_Reg_GyroXL	30
+#define GYRO_I2C_Reg_GyroYH	31
+#define GYRO_I2C_Reg_GyroYL	32
+#define GYRO_I2C_Reg_GyroZH	33
+#define GYRO_I2C_Reg_GyroZL	34
+#define GYRO_I2C_Reg_AuxXH	35
+#define GYRO_I2C_Reg_AuxXL	36
+#define GYRO_I2C_Reg_AuxYH	37
+#define GYRO_I2C_Reg_AuxYL	38
+#define GYRO_I2C_Reg_AuxZH	39
+#define GYRO_I2C_Reg_AuxZL	40
+#define GYRO_I2C_Reg_FIFOcH	58	//0-2: high 2 bits of 10 bit counter
+#define GYRO_I2C_Reg_FIFOcL	58	//0-7: low 8 bits of 10 bit counter
+#define GYRO_I2C_Reg_FIFOd	60	//0-7: 8-bit data in FIFO queue
+#define GYRO_I2C_Reg_User	61	//6:FIFO_en; 5:Aux_IF_en; 3:Aux_IF_rst; 1:FIFO_rst; 0:Gyro_rst
+#define GYRO_I2C_Reg_Power	62	//7:H_reset; 6:sleep; 5:StbyX; 4:StbyY; 3:StbyZ
+								//0-2:Clk_Sel: 0=IntOsc; 1=gyroX; 2=gyroY; 3=gyroZ
+								//             4=ext32.768MHZ; 5=ext19.2MHz; 6:rsvd; 7:stop clock
+
+#define GYRO_I2C_ZoutSync	0x80	//10000000
+#define GYRO_I2C_2000dps	0x18	//00011000
+#define GYRO_I2C_1000dps	0x10	//00010000
+#define GYRO_I2C_8kHz		0x00	//00000000
+#define GYRO_I2C_SampleDiv	0x0F	//00001111	= new sample every 2 msec (we check every 1 ms)
+#define GYRO_I2C_H_Reset	0x80	//10000000
+#define GYRO_I2C_Sleep		0x40	//01000000
+#define GYRO_I2C_Stby_GX	0x20	//00100000
+#define GYRO_I2C_Stby_GY	0x10	//00010000
+#define GYRO_I2C_Stby_GZ	0x08	//00001000
+#define GYRO_I2C_Zoffset	0x05	//00000101
+#define GYRO_I2C_DataRdy	0x01	//00100001	= latch data ready bit
+#define GYRO_I2C_FIFO_Tmp	0x80	//10000000	= put Temp data on FIFO queue
+#define GYRO_I2C_FIFO_GX	0x40	//01000000	= put gyro X-axis data on FIFO queue
+#define GYRO_I2C_FIFO_GY	0x20	//00100000	= put gyro Y-axis data on FIFO queue
+#define GYRO_I2C_FIFO_GZ	0x10	//00010000	= put gyro Z-axis data on FIFO queue
+#define GYRO_I2C_FIFO_AX	0x08	//00001000	= put accel X-axis data on FIFO queue
+#define GYRO_I2C_FIFO_AY	0x04	//00000100	= put accel Y-axis data on FIFO queue
+#define GYRO_I2C_FIFO_AZ	0x02	//00000010	= put accel Z-axis data on FIFO queue
+#define GYRO_I2C_FIFO_ft	0x01	//00000001	= put footer place holder on FIFO queue
+
+#define SAMPLEPERIOD 0.001		// sample gyro and accelerometer inputs every 1.0 msec
+#define CALIBRATEPERIOD 0.01	// recalibrate gyro and accelerometer inputs every 10 msec until match play begins
+#define INSUPDATEPERIOD 0.01	// Update positon, orientation, speed, heading, spin every 10 msec
+
+
+#define ACTIVESENSE 10
+
+
+
+// Catapult
+#define LAUNCHMOTORCHANNEL		10	// can assist with tensioning using counter to start/stop assist function
+#define TENSIONMOTORCHANNEL		9	// combines with PWM generator box and feed 3 victors through cam switch
+#define SHOOTERSWITCHMODULE		1	// not currently used.  replaced with counter.
+#define SHOOTERSWITCHCHANNEL	6	// not currently used.	replaced with counter.
+#define TENSION_COUNTER_CHANNEL	4
+#define CATAPULT_TENSION_POWER			0.6	// will need to adjust based on battery power
+#define CATAPULT_TENSION_ASSIST_POWER	1.0	// launch motor to help tension, but not enough to fire
+#define CATAPULT_TENSION_ASSIST_TIME	1.0	// only help tension for 0.6 seconds
+#define CATAPULT_TENSION_TIMEOUT		2.5	// catapult failed to tension after 1.2 seconds
+#define CATAPULT_MISFIRE				200	// catapult failed to stop at full tension for more than 200msec
+#define CATAPULT_FIRE_POWER				1.0	// use full power to fire the catapult and to run in manual mode
+
+#define RESET_STOP 30
+#define SHOOTER_RESETANG 50
+#define SHOOTER_LAUNCHTIME 0.5
+#define SHOOTER_RESTANG_SLOWZONE 300
+#define CAT_CIRCLE 360
+
+// Catapult States
+#define CATAPULT_MANUAL 0					// manually operated by pressing the BTN_CATSHOOT button
+#define CATAPULT_INITIAL 1					// start of automated catapult operating cycle
+#define CATAPULT_ASSISTED_TENSIONING 2		// tension catapult with assistance from lauching motor
+#define CATAPULT_UNASSISTED_TENSIONING 3	// complete tensioning using only tensioning motors
+#define CATAPULT_TENSION_CHECK 4			// make sure we stopped when the CAM switch got pressed
+#define CATAPULT_READY 5					// wait for the BTN_CATSHOOT button to be pressed
+#define CATAPULT_FIRING 6					// make sure we fired the catapult, then start over
+
+
+//Array for holding input
+struct INPUT //holds all the input from the driverstation/dashboard
+{
+	//drive inputs
+	double DriveX; //drive x
+	double DriveY; //drive y
+	double DriveR; //drive z/spin
+	bool ActiveRotation;
+	bool ActiveOff;
+	bool FieldMode;
+	bool Sprint;
+
+	//shooter inputs
+	bool fire_catapult; //firin mah lazor
+	bool reset; //chargin mah lazor
+	bool catkill; //no more lazor
+	bool catmanual;
+	bool catstateon;
+	bool catstateoff;
+
+	//claw inputs
+	bool gotostart; //claw to start position
+	bool gotoscore; //claw to scoring position
+	bool gotodown; //claw to down position
+	bool gotocatapult; //claw dump to catapult
+	bool clawmandown;
+	bool clawmanup;
+	double clawmanpower;
+
+	double GyroHeading;
+	double RobotSpeed;
+	double Xcoordinate;
+	double Ycoordinate;
+
+	/*
+	//Aton Tracking Data;
+	int autoruns;
+	int atonRunsStart;
+	int atonFireDelay;
+	double atonForwardPower;
+	bool atonFire;
+	bool atonReadyToFire;
+	bool isAton;
+	*/
+
+
+
+};
+
+struct OUTPUT //holds all the output from the robot to the dashboard
+{
+
+};
+
+
+//make input and output available to any class that includes Definitions.h
+//extern INPUT input;
+//extern OUTPUT output;
+
+#define PI 3.14159
+
+#endif

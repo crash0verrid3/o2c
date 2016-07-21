@@ -1,0 +1,17 @@
+18:08:14 **** Incremental Build of configuration Debug for project DevNAV ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Rod/wpilib/cpp/current/include" "-IC:\\Users\\Rod\\RoboRIO_workspace\\DevNAV\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Robot.o" "..\\src\\Robot.cpp" 
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Rod/wpilib/cpp/current/include" "-IC:\\Users\\Rod\\RoboRIO_workspace\\DevNAV\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\MecanumDrivetrain.o" "..\\src\\MecanumDrivetrain.cpp" 
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Rod/wpilib/cpp/current/include" "-IC:\\Users\\Rod\\RoboRIO_workspace\\DevNAV\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Autonomous.o" "..\\src\\Autonomous.cpp" 
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Rod/wpilib/cpp/current/include" "-IC:\\Users\\Rod\\RoboRIO_workspace\\DevNAV\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\KiwiDrivetrain.o" "..\\src\\KiwiDrivetrain.cpp" 
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Rod/wpilib/cpp/current/include" "-IC:\\Users\\Rod\\RoboRIO_workspace\\DevNAV\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Comms.o" "..\\src\\Comms.cpp" 
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Rod/wpilib/cpp/current/include" "-IC:\\Users\\Rod\\RoboRIO_workspace\\DevNAV\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Pincer.o" "..\\src\\Pincer.cpp" 
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Rod/wpilib/cpp/current/include" "-IC:\\Users\\Rod\\RoboRIO_workspace\\DevNAV\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ToteLift.o" "..\\src\\ToteLift.cpp" 
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Rod/wpilib/cpp/current/include" "-IC:\\Users\\Rod\\RoboRIO_workspace\\DevNAV\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Field.o" "..\\src\\Field.cpp" 
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Rod/wpilib/cpp/current/include" "-IC:\\Users\\Rod\\RoboRIO_workspace\\DevNAV\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ToteWheels.o" "..\\src\\ToteWheels.cpp" 
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Rod/wpilib/cpp/current/include" "-IC:\\Users\\Rod\\RoboRIO_workspace\\DevNAV\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Navigator.Dev.o" "..\\src\\Navigator.Dev.cpp" 
+arm-frc-linux-gnueabi-g++ "-LC:\\Users\\Rod/wpilib/cpp/current/lib" -Wl,-rpath,/opt/GenICam_v2_3/bin/Linux_armv7-a -o FRCUserProgram "src\\ToteWheels.o" "src\\ToteLift.o" "src\\Robot.o" "src\\Pincer.o" "src\\Navigator.Dev.o" "src\\MecanumDrivetrain.o" "src\\KiwiDrivetrain.o" "src\\Field.o" "src\\Comms.o" "src\\Autonomous.o" -lwpi 
+c:/frc/bin/../lib/gcc/arm-frc-linux-gnueabi/4.9.1/../../../../arm-frc-linux-gnueabi/bin/ld.exe: warning: libstdc++.so.6, needed by C:\Users\Rod/wpilib/cpp/current/lib\libFRC_NetworkCommunication.so.1.5.0, not found (try using -rpath or -rpath-link)
+
+18:08:41 Build Finished (took 26s.558ms)
+

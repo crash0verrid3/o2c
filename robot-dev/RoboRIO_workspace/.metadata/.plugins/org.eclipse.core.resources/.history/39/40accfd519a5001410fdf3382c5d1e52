@@ -1,0 +1,480 @@
+#ifndef Definitions_H
+#define Definitions_H
+
+#include "SmartDashboard/SendableChooser.h"
+#include "SmartDashboard/SmartDashboard.h"
+#define ACTIVESENSE 10		// I don't know what this is for
+
+
+// Field loop configuration
+#define LOOPSPERSEC 50
+#define	LOOPPERIOD 0.02
+#define	LOOPPERIODMIN 0.0001		// 0.00015 is as fast as the cRio can run
+
+
+//CONTROLS //should be in Dinput, mode off
+//Drive Controls
+#define AXIS_DRIVEX 1
+#define AXIS_DRIVEY 2
+#define AXIS_DRIVER 3
+#define BTN_ACTIVEROT 12
+#define BTN_ACTIVEOFF 9
+#define BTN_DRIVEMODE 3
+#define BTN_DRIVESPRINT 7
+
+//Shooter Controls
+#define BTN_CATSHOOT 1 //fire shooter
+#define BTN_CATRESET 24 //reset shooter
+#define BTN_CATSTATEOFF 10
+#define BTN_CATSTATEON 9
+//#define BTN_CATKILL 11 //stop the firing sequence, go to idle state
+#define BTN_CATMANUAL_OPERATION 2	//remove state machine operation and run catapult manually
+
+//Forklift Controls
+#define AXIS_CLAWMANPOWER 5
+#define BTN_CLAWSTART 22
+#define BTN_CLAWSCORE 21
+#define BTN_CLAWDOWN 24
+#define BTN_CLAWCATAPULT 25
+#define BTN_CLAWMANDOWN 8
+#define BTN_CLAWMANUP 6
+
+
+// Operations/Subsystems configurations
+
+//AUTONOMOUS
+#define AUTO_MOVETIME 1.75
+#define AUTO_STOPTIME 0
+#define AUTO_RESETTIME 0
+#define AUTO_FIRETIME 1.78
+#define AUTO_FIREDONE 10
+
+// Optical Sensor for hot goal detection
+#define PHOTOCHANNEL 3
+
+// Ultrasonic Sensor to detect ball near forklift (used in two-ball autonomous)
+#define ULTRASONICCHANNEL 3
+#define ULTRASONICVOLTSPERINCH 0.0098
+#define ULTRASONICSETBACK 6.5
+#define ULTRASONICOVERSAMPLEBITS 6
+#define ULTRASONICAVERAGEBITS 6
+
+// Forklift
+#define CLAWMOTORCHANNEL 6
+#define CLAWENCODERCHAN1 1
+#define CLAWENCODERCHAN2 2
+
+// Forklift Encoder Values (why not use these as the actual state values?)
+#define CLAWANGLE_START		0		// fully retracted
+#define CLAWANGLE_HOLD_BALL	30		// hold ball in place while manuevering
+#define CLAWANGLE_FIRE_CAT	75		// keep arms and hands away from the firing mechanism
+#define CLAWANGLE_LOAD_BALL	60		// load the ball onto the catapult
+#define CLAWANGLE_CARRY		100		// carry the ball on the forklift
+#define CLAWANGLE_SCORE		100		// push ball into low goal
+#define CLAWANGLE_DOWN		195		// all the way down on the ground
+#define SLOWZONE			60		// slow down so you don't throw the ball
+#define CLAWPRECISION 5
+
+// Forklift states
+//#define CLAW_START 1
+//#define CLAW_SCORE 2
+//#define CLAW_DOWN 3
+//#define CLAW_CATAPULT 4
+//#define CLAW_GOINGSTART 5
+//#define CLAW_GOINGSCORE 6
+//#define CLAW_GOINGDOWN 7
+//#define CLAW_GOINGCATAPULT 8
+
+#define CLAW_MANUAL 1			// use Y-axis of spin controller for manual forklift operation
+#define CLAW_STATE 2			// run forklift as state machine (in autonomous mode)
+
+//DRIVETRAIN
+#define LDRIVEVICTORCHANNEL 3
+#define RDRIVEVICTORCHANNEL 2
+#define BDRIVEVICTORCHANNEL 1
+//drive state machines
+#define MOSEY_ALONG 1
+#define CRAZY_IVAN 2
+#define ORIENT_FIELD 1
+#define ORIENT_ROBOT 2
+#define ORIENT_BTNHELD 3
+
+
+
+// Inertial Navigation System
+#define I2C_CHANNEL 2
+#define SAMPLEPERIOD 0.002		// I2C bus WPILib function calls are inefficient and take 0.5msec per call
+#define INSUPDATEPERIOD 0.01	// Update positon, orientation, speed, heading, spin every 10 msec
+
+
+//#define WPILIB_GYRO
+//#define ANALOG_GYRO
+#define ITG3200_GYRO
+//#define ANALOG_THERMOSTAT
+//#define MYGYROANALOG
+#define ADXL345_ACCEL
+//#define BUILTIN_ACCEL
+
+
+
+
+#ifdef ANALOG_GYRO
+	#define GYRO_ANALOGCHANNEL 0
+	/*
+	 * This value set yields an average of 1.6 data points every 1ms cycle time
+	 * High speed turns in both directions vary by +/- 0.1 degree per revolution
+	 */
+	#define GYRO_OVERSAMPLEBITS 5
+	#define GYRO_SAMPLEAVGBITS 0
+	#define GYRO_SAMPLERATE 50000
+	#define GYRO_NOISE_BASE 0.0005
+	#define	GYRO_NOISELIMIT 500	// robot was moved during calibration -- start over
+	#define GYRO_CW_SENSITIVITY	5034.965
+	#define GYRO_CCW_SENSITIVITY	5583.5
+	#define GYRO_CW_SPIN_CORRECTION	3.0	// Offset to Gyro_Sensitivity to account for data loss during high speed spins
+	#define GYRO_CCW_SPIN_CORRECTION	-0.1	// Offset to Gyro_Sensitivity to account for data loss during high speed spins
+	#define GYRO_RATECENTER 62926550.000
+	#define GYRO_RATELIMIT 200		// 20d/10msec exceeds the gyro rate limit of 2000dps -- flag it
+#endif
+
+//#define ITG3200_GYRO
+#ifdef ITG3200_GYRO
+	/*
+	 * This value set yields an average of 1.6 data points every 1ms cycle time
+	 * High speed turns in both directions vary by +/- 0.1 degree per revolution
+	 */
+	#define GYRO_THERMO_SENSITIVITY 2
+	#define GYRO_THERMO_CENTER 54050;
+	#define GYRO_NOISE_BASE 0.0008
+	#define	GYRO_NOISELIMIT 500	// robot was moved during calibration -- start over
+	#define GYRO_CW_SENSITIVITY	-130419.865
+	#define GYRO_CCW_SENSITIVITY	-131189.189
+	#define GYRO_CW_SPIN_CORRECTION	0.0	// Offset to Gyro_Sensitivity to account for data loss during high speed spins
+	#define GYRO_CCW_SPIN_CORRECTION	-0.0	// Offset to Gyro_Sensitivity to account for data loss during high speed spins
+	#define GYRO_RATECENTER 2550.000
+	#define GYRO_RATELIMIT 200		// 20d/10msec exceeds the gyro rate limit of 2000dps -- flag it
+	#define GYRO_READ_CNT 6			// need to acquire all three axes due to tipping effect causes accelerometer drift
+									// also grab the Low Order Byte of the temperature
+
+	#define GYRO_I2C_ADDR		0x68
+	#define GYRO_I2C_ALT_ADDR	0x69
+	#define GYRO_Reg_WhoAmI		0x00	//7:I2C_IF_DIS; 1-6: ID; 0:R/W
+	#define GYRO_Reg_SMPLRT_DIV	0x15
+		#define GYRO_5Samples	0x04	//00000100	= new sample every .625 msec (we check every 1 ms)
+		#define GYRO_6Samples	0x05	//00000101	= new sample every .75 msec (we check every 1 ms)
+		#define GYRO_7Samples	0x06	//00000110	= new sample every .875 msec (we check every 1 ms)
+	#define	GYRO_Reg_DLPF_FS	0x16
+		#define GYRO_2000dps	0x18	//00011000
+		#define GYRO_8kHz		0x00	//00000000
+		#define GYRO_1kHz		0x01	//00000001
+	#define	GYRO_Reg_INT_CFG	0x17
+		#define GYRO_DataRdy	0x01	//00000001	= enable data ready bit
+		#define GYRO_Latch		0x20	//00100000	= latch the data ready bit until cleared
+		#define GYRO_AnyRd2Clr	0x10	//00010000	= clear data ready bit on any register read
+	#define GYRO_Reg_INT_STATUS	0x1A
+		#define GYRO_DataRdy	0x01	//00000001	= data ready bit mask
+	#define GYRO_Reg_TEMP_OUT_H	0x1B	//0-7: high 8-bits of 16-bit data
+	#define GYRO_Reg_TEMP_OUT_L	0x1C	//0-7: high 8-bits of 16-bit data
+	#define GYRO_Reg_XOUT_H		0x1D
+	#define GYRO_Reg_XOUT_L		0x1E
+	#define GYRO_Reg_YOUT_H		0x1F
+	#define GYRO_Reg_YOUT_L		0x20
+	#define GYRO_Reg_ZOUT_H		0x21
+	#define GYRO_Reg_ZOUT_L		0x22
+	#define GYRO_Reg_PWR_MGM	0x3E
+		#define GYRO_H_Reset	0x80	//10000000
+		#define GYRO_Sleep		0x40	//01000000
+		#define GYRO_Stby_GX	0x20	//00100000
+		#define GYRO_Stby_GY	0x10	//00010000
+		#define GYRO_Stby_GZ	0x08	//00001000
+		#define GYRO_Clock_Intl	0x00	//internal clock source
+		#define GYRO_Clock_X	0x01	// X Gyro provides clock source
+		#define GYRO_Clock_Y	0x02	// Y Gyro provides clock source
+		#define GYRO_Clock_Z	0x03	// Z Gyro provides clock source
+#endif
+
+
+#ifdef ANALOG_THERMOSTAT
+	#define THERMOSTAT_ANALOGCHANNEL 1
+#endif
+
+#ifdef BUILTIN_ACCEL
+	#define ACCEL_XSENSITIVITY 5.000
+	#define ACCEL_YSENSITIVITY 5.000
+	#define ACCEL_XCENTER 0.03
+	#define ACCEL_YCENTER -33.8
+	#define ACCEL_ZCENTER 1014
+	#define ACCEL_NOISE_BASE 0.012
+	#define	ACCEL_NOISELIMIT 500.0	// robot was moved during calibration -- start over
+	#define ACCEL_FRICTION 2.000	// percent of velocity loss due to friction
+#endif
+
+#ifdef ADXL345_ACCEL
+	#define ACCEL_I2C_ADDR		0x53
+	#define ACCEL_I2C_ALTADDR	0x1D
+	#define ACCEL_OFSX			0x1E	// we won't use the offset registers
+	#define ACCEL_OFSY			0x1F	// we will calculate/maintain our own
+	#define ACCEL_OFSZ			0x20	// center point value for each axis
+	#define ACCEL_BW_RATE		0x2C	// =100Hz on power up; we want 1600Hz (00001110)
+		#define ACCEL_RATE_50Hz		0x9
+		#define ACCEL_RATE_100Hz	0xA
+		#define ACCEL_RATE_200Hz	0xB
+		#define ACCEL_RATE_400Hz	0xC
+		#define ACCEL_RATE_800Hz	0xD
+		#define ACCEL_RATE_1600Hz	0xE
+		#define ACCEL_RATE_3200Hz	0xF
+	#define ACCEL_PWR_CTL		0x2D	// set to (00001000) to start measuring
+		#define ACCEL_PWR_STANDBY	0x0
+		#define ACCEL_PWR_MEASURE	0x8
+	#define ACCEL_INT_ENA		0x2E
+		#define ACCEL_DATA_RDY		0x80
+	#define ACCEL_INT_MAP		0x2F
+	#define ACCEL_INT_SRC		0x30
+		#define ACCEL_DATA_RDY		0x80
+	#define ACCEL_DATA_FMT		0x31	// set to (00001011) for Full Range +/- 16g
+		#define ACCEL_FULL_RES		0x8
+		#define ACCEL_2g			0x0
+		#define ACCEL_4g			0x1
+		#define ACCEL_8g			0x2
+		#define ACCEL_16g			0x3
+	#define ACCEL_X0_DATA		0x32	// LSB
+	#define ACCEL_X1_DATA		0x33	// MSB sign extended twos compliment
+	#define ACCEL_Y0_DATA		0x34	// LSB
+	#define ACCEL_Y1_DATA		0x35	// MSB sign extended twos compliment
+	#define ACCEL_Z0_DATA		0x36	// LSB
+	#define ACCEL_Z1_DATA		0x37	// MSB sign extended twos compliment
+	#define ACCEL_FIFO_CTL		0x38	// set to (10000001) for Stream w/min of 1 sample
+		#define ACCEL_FIFO_OFF		0x0
+		#define ACCEL_FIFO_FULL		0x40
+		#define ACCEL_FIFO_STREAM	0x80
+		#define ACCEL_FIFO_TRIG		0xC0
+		#define ACCEL_FIFO_SAMPLES	0x1
+	#define ACCEL_FIFO_STAT		0x39	// &0x3F to give FIFO queue depth
+		#define ACCEL_FIFO_QUE_MSK	0x3F
+	/*
+	 * Note:  Unlike the I2C gyro, the ADXL345 FIFO data is read from the normal
+	 * 		data registers and all axes must be read in one multi-byte read, since
+	 * 		the data frame is replaced by the next FIFO entry as soon as any
+	 * 		data registers are read.
+	 */
+
+	#define ACCEL_READ_CNT	6	// 2 bytes per axis
+	#define ACCEL_OVERSAMPLECNT 8	// add 8 consecutive samples to achieve a stable value
+	#define ACCEL_NOISE_BASE 0.000
+	#define	ACCEL_NOISELIMIT 500.0	// robot was moved during calibration -- start over
+	#define ACCEL_XSENSITIVITY 5.000
+	#define ACCEL_YSENSITIVITY 5.000
+	#define ACCEL_XCENTER 1165
+	#define ACCEL_YCENTER 790
+	#define ACCEL_ZCENTER 61429
+	#define ACCEL_FRICTION 2.000	// percent of velocity loss due to friction
+#endif
+
+#ifdef MPU3050_GYRO
+	#define GYRO_RATECENTER 234000
+	#define GYRO_SENSITIVITY 192.6	// convert gyro raw signal to degrees
+	#define GYRO_NOISE_BASE 0.0005
+	#define	GYRO_NOISELIMIT 500.0	// robot was moved during calibration -- start over
+	#define GYRO_READ_CNT 2			// need to acquire only the Z axis spin rate
+
+	#define GYRO_I2C_ADDR		0x68
+	#define GYRO_I2C_ALT_ADDR	0x69
+	#define GYRO_Reg_WhoAmI	0	//7:I2C_IF_DIS; 1-6: ID; 0:R/W
+	#define GYRO_Reg_XoffsH	12	//0-7:DC bias
+	#define GYRO_Reg_XoffsL	13	//0-7:subtracted from sensor value
+	#define GYRO_Reg_YoffsH	14	//0-7:before going into sensor registers
+	#define GYRO_Reg_YoffsL	15
+	#define GYRO_Reg_ZoffsH	16
+	#define GYRO_Reg_ZoffsL	17
+	#define GYRO_Reg_FIFOen	18	//7:temp_out; 6:gyro_Xout; 5:gyro_Yout; 4:gyro_Zout
+									//3:aux_Xout: 2:aux_Yout; 1:aux_Zout; 0:FIFO_footer
+	#define GYRO_Reg_AUXdio	19	//2:1=VDD, 0=VLOGIC; 0-1,3-7:=0
+	#define GYRO_Reg_AUXadr	20	//7:clkout_en; 0-6:AuxID
+	#define GYRO_Reg_SMPLRT_DIV	21	//0-7:sample rate divider
+	#define GYRO_Reg_DLPF_FS	22	//5-7:ext_sync_set; 3-4:FS_sel; 0-2:DLPF_CFG
+									//ext sync: 0=none; 1=temp_out; 2=gyro_Xout; 3=gyro_Yout
+									//ext sync: 4=gyro_Zout; 5=aux_Xout; 6=aux_Yout; 7=auxZ_out
+									//FS_sel: 0=250d/s; 1=500d/s; 2=1000d/s; 3=2000d/s
+									//DLPF_CFG: Sample Rate: 0=8kHz; 1-6=1kHz;
+									//DLPF_CFG: Low Pass Filter: 0=256Hz; 1=188Hz; 2=98Hz; 3=42Hz
+									//DLPF_CFG: Low Pass Filter: 4=20Hz; 5=10Hz; 6=5Hz
+	#define GYRO_Reg_INT_CFG	23	//7:ACTL; 6:OPEN; 5:Latch_Int_en; 4:Int_anyRD
+									//3:0; 2:MPU_Rdy_en; 1:DMP_done_en; 0:Raw_Rdy_en
+	#define GYRO_Reg_AuxBur	24	//0-7: Burst Address
+	#define GYRO_Reg_INT_STATUS	26	//2:MPU_Rdy; 1:DMP_done; 0:Raw_Rdy
+	#define GYRO_Reg_TEMP_OUT_H	0x1B	//0-7: high 8-bits of 16-bit data
+	#define GYRO_Reg_TEMP_OUT_L	0x1C	//0-7: high 8-bits of 16-bit data
+	#define GYRO_Reg_XOUT_H		0x1D
+	#define GYRO_Reg_XOUT_L		0x1E
+	#define GYRO_Reg_YOUT_H		0x1F
+	#define GYRO_Reg_YOUT_L		0x20
+	#define GYRO_Reg_ZOUT_H		0x21
+	#define GYRO_Reg_ZOUT_L		0x22
+	#define GYRO_Reg_AuxXH	35
+	#define GYRO_Reg_AuxXL	36
+	#define GYRO_Reg_AuxYH	37
+	#define GYRO_Reg_AuxYL	38
+	#define GYRO_Reg_AuxZH	39
+	#define GYRO_Reg_AuxZL	40
+	#define GYRO_Reg_FIFOcH	58	//0-2: high 2 bits of 10 bit counter
+	#define GYRO_Reg_FIFOcL	58	//0-7: low 8 bits of 10 bit counter
+	#define GYRO_Reg_FIFOd	60	//0-7: 8-bit data in FIFO queue
+	#define GYRO_Reg_User	61	//6:FIFO_en; 5:Aux_IF_en; 3:Aux_IF_rst; 1:FIFO_rst; 0:Gyro_rst
+	#define GYRO_Reg_PWR_MGM	62	//7:H_reset; 6:sleep; 5:StbyX; 4:StbyY; 3:StbyZ
+									//0-2:Clk_Sel: 0=IntOsc; 1=gyroX; 2=gyroY; 3=gyroZ
+									//             4=ext32.768MHZ; 5=ext19.2MHz; 6:rsvd; 7:stop clock
+
+	#define GYRO_ZoutSync	0x80	//10000000
+	#define GYRO_2000dps	0x18	//00011000
+	#define GYRO_1000dps	0x10	//00010000
+	#define GYRO_8kHz		0x00	//00000000
+	#define GYRO_1kHz		0x01	//00000001
+	#define GYRO_SampleDiv	0x0F	//00010000	= new sample every 2 msec (we check every 2 ms)
+	#define GYRO_H_Reset	0x80	//10000000
+	#define GYRO_Sleep		0x40	//01000000
+	#define GYRO_Stby_GX	0x20	//00100000
+	#define GYRO_Stby_GY	0x10	//00010000
+	#define GYRO_Stby_GZ	0x08	//00001000
+	#define GYRO_Zoffset	0x05	//00000101
+	#define GYRO_DataRdy	0x01	//00000001	= enable data ready bit
+	#define GYRO_Latch		0x20	//00100000	= latch the data ready bit until cleared
+	#define GYRO_AnyRd2Clr	0x10	//00010000	= clear data ready bit on any register read
+	#define GYRO_FIFO_Tmp	0x80	//10000000	= put Temp data on FIFO queue
+	#define GYRO_FIFO_GX	0x40	//01000000	= put gyro X-axis data on FIFO queue
+	#define GYRO_FIFO_GY	0x20	//00100000	= put gyro Y-axis data on FIFO queue
+	#define GYRO_FIFO_GZ	0x10	//00010000	= put gyro Z-axis data on FIFO queue
+	#define GYRO_FIFO_AX	0x08	//00001000	= put accel X-axis data on FIFO queue
+	#define GYRO_FIFO_AY	0x04	//00000100	= put accel Y-axis data on FIFO queue
+	#define GYRO_FIFO_AZ	0x02	//00000010	= put accel Z-axis data on FIFO queue
+	#define GYRO_FIFO_ft	0x01	//00000001	= put footer place holder on FIFO queue
+#endif
+
+
+
+
+// Catapult
+#define LAUNCHMOTORCHANNEL		10	// can assist with tensioning using counter to start/stop assist function
+#define TENSIONMOTORCHANNEL		9	// combines with PWM generator box and feed 3 victors through cam switch
+#define SHOOTERSWITCHMODULE		1	// not currently used.  replaced with counter.
+#define SHOOTERSWITCHCHANNEL	6	// not currently used.	replaced with counter.
+#define TENSION_COUNTER_CHANNEL	4
+#define CATAPULT_TENSION_POWER			0.6	// will need to adjust based on battery power
+#define CATAPULT_TENSION_ASSIST_POWER	1.0	// launch motor to help tension, but not enough to fire
+#define CATAPULT_TENSION_ASSIST_TIME	1.0	// only help tension for 0.6 seconds
+#define CATAPULT_TENSION_TIMEOUT		2.5	// catapult failed to tension after 1.2 seconds
+#define CATAPULT_MISFIRE				200	// catapult failed to stop at full tension for more than 200msec
+#define CATAPULT_FIRE_POWER				1.0	// use full power to fire the catapult and to run in manual mode
+
+#define RESET_STOP 30
+#define SHOOTER_RESETANG 50
+#define SHOOTER_LAUNCHTIME 0.5
+#define SHOOTER_RESTANG_SLOWZONE 300
+#define CAT_CIRCLE 360
+
+// Catapult States
+#define CATAPULT_MANUAL 0					// manually operated by pressing the BTN_CATSHOOT button
+#define CATAPULT_INITIAL 1					// start of automated catapult operating cycle
+#define CATAPULT_ASSISTED_TENSIONING 2		// tension catapult with assistance from lauching motor
+#define CATAPULT_UNASSISTED_TENSIONING 3	// complete tensioning using only tensioning motors
+#define CATAPULT_TENSION_CHECK 4			// make sure we stopped when the CAM switch got pressed
+#define CATAPULT_READY 5					// wait for the BTN_CATSHOOT button to be pressed
+#define CATAPULT_FIRING 6					// make sure we fired the catapult, then start over
+
+
+//typedef unsigned char byte;  // make it more Arduino like
+typedef uint8_t byte;  // make it more Arduino like
+
+static struct RobotStateBuffer	// holds the state of all Robot Subsystems
+{
+	int		Robot_Init;
+
+	int		Comms_Init;
+
+	int		Drivetrain_Init;
+	double	Drivetrain_FL_Motor_Power;
+	double	Drivetrain_FR_Motor_Power;
+	double	Drivetrain_BL_Motor_Power;
+	double	Drivetrain_BR_Motor_Power;
+	enum	Drivetrain_Speed_Control {Slow, Normal, Fast};	// motor = pwr * (2^Drivetrain_Speed_Control) / 4
+	bool	Drivetrain_Spin_Control;	// true when gamepad spin control == 0; false otherwise
+	double	Drivetrain_Heading;			// if == 0 && Drivetrain_Spin_Control, set to Navigation_Heading;
+	enum	Drivetrain_Directional_Orientation {Robot, Field};
+
+	int		Navigation_Init;
+	double	Navigation_Heading;
+	double	Navigation_Position_X;
+	double	Navigation_Position_Y;
+	double	Navigation_Direction;
+	double	Navigation_Speed;
+	bool	Navigation_Robot_Lost;		// autorun needs to check this and if set, disable all motors and wait for teleop
+	bool	Navigation_GyroTilt;		// gyro_spin exceeded maximum range
+
+	int		Tote_Lift_Init;
+
+	int		Claw_Init;
+
+	int		Tote_Wheels_Init;
+
+} *pMyRobotState;
+
+#define NAVIGATION_QUEUE_SIZE	200	// we will be long lost before we fill this queue
+
+//Array for holding input
+struct INPUT //holds all the input from the driverstation/dashboard
+{
+	//drive inputs
+	double DriveX; //drive x
+	double DriveY; //drive y
+	double DriveR; //drive z/spin
+	bool ActiveRotation;
+	bool ActiveOff;
+	bool FieldMode;
+	bool Sprint;
+
+	//shooter inputs
+	bool fire_catapult; //firin mah lazor
+	bool reset; //chargin mah lazor
+	bool catkill; //no more lazor
+	bool catmanual;
+	bool catstateon;
+	bool catstateoff;
+
+	//claw inputs
+	bool gotostart; //claw to start position
+	bool gotoscore; //claw to scoring position
+	bool gotodown; //claw to down position
+	bool gotocatapult; //claw dump to catapult
+	bool clawmandown;
+	bool clawmanup;
+	double clawmanpower;
+
+	double GyroHeading;
+	double RobotSpeed;
+	double Xcoordinate;
+	double Ycoordinate;
+
+	/*
+	//Aton Tracking Data;
+	int autoruns;
+	int atonRunsStart;
+	int atonFireDelay;
+	double atonForwardPower;
+	bool atonFire;
+	bool atonReadyToFire;
+	bool isAton;
+	*/
+};
+
+struct OUTPUT //holds all the output from the robot to the dashboard
+{
+
+};
+
+
+//make input and output available to any class that includes Definitions.h
+//extern INPUT input;
+//extern OUTPUT output;
+
+#define PI 3.14159
+
+#endif

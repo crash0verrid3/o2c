@@ -1,0 +1,722 @@
+#ifndef Definitions_H
+#define Definitions_H
+
+// ROBOT		Select your Robot
+
+//#define PRACTICEBOT
+//#define REALBOT
+#define MOCKBOT
+
+//#define DEBUG_LIFT_INIT
+
+	#ifdef REALBOT
+		#define BNO055_9DOF
+		#define XPOWERFACTOR	3		// It take 3 times more power to move sideways
+	#endif
+
+	#ifdef PRACTICEBOT
+		#define BNO055_9DOF
+		#define XPOWERFACTOR	3		// It take 3 times more power to move sideways
+	#endif
+
+	#ifdef MOCKBOT
+		#define BNO055_9DOF
+		#define XPOWERFACTOR	1		// It take 3 times more power to move sideways
+	#endif
+
+#include "SmartDashboard/SendableChooser.h"
+#include "SmartDashboard/SmartDashboard.h"
+
+#define HALF_PI						1.57079632679489661923132169163975
+#define PI							3.1415926535897932384626433832795
+#define TWO_PI						6.283185307179586476925286766559
+#define DEGREES_TO_RADIANS			0.01745329251994329576923690768489
+#define RADIANS_TO_DEGREES			57.295779513082320876798154814105
+
+#define AUTONOMOUS_PERIOD		15000	// 15 seconds Autonomous Time Period
+#define AUTONOMOUS_MAX_STEPS	100		// Really!  How many steps can you do in 15 seconds anyway?
+#define AUTO_DEFAULT_SCENARIO	0
+
+// Field loop configuration
+#define LOOPSPERSEC 50
+#define	LOOPPERIOD 0.02
+#define	LOOPPERIODMIN 0.0001		// 0.00015 is as fast as the RoboRio can run
+
+
+//CONTROLS //should be in Dinput, mode off
+//Drive Controls
+#define AXIS_DRIVEX 0
+#define AXIS_DRIVEY 1
+#define AXIS_DRIVER 2
+#define AXIS_LIFTER	3
+#define AXIS_DEADZONE	0.05
+#define BTN_SPRINTCONTROL	11
+#define BTN_SPINCONTROL		12
+#define BTN_ORIENTMODE 3
+//#define LIFT_JOY_BTN 1			// deprecated -- joy stick and buttons are all active, no need to switch mode
+#define LIFT_UP_BTN	6
+#define LIFT_DN_BTN 8
+
+
+// Optical Sensor for hot goal detection
+#define PHOTOCHANNEL 3
+
+// Ultrasonic Sensor to detect ball near forklift (used in two-ball autonomous)
+#define ULTRASONICCHANNEL 3
+#define ULTRASONICVOLTSPERINCH 0.0098
+#define ULTRASONICSETBACK 6.5
+#define ULTRASONICOVERSAMPLEBITS 6
+#define ULTRASONICAVERAGEBITS 6
+
+
+
+
+#define FLVICTORCHANNEL 0
+#define BLVICTORCHANNEL 1
+#define FRVICTORCHANNEL 2
+#define BRVICTORCHANNEL 3
+#define MINIMUM_POWER_TO_MOVE	10		// less than 10% does not overcome friction/inertia
+#define INVERT_Y_AXIS_INPUT	1
+#define ACTIVESENSE 250		// Spin Control correction factor.  Lower numbers correct more violently.
+
+//DRIVETRAIN state machine
+#define ORIENT_BTNHELD 0
+#define ORIENT_ROBOT 1
+#define ORIENT_FIELD 2
+#define SPRINT_INVALID 0
+#define SPRINT_HALF 50
+#define SPRINT_FULL 100
+
+//Pincer Defines
+#define PINCERUM_CHANNEL 8
+#define PINCERLM_CHANNEL 7
+#define PINCERUM_UP_POWER -100
+#define PINCERLM_UP_POWER -100
+#define PINCERUM_DN_POWER 55
+#define PINCERLM_DN_POWER 55
+
+// Lift Defines
+
+#define LIFTER_UP_CHANNEL	4
+#define LIFTER_DN_CHANNEL	5
+#define LIFTER_FULL_UP	24				// 24 inches off the ground; pneumatic actuator is fully retracted
+#define LIFTER_STACK	14				// 14 inches off the ground; clearance to stack on top of another tote
+#define LIFTER_PLATFORM	4				// 24 inches off the ground; minimum height to place on the stacking platform
+#define LIFTER_FULL_DN	0				// 0 inches off the ground; pneumatic actuator is fully extended
+#define LIFTER_INCHES_PER_CYCLE	0.15	// @ 20msec per cycle equals 7.5 inches per second (tune with flow control fittings)
+#define LIFTER_LEAKAGE	0.01			// assumes pneumatics will leak a bit (tune this number for actual leakage)
+#define LIFT_UP			1
+#define LIFT_HOLD		0
+#define LIFT_DN 		-1
+#define LIFT_INITIALIZE	-2
+
+#define WHEELS_LEFT_ARM_FWD_CHANNEL		0
+#define WHEELS_LEFT_ARM_REV_CHANNEL		1
+#define WHEELS_RIGHT_ARM_FWD_CHANNEL	2
+#define WHEELS_RIGHT_ARM_REV_CHANNEL	3
+#define TOTEWHEEL_LEFT_CHANNEL			7
+#define TOTEWHEEL_RIGHT_CHANNEL			8
+#define WHEELARMS_WIDE_OPEN			0		// tote wheel arm positions in degrees
+#define WHEELARMS_WIDE_TOTE			60
+#define WHEELARMS_NORMAL			90
+#define WHEELARMS_CLOSED			110
+#define WHEELARMS_PINCHED			130
+#define WHEELARMS_GRIP				150
+#define WHEELARMS_CLOSING			1
+#define WHEELARMS_HOLDING			0
+#define WHEELARMS_OPENING			-1
+#define WHEELARMS_INITIALIZING		-2
+#define WHEELARMS_DEGREES_PER_CYCLE	4.0	// @ 20msec per cycle equals 100 degrees per second (tune with flow control fittings)
+
+#define WHEELARMS_INIT_DUTY_CYCLE	10		// 10% duty cycle to control actuator speed during robot initialization
+#define	WHEELARMS_DUTY_CYCLE		50		// 45% duty cycle to control actuator speed
+#define WHEELARMS_MAX_CYCLES		15		// 15 on cycles * 20msec/cycle = 0.3sec/duty_cycle = 0.67sec to open/close arms
+#define	TOTEWHEEL_LEFT_IN_POWER		100		// pulling totes in can be reasonably quick as it is generally done 1 at a time
+#define TOTEWHEEL_RIGHT_IN_POWER	-100
+#define TOTEWHEEL_LEFT_OUT_POWER	60		// pushing totes out requires care, as it may be a stack of many totes
+#define TOTEWHEEL_RIGHT_OUT_POWER	-60
+
+
+
+
+//typedef unsigned char byte;  // make it more Arduino like
+typedef uint8_t byte;  // make it more Arduino like
+typedef char* string;
+
+enum SpeedControl {Slow=1, Normal=2, Fast=3, Speedy=4};
+enum DriveOrientation {Robot=0, Field=1};
+
+#define REPORT_FIELD_STATUS
+#define REPORT_ROBOT_STATUS
+#define REPORT_COMMS_STATUS
+#define REPORT_DRIVE_STATUS
+#define REPORT_AUTO_STATUS
+#define REPORT_LIFT_STATUS
+#define REPORT_NAV_STATUS
+#define REPORT_WHEEL_STATUS
+//#define REPORT_PINCER_STATUS
+#define REPORT_INPUT_STATUS
+//#define REPORT_FIELD_DEBUG
+#define REPORT_ROBOT_DEBUG
+#define REPORT_COMMS_DEBUG
+//#define REPORT_DRIVE_DEBUG
+//#define REPORT_AUTO_DEBUG
+#define REPORT_LIFT_DEBUG
+#define REPORT_NAV_DEBUG
+#define REPORT_GYRO_DEBUG
+#define REPORT_ACCEL_DEBUG
+//#define REPORT_WHEEL_DEBUG
+//#define REPORT_PINCER_DEBUG
+#define REPORT_INPUT_DEBUG
+
+static struct RobotStateBuffer	// holds the state of all Robot Subsystems
+	{
+	int		Field_Disabledruns;			// Count the disabled run cycles
+	int		Field_Enabledruns;			// Count the enabled run cycles
+	int		Field_Totalruns;			// Count the run cycles (theoretically equals Disabledruns + Enabledruns)
+	int		Field_Autoruns;				// Count the autonomous run cycles
+	int		Field_Teleruns;				// Count the TeleOp run cycles
+	int		Field_Testruns;				// Count the Test run cycles
+	int		Field_LoopTime;				// number of milliseconds per run cycle
+
+	int		Robot_Init;					// Subsystem Initialization values
+	int		Comms_Init;
+	int		DriveTrain_Init;
+	int		Autonomous_Init;
+	int		Lift_Init;
+	int		Navigator_Init;
+	int		ToteWheel_Init;
+	int		Pincer_Init;
+
+	double	Robot_Heading;				// Measured (by Navigator) orientation of robot relative to field (preset by DS)
+	double	Robot_Direction;			// Measured (by Navigator) direction of mevement on the field (field oriented)
+	double	Robot_Speed;				// Measured (by Navigator) speed of the Robot in inches/second
+	double	Robot_Position_X;			// Measured (by Navigator) X coordinate of Robot Position (preset by DS)
+	double	Robot_Position_Y;			// Measured (by Navigator) Y coordinate of Robot Position (preset by DS)
+	double	Robot_Spin_Rate;			// Measured (by Navigator) used to predict stoping heading after spinning
+	double	Robot_Pitch;				// Measured (by Navigator) orientation of robot relative to longitudinal level (+/- 180 degrees)
+	double	Robot_Roll;					// Measured (by Navigator) orientation of robot relative to latteral level (+/- 90 degrees)
+
+	int		Auto_State;					// 0=uninit; 1=scenario_selected; 2=running; 3=finished.
+	int		Auto_Step;
+	int		Auto_Scenario_Selection;
+	int		Auto_Scenario_Steps;
+	int		Auto_Start_X;
+	int		Auto_Start_Y;
+	int		Auto_Start_Z;
+	int		Auto_Start_Heading;
+
+	/*
+ 		AutoTarget.Robot_Position_X = pMyRobotState->Robot_Position_X;
+		AutoTarget.Robot_Position_Y = pMyRobotState->Robot_Position_Y;
+		AutoTarget.Robot_Heading = pMyRobotState->Robot_Heading;
+		AutoTarget.Robot_Speed = 0;
+	 */
+
+	int		Comms_GetCount;				// Count input packets from driver station
+
+	double	Battery_Voltage;			// Measured Battery Voltage (Analog input or CAN bus interrogation of PDP)
+	double	Power_Consumption;			// Measured Power Consumption (from CAN bus interrogation of PDP)
+
+	double	Drivetrain_FL_Motor_Power;
+	double	Drivetrain_FR_Motor_Power;
+	double	Drivetrain_BL_Motor_Power;
+	double	Drivetrain_BR_Motor_Power;
+	SpeedControl	Drivetrain_Speed_Control;	// motor = pwr * Drivetrain_Speed_Control / 4
+	bool	Drivetrain_Spin_Control;	// enabled/disabled by gamepad button input
+	double	Drivetrain_Heading;			// if == 0 && Drivetrain_Spin_Control, set to Navigation_Heading;
+	DriveOrientation	Drivetrain_Directional_Orientation;
+	double	Drivetrain_SprintFactor;
+	double	Drivetrain_SpinCorrection;
+
+	bool	Nav_Robot_Lost;				// autorun needs to check this and if set, disable all motors and wait for teleop
+	bool	Nav_Gyro_Tilt;				// gyro_spin exceeded maximum range
+	int		Nav_Temp;					// degrees celsius
+	/*
+	 * The following Gyro tuning parameters are obtained from the SmartDashboard if REPORT_GYRO_DEBUG is defined.
+	 * The default values are defined below.  Tune the Gryo by defining REPORT_GYRO_DEBUG and modifying these
+	 * parameters to obtain the best gyro performance at various speeds and different directions.  Then take
+	 * the final values and set them as the new default values below.  When the tuning process is complete,
+	 * undefine REPORT_GYRO_DEBUG and remove the items from the SmartDashboard display.
+	 */
+	double	Nav_Gyro_Noise_Base;		// we filter gyro signals below this base level
+	double	Nav_Gyro_Squelch;			// signal levels below Noise Base are squelched by this factor
+	double	Nav_Gyro_Noise_Limit;		// robot was moved during calibration -- reset and start calibration over
+	double	Nav_Gyro_Noisy_Count;		// number of times gyro exceeded Noise Limit during calibration
+	double	Nav_Gyro_X_Sensitivity;		// convert raw gyro value into dps
+	double	Nav_Gyro_Y_Sensitivity;		// convert raw gyro value into dps
+	double	Nav_Gyro_Z_CW_Sensitivity;	// convert raw gyro Clockwise value into dps
+	double	Nav_Gyro_Z_CCW_Sensitivity;	// convert raw gyro Counter-Clockwise value into dps
+	double	Nav_Gyro_Z_CW_Spin_Effect;	// correct for non-linear spin rate values
+	double	Nav_Gyro_Z_CCW_Spin_Effect;	// correct for non-linear spin rate values
+	double	Nav_Gyro_X_Center;			// raw gyro reading when stationary
+	double	Nav_Gyro_Y_Center;			// raw gyro reading when stationary
+	double	Nav_Gyro_Z_Center;			// raw gyro reading when stationary
+	double	Nav_Gyro_Temp_Adjust;		// correction factor for off-center temperature values
+	double	Nav_Gyro_X_Raw;				// raw X
+	double	Nav_Gyro_Y_Raw;				// raw Y
+	double	Nav_Gyro_Z_Raw;				// raw Z
+	//	end of Gyro Tuning Parameters.
+
+	/*
+	 * The following accelerometer tuning parameters are obtained from the SmartDashboard if REPORT_ACCEL_DEBUG is defined.
+	 * The default values are defined below.  Tune the accelerometer by defining REPORT_ACCEL_DEBUG and modifying these
+	 * parameters to obtain the best accelerometer performance at various speeds and different directions.  Then take
+	 * the final values and set them as the new default values below.  When the tuning process is complete,
+	 * undefine REPORT_ACCEL_DEBUG and remove the items from the SmartDashboard display.
+	 */
+	double	Nav_Acc_Noise_Base;			// we filter gyro signals below this base level
+	double	Nav_Acc_Squelch;			// signal levels below Noise Base are squelched by this factor
+	double	Nav_Acc_Noise_Limit;		// robot was moved during calibration -- reset and start calibration over
+	double	Nav_Acc_X_Sensitivity;		// convert raw accelerometer value into m/s/s
+	double	Nav_Acc_Y_Sensitivity;		// convert raw accelerometer value into m/s/s
+	double	Nav_Acc_Z_Sensitivity;		// convert raw accelerometer value into m/s/s
+	double	Nav_Acc_X_Center;			// raw accelerometer value when stationary
+	double	Nav_Acc_Y_Center;			// raw accelerometer value when stationary
+	double	Nav_Acc_Z_Center;			// raw accelerometer value when stationary
+	double	Nav_Acc_Temp_Adjust;		// correction factor for off-center temperature values
+	double	Nav_Acc_X_Align;			// angular deviation from perpendicular alignment of mems device axis
+	double	Nav_Acc_Y_Align;			// angular deviation from perpendicular alignment of mems device axis
+	double	Nav_Acc_Z_Align;			// angular deviation from perpendicular alignment of mems device axis
+	double	Nav_Acc_X_Raw;				// raw X
+	double	Nav_Acc_Y_Raw;				// raw Y
+	double	Nav_Acc_Z_Raw;				// raw Z
+	//	end of accelerometer Tuning Parameters.
+
+	/*
+	 * The following Navigation values are displayed on the SmartDashboard if REPORT_NAV_DEBUG is defined.
+	 * When the Navigator is fully debugged, undefine REPORT_NAV_DEBUG and remove the items from the SmartDashboard display.
+	 */
+	double	Nav_Gyro_Heading;			// Euler Angle Heading
+	double	Nav_Gyro_Roll;				// Euler Angle Roll
+	double	Nav_Gyro_Pitch;				// Euler Angle Pitch
+	double	Nav_Drift_Heading;			// Euler Angle Heading Drift Rate
+	double	Nav_Drift_Roll;				// Euler Angle Roll Drift Rate
+	double	Nav_Drift_Pitch;			// Euler Angle Pitch Drift Rate
+	double	Nav_Acc_Lin_X;				// Linear X (minus gravity)
+	double	Nav_Acc_Lin_Y;				// Linear Y (minus gravity)
+	double	Nav_Acc_Lin_Z;				// Linear Z (minus gravity)
+	int		Nav_IMU_Temp_Center;		// Normal operating temperature of the BNO055
+	double	Nav_Timestamp;				// These next seven values hold the current positional state of the INS
+	double	Nav_X_Coord;
+	double	Nav_Y_Coord;
+	double	Nav_X_Speed;
+	double	Nav_Y_Speed;
+	double	Nav_X_Accel;
+	double	Nav_Y_Accel;
+	int		IMU_ChipID;
+	int		IMU_CalStat;
+	int		IMU_SelfTest;
+	int		IMU_IntrStat;
+	int		IMU_ClockStat;
+	int		IMU_SystemStat;
+	int		IMU_SystemError;
+
+	double	ToteLift_Position;			// Measured position of the ToteLift arms (not clear if this is an encoder or pot)
+	double	ToteLift_Target;			// The position we told the ToteLift arms to move to
+	double	ToteLift_Speed;				// Measured speed of ToteLift arms movements
+	int		ToteLift_Direction;			// Direction of ToteLift movements
+	int		ToteLift_ToteCount;			// number of totes being lifted (how to measure this?)
+
+	double	ToteWheelArm_Left_Position;		//  represent the position of the arms
+	double	ToteWheelArm_Right_Position;	//	preset values defined above
+	double	ToteWheelArm_Left_Target;		//  represent the position we want the arms to initially go to
+	double	ToteWheelArm_Right_Target;		//	preset values defined above
+	int		ToteWheelArm_Left_Direction;
+	int		ToteWheelArm_Right_Direction;
+	double	ToteWheels_Left_Speed;
+	double	ToteWheels_Right_Speed;
+
+	double	Pincer_Arm1_Position;
+	double	Pincer_Arm1_Speed;
+	double	Pincer_Arm2_Position;
+	double	Pincer_Arm2_Speed;
+	int		Pincer_Grip_Position;
+	double	Pincer_Grip_Speed;
+	double	Pincer_Grip_Height;
+	double	Pincer_Grip_Reach;
+	} *pMyRobotState;
+
+
+//Array for holding input
+static struct INPUT //holds all the input from the driverstation/dashboard
+	{
+	//drive inputs
+	double DriveX; 				//drive x
+	double DriveY; 				//drive y
+	double DriveR; 				//drive z/spin
+	double ToteLift;			//right joystick (throttle) for manual control of tote lift
+//	double PincerUM;
+//	double PincerLM;
+	double LeftArm;				// second game controller, drive x controls Left ToteWheel Arm position
+	double LeftWheel;			// second game controller, drive y controls Left ToteWheel speed & direction of rotation
+	double RightArm;			// second game controller, drive z controls Right ToteWheel Arm position
+	double RightWheel;			// second game controller, throttle controls Right ToteWheel speed & direction of rotation
+	bool OrientModeBtn;
+	bool SprintModeBtn;
+	bool SpinControlBtn;
+	bool ToteUPBtn;
+	bool ToteDNBtn;
+//	bool ToteJoyBtn;
+	} *pMyInput;
+
+struct OUTPUT //holds all the output from the robot to the dashboard
+{
+
+};
+
+
+
+
+
+
+// Inertial Navigation System
+#define I2C_CHANNEL 2				// RoboRIO I2C channel
+#define SAMPLEPERIOD 0.01			// I2C bus WPILib function calls are inefficient and take 0.0005 sec per call
+#define INSUPDATEPERIOD 0.01		// Update positon, orientation, speed, heading, spin every 10 msec
+#define NAVIGATION_QUEUE_SIZE	200	// we will be long lost before we fill this queue
+#define I2C_RCV_DATA_LEN		6	// WPILib call to I2C supports a max transfer packet size of 7 bytes (I don't know why)
+
+
+
+// From here down are the control register definitions for various Gyros and Accelerometers
+
+
+
+#ifdef BNO055_9DOF
+	/*
+	The BNO055 is a System in Package (SiP), integrating a triaxial 14-bit accelerometer, a triaxial
+	16-bit gyroscope with a range of ±2000 degrees per second, a triaxial geomagnetic sensor
+	and a 32-bit cortex M0+ microcontroller running Bosch Sensortec sensor fusion software, in
+	a single package.
+
+	The default operation mode after power-on is CONFIGMODE.
+	When the user changes to another operation mode, the sensors which are required in that
+	particular sensor mode are powered, while the sensors whose signals are not required are
+	set to suspend mode.
+
+	Sensor fusion modes are meant to calculate measures describing the orientation of the
+	device in space. It can be distinguished between non-absolute or relative orientation and
+	absolute orientation. Absolute orientation means orientation of the sensor with respect to
+	the earth and its magnetic field. In other words, absolute orientation sensor fusion modes
+	calculate the direction of the magnetic north pole.
+	In non-absolute or relative orientation modes, the heading of the sensor can vary depending
+	on how the sensor is placed initially.
+	All fusion modes provide the heading of the sensor as quaternion data or in Euler angles
+	(roll, pitch and yaw angle). The acceleration sensor is both exposed to the gravity force and to
+	accelerations applied to the sensor due to movement. In fusion modes it is possible to
+	separate the two acceleration sources, and thus the sensor fusion data provides separately
+	linear acceleration (i.e. acceleration that is applied due to movement) and the gravity vector.
+
+	In the IMU mode the relative orientation of the BNO055 in space is calculated from the
+	accelerometer and gyroscope data. The calculation is fast (i.e. high output data rate).
+	The operating mode can be selected by writing to the OPR_MODE register.
+	Fusion Mode IMU [OPR_MODE]: xxxx1000b.
+
+	The fusion outputs of the BNO055 are tightly linked with the sensor configuration settings.
+	Due to this fact, the sensor configuration is limited when BNO055 is configured to run in any
+	of the fusion operating mode. In any of the sensor modes the configuration settings can be
+	updated by writing to the configuration registers.
+
+	Default sensor settings:  Gyro 2000dps/32Hz; Accel 4g/62.5Hz
+
+		Gyro.  All config settings are auto controlled in Fusion mode.
+		Accel.  G Range is User selectable in all modes.  Bandwidth and Power settings are auto controlled in Fusion mode.
+			2G [ACC_Config]: xxxxxx00b
+			4G [ACC_Config]: xxxxxx01b
+			8G [ACC_Config]: xxxxxx10b
+			16G [ACC_Config]: xxxxxx11b
+		Mag.  All config settings are auto controlled in Fusion mode.
+
+	The device mounting position should not limit the data output of the BNO055 device. The
+	axis of the device can be re-configured to the new reference axis.
+
+	The measurement units for the various data outputs (regardless of operation mode) can be
+	configured by writing to the UNIT_SEL register as described here.
+			Data 								Units 			[Reg Addr]: Register Value
+			Acceleration, Linear				m/s2			[UNIT_SEL] : xxxxxxx0b
+			Acceleration, Gravity vector		mg				[UNIT_SEL] : xxxxxxx1b
+			Magnetic Field Strength				Micro Tesla 	NA
+			Angular Rate 						Dps 			[UNIT_SEL] : xxxxxx0xb
+												Rps 			[UNIT_SEL] : xxxxxx1xb
+			Euler Angles 						Degrees 		[UNIT_SEL] : xxxxx0xxb
+												Radians 		[UNIT_SEL] : xxxxx1xxb
+			Quaternion 							Quaternion units	NA
+			Temperature 						°C 				[UNIT_SEL] : xxx0xxxxb
+												°F 				[UNIT_SEL] : xxx1xxxxb
+
+	In fusion mode the fusion algorithm output offset compensated acceleration data for each
+	axis X/Y/Z, the output data can be read from the appropriate ACC_DATA_<axis>_LSB and
+	ACC_DATA_<axis>_MSB registers.
+
+	In fusion mode the fusion algorithm output offset compensated angular velocity (yaw rate)
+	data for each axis X/Y/Z, the output data can be read from the appropriate
+	GYR_DATA_<axis>_LSB and GYR_DATA_<axis>_MSB registers.
+
+	The fusion algorithm output offset and tilt compensated orientation data in Euler angles
+	format for each DOF Heading/Roll/Pitch, the output data can be read from the appropriate
+	EUL<dof>_LSB and EUL_<dof>_MSB registers.
+
+	The fusion algorithm output linear acceleration data for each axis x/y/z, the output data can
+	be read from the appropriate LIA_DATA_<axis>_LSB and LIA_DATA_<axis>_MSB registers.
+
+	The register map is separated into two logical pages, Page 1 contains sensor specific
+	configuration data and Page 0 contains all other configuration parameters and output data.
+	At power-on Page 0 is selected, the PAGE_ID register can be used to identify the current
+	selected page and change between page 0 and page 1.
+
+	*/
+
+
+	#define GYRO_THERMO_SENSITIVITY 	1.03		//	%/K typical
+	#define GYRO_THERMO_CENTER 			25			// per manual 25dC is the value for zero sensitivity offset
+	#define GYRO_NOISE_BASE 			3.100
+	#define GYRO_NOISE_SQUELCH			0.100		// Any signals below the base threshold are multiplied by the squelch factor
+	#define	GYRO_NOISELIMIT 			500			// robot was moved during calibration -- start over
+	#define GYRO_X_SENSITIVITY			900			// convert raw to radians per second
+	#define GYRO_Y_SENSITIVITY			900
+	#define GYRO_CW_SENSITIVITY			900
+	#define GYRO_CCW_SENSITIVITY		900
+	#define GYRO_CW_SPIN_CORRECTION		0.015		// Offset to Gyro_Sensitivity to account for data loss during high speed spins
+	#define GYRO_CCW_SPIN_CORRECTION	0.015		// Offset to Gyro_Sensitivity to account for data loss during high speed spins
+	#define GYRO_RATELIMIT 3						// 3r/10msec exceeds 90% of the gyro rate limit of 2000dps -- flag it
+	#define GYRO_READ_CNT 6							// need to acquire all three axes due to tipping effect causes accelerometer drift
+													// also grab the Low Order Byte of the temperature
+	#define GYRO_RADIANS				900.000
+	#define GYRO_DEGREES				16.000
+	#define GYRO_DEGREES_TO_RADIANS		916.73247220931713402877047702568
+
+
+	#define ACCEL_READ_CNT				6			// 2 bytes per axis
+	#define ACCEL_NOISE_BASE 			3.100
+	#define ACCEL_NOISE_SQUELCH			0.001		// Any signals below the base threshold are multiplied by the squelch factor
+	#define	ACCEL_NOISELIMIT 			500.0		// robot was moved during calibration -- start over
+	#define ACCEL_X_SENSITIVITY 		1			// convert raw to mg
+	#define ACCEL_Y_SENSITIVITY 		1
+	#define ACCEL_Z_SENSITIVITY 		1
+	#define ACCEL_THERMO_SENSITIVITY 	1.03		//	%/K typical
+	#define ACCEL_X_ALIGN				2.000		// Typical alignment error gyro axis vs accel axis in degrees
+	#define ACCEL_Y_ALIGN				2.000
+	#define ACCEL_Z_ALIGN				2.000
+	#define ACCEL_FRICTION				0.000		// percent of velocity loss due to friction that is lost in the Noise Cancellation
+	#define ACCEL_MPS2					100
+
+
+	#define BNO055_ADDRESS_A	0x28
+	#define BNO055_ADDRESS_B	0x29
+	#define BNO055_ID       	0xA0
+	#define BNO055_STATUS_CNT	6
+
+	/* Page id register definition */
+	#define BNO055_PAGE_ID_ADDR                      0X07
+
+	/* PAGE0 REGISTER DEFINITION START*/
+	#define BNO055_CHIP_ID_ADDR                      0x00
+	#define BNO055_ACCEL_REV_ID_ADDR                 0x01
+	#define BNO055_MAG_REV_ID_ADDR                   0x02
+	#define BNO055_GYRO_REV_ID_ADDR                  0x03
+	#define BNO055_SW_REV_ID_LSB_ADDR                0x04
+	#define BNO055_SW_REV_ID_MSB_ADDR                0x05
+	#define BNO055_BL_REV_ID_ADDR                    0X06
+
+	/* Accel data register */
+	#define BNO055_ACCEL_DATA_X_LSB_ADDR             0X08
+	#define BNO055_ACCEL_DATA_X_MSB_ADDR             0X09
+	#define BNO055_ACCEL_DATA_Y_LSB_ADDR             0X0A
+	#define BNO055_ACCEL_DATA_Y_MSB_ADDR             0X0B
+	#define BNO055_ACCEL_DATA_Z_LSB_ADDR             0X0C
+	#define BNO055_ACCEL_DATA_Z_MSB_ADDR             0X0D
+
+	/* Mag data register */
+	#define BNO055_MAG_DATA_X_LSB_ADDR               0X0E
+	#define BNO055_MAG_DATA_X_MSB_ADDR               0X0F
+	#define BNO055_MAG_DATA_Y_LSB_ADDR               0X10
+	#define BNO055_MAG_DATA_Y_MSB_ADDR               0X11
+	#define BNO055_MAG_DATA_Z_LSB_ADDR               0X12
+	#define BNO055_MAG_DATA_Z_MSB_ADDR               0X13
+
+	/* Gyro data registers */
+	#define BNO055_GYRO_DATA_X_LSB_ADDR              0X14
+	#define BNO055_GYRO_DATA_X_MSB_ADDR              0X15
+	#define BNO055_GYRO_DATA_Y_LSB_ADDR              0X16
+	#define BNO055_GYRO_DATA_Y_MSB_ADDR              0X17
+	#define BNO055_GYRO_DATA_Z_LSB_ADDR              0X18
+	#define BNO055_GYRO_DATA_Z_MSB_ADDR              0X19
+
+	/* Euler data registers */
+	#define BNO055_EULER_H_LSB_ADDR                  0X1A
+	#define BNO055_EULER_H_MSB_ADDR                  0X1B
+	#define BNO055_EULER_R_LSB_ADDR                  0X1C
+	#define BNO055_EULER_R_MSB_ADDR                  0X1D
+	#define BNO055_EULER_P_LSB_ADDR                  0X1E
+	#define BNO055_EULER_P_MSB_ADDR                  0X1F
+
+	/* Quaternion data registers */
+	#define BNO055_QUATERNION_DATA_W_LSB_ADDR        0X20
+	#define BNO055_QUATERNION_DATA_W_MSB_ADDR        0X21
+	#define BNO055_QUATERNION_DATA_X_LSB_ADDR        0X22
+	#define BNO055_QUATERNION_DATA_X_MSB_ADDR        0X23
+	#define BNO055_QUATERNION_DATA_Y_LSB_ADDR        0X24
+	#define BNO055_QUATERNION_DATA_Y_MSB_ADDR        0X25
+	#define BNO055_QUATERNION_DATA_Z_LSB_ADDR        0X26
+	#define BNO055_QUATERNION_DATA_Z_MSB_ADDR        0X27
+
+	/* Linear acceleration data registers */
+	#define BNO055_LINEAR_ACCEL_DATA_X_LSB_ADDR      0X28
+	#define BNO055_LINEAR_ACCEL_DATA_X_MSB_ADDR      0X29
+	#define BNO055_LINEAR_ACCEL_DATA_Y_LSB_ADDR      0X2A
+	#define BNO055_LINEAR_ACCEL_DATA_Y_MSB_ADDR      0X2B
+	#define BNO055_LINEAR_ACCEL_DATA_Z_LSB_ADDR      0X2C
+	#define BNO055_LINEAR_ACCEL_DATA_Z_MSB_ADDR      0X2D
+
+	/* Gravity data registers */
+	#define BNO055_GRAVITY_DATA_X_LSB_ADDR           0X2E
+	#define BNO055_GRAVITY_DATA_X_MSB_ADDR           0X2F
+	#define BNO055_GRAVITY_DATA_Y_LSB_ADDR           0X30
+	#define BNO055_GRAVITY_DATA_Y_MSB_ADDR           0X31
+	#define BNO055_GRAVITY_DATA_Z_LSB_ADDR           0X32
+	#define BNO055_GRAVITY_DATA_Z_MSB_ADDR           0X33
+
+	/* Temperature data register */
+	#define BNO055_TEMP_ADDR                         0X34
+
+	/* Status registers */
+	#define BNO055_CALIB_STAT_ADDR                   0X35
+		#define BNO055_CALIB_STAT_MAG							0X03
+		#define BNO055_CALIB_STAT_ACC							0X0C
+		#define BNO055_CALIB_STAT_GYRO							0X30
+		#define BNO055_CALIB_STAT_SYS							0XC0
+	#define BNO055_SELFTEST_RESULT_ADDR              0X36
+		#define BNO055_ST_STAT_ACC							0X01
+		#define BNO055_ST_STAT_MAG							0X02
+		#define BNO055_ST_STAT_GYRO							0X04
+		#define BNO055_ST_STAT_MCU							0X08
+	#define BNO055_INTR_STAT_ADDR                    0X37
+		#define BNO055_INTR_STAT_MAG_AM							0X04
+		#define BNO055_INTR_STAT_MAG_HR							0X08
+		#define BNO055_INTR_STAT_ACC_HG							0X20
+		#define BNO055_INTR_STAT_ACC_AM							0X40
+		#define BNO055_INTR_STAT_ACC_NM							0X80
+	#define BNO055_SYS_CLK_STAT_ADDR                 0X38
+		#define BNO055_SYS_CLK_STAT								0X01
+	#define BNO055_SYS_STAT_ADDR                     0X39
+		#define BNO055_SYS_STAT									0X0F
+		enum BNO055_SYS_STAT_VALUE {BNO055_SYS_STAT_IDLE=0,
+									BNO055_SYS_STAT_ERROR=1,
+									BNO055_SYS_STAT_INITP=2,
+									BNO055_SYS_STAT_INITS=3,
+									BNO055_SYS_STAT_EXEST=4,
+									BNO055_SYS_STAT_FUSON=5,
+									BNO055_SYS_STAT_NOFUS=6};
+	#define BNO055_SYS_ERR_ADDR                      0X3A
+		#define BNO055_SYS_ERR									0X0F
+		enum BNO055_SYS_ERR_VALUE  {BNO055_SYS_ERR_NOERR=0,
+		 	 	 	 	 	 	 	BNO055_SYS_ERR_INITP=1,
+									BNO055_SYS_ERR_INITS=2,
+									BNO055_SYS_ERR_STFAIL=3,
+									BNO055_SYS_ERR_REGVAL=4,
+									BNO055_SYS_ERR_REGADD=5,
+									BNO055_SYS_ERR_REGWRT=6,
+									BNO055_SYS_ERR_LOWPWR=7,
+									BNO055_SYS_ERR_ACCPWR=8,
+									BNO055_SYS_ERR_FUSION=9,
+									BNO055_SYS_ERR_CONFIG=10};
+
+	/* Unit selection register */
+	#define BNO055_UNIT_SEL_ADDR                     0X3B
+		#define BNO055_ORIENTATION_ANDROID						0X80
+		#define BNO055_TEMP_FAHRENHEIT							0X10
+		#define BNO055_EULER_RADIANS							0X04
+		#define BNO055_ANGULAR_RATE_RPS							0X02
+		#define BNO055_ACCEL_MG									0X01
+		#define BNO055_ORIENTATION_WINDOWS						0X00
+		#define BNO055_TEMP_CELSIUS								0X00
+		#define BNO055_EULER_DEGREES							0X00
+		#define BNO055_ANGULAR_RATE_DPS							0X00
+		#define BNO055_ACCEL_MPS2								0X00
+	#define BNO055_DATA_SELECT_ADDR                  0X3C
+
+	/* Mode registers */
+	#define BNO055_OPR_MODE_ADDR                     0X3D
+		#define BNO055_OPERATION_MODE_CONFIG                    0X00
+		#define BNO055_OPERATION_MODE_ACCONLY                   0X01
+		#define BNO055_OPERATION_MODE_MAGONLY                   0X02
+		#define BNO055_OPERATION_MODE_GYRONLY                   0X03
+		#define BNO055_OPERATION_MODE_ACCMAG                    0X04
+		#define BNO055_OPERATION_MODE_ACCGYRO                   0X05
+		#define BNO055_OPERATION_MODE_MAGGYRO                   0X06
+		#define BNO055_OPERATION_MODE_AMG                       0X07
+		#define BNO055_OPERATION_MODE_IMU                       0X08
+		#define BNO055_OPERATION_MODE_COMPASS                   0X09
+		#define BNO055_OPERATION_MODE_M4G                       0X0A
+		#define BNO055_OPERATION_MODE_NDOF_FMC_OFF              0X0B
+		#define BNO055_OPERATION_MODE_NDOF                      0X0C
+	#define BNO055_PWR_MODE_ADDR                     0X3E
+		#define BNO055_POWER_MODE_NORMAL                        0X00
+		#define BNO055_POWER_MODE_LOWPOWER                      0X01
+		#define BNO055_POWER_MODE_SUSPEND                       0X02
+
+	#define BNO055_SYS_TRIGGER_ADDR                  0X3F
+		#define BNO55_TRIGGER_EXTCLK							0X80
+		#define BNO55_TRIGGER_RSTINT							0X40
+		#define BNO55_TRIGGER_RSTSYS							0X20
+		#define BNO55_TRIGGER_SELFTEST							0X01
+	#define BNO055_TEMP_SOURCE_ADDR                  0X40
+
+	/* Axis remap registers */
+	#define BNO055_AXIS_MAP_CONFIG_ADDR              0X41
+	#define BNO055_AXIS_MAP_SIGN_ADDR                0X42
+
+	/* SIC registers */
+	#define BNO055_SIC_MATRIX_0_LSB_ADDR             0X43
+	#define BNO055_SIC_MATRIX_0_MSB_ADDR             0X44
+	#define BNO055_SIC_MATRIX_1_LSB_ADDR             0X45
+	#define BNO055_SIC_MATRIX_1_MSB_ADDR             0X46
+	#define BNO055_SIC_MATRIX_2_LSB_ADDR             0X47
+	#define BNO055_SIC_MATRIX_2_MSB_ADDR             0X48
+	#define BNO055_SIC_MATRIX_3_LSB_ADDR             0X49
+	#define BNO055_SIC_MATRIX_3_MSB_ADDR             0X4A
+	#define BNO055_SIC_MATRIX_4_LSB_ADDR             0X4B
+	#define BNO055_SIC_MATRIX_4_MSB_ADDR             0X4C
+	#define BNO055_SIC_MATRIX_5_LSB_ADDR             0X4D
+	#define BNO055_SIC_MATRIX_5_MSB_ADDR             0X4E
+	#define BNO055_SIC_MATRIX_6_LSB_ADDR             0X4F
+	#define BNO055_SIC_MATRIX_6_MSB_ADDR             0X50
+	#define BNO055_SIC_MATRIX_7_LSB_ADDR             0X51
+	#define BNO055_SIC_MATRIX_7_MSB_ADDR             0X52
+	#define BNO055_SIC_MATRIX_8_LSB_ADDR             0X53
+	#define BNO055_SIC_MATRIX_8_MSB_ADDR             0X54
+
+	/* Accelerometer Offset registers */
+	#define BNO055_ACCEL_OFFSET_X_LSB_ADDR           0X55
+	#define BNO055_ACCEL_OFFSET_X_MSB_ADDR           0X56
+	#define BNO055_ACCEL_OFFSET_Y_LSB_ADDR           0X57
+	#define BNO055_ACCEL_OFFSET_Y_MSB_ADDR           0X58
+	#define BNO055_ACCEL_OFFSET_Z_LSB_ADDR           0X59
+	#define BNO055_ACCEL_OFFSET_Z_MSB_ADDR           0X5A
+
+	/* Magnetometer Offset registers */
+	#define BNO055_MAG_OFFSET_X_LSB_ADDR             0X5B
+	#define BNO055_MAG_OFFSET_X_MSB_ADDR             0X5C
+	#define BNO055_MAG_OFFSET_Y_LSB_ADDR             0X5D
+	#define BNO055_MAG_OFFSET_Y_MSB_ADDR             0X5E
+	#define BNO055_MAG_OFFSET_Z_LSB_ADDR             0X5F
+	#define BNO055_MAG_OFFSET_Z_MSB_ADDR             0X60
+
+	/* Gyroscope Offset register s*/
+	#define BNO055_GYRO_OFFSET_X_LSB_ADDR            0X61
+	#define BNO055_GYRO_OFFSET_X_MSB_ADDR            0X62
+	#define BNO055_GYRO_OFFSET_Y_LSB_ADDR            0X63
+	#define BNO055_GYRO_OFFSET_Y_MSB_ADDR            0X64
+	#define BNO055_GYRO_OFFSET_Z_LSB_ADDR            0X65
+	#define BNO055_GYRO_OFFSET_Z_MSB_ADDR            0X66
+
+	/* Radius registers */
+	#define BNO055_ACCEL_RADIUS_LSB_ADDR             0X67
+	#define BNO055_ACCEL_RADIUS_MSB_ADDR             0X68
+	#define BNO055_MAG_RADIUS_LSB_ADDR               0X69
+	#define BNO055_MAG_RADIUS_MSB_ADDR               0X6A
+
+#endif	// BNO055_9DOF
+
+#endif	// Definitions_H

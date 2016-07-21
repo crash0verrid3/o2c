@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;AnalogNAV&apos; to &apos;O2C2014BigBall&apos;" description="Rename resource &apos;AnalogNAV&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="/AnalogNAV" name="O2C2014BigBall" stamp="1464618678591" updateReferences="true"/>
+</session>

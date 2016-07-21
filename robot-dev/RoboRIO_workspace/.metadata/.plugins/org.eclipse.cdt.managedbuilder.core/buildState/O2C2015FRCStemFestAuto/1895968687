@@ -1,0 +1,9 @@
+#
+#Wed Jul 20 20:21:06 EDT 2016
+src/Autonomous.cpp=1
+Debug/src/Autonomous.o=1
+Debug/FRCUserProgram=1
+Debug/src/Navigator.o=1
+src/Navigator.cpp=1
+src/MecanumDrivetrain.cpp=1
+Debug/src/MecanumDrivetrain.o=1

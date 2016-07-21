@@ -1,0 +1,315 @@
+<xml version="1.0">
+<dashboard>
+	<widget field="Autonomous Scenario" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="183" y="89"/>
+	</widget>
+	<widget field="ToteJoyBtn" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="1281" y="330"/>
+	</widget>
+	<static-widget class="edu.wpi.first.smartdashboard.gui.elements.Label">
+		<location x="1337" y="99"/>
+		<property name="Text" value="Debug Values"/>
+	</static-widget>
+	<static-widget class="edu.wpi.first.smartdashboard.gui.elements.Label">
+		<location x="728" y="260"/>
+		<property name="Text" value="Accelerometer Values"/>
+	</static-widget>
+	<static-widget class="edu.wpi.first.smartdashboard.gui.elements.Label">
+		<location x="937" y="92"/>
+		<property name="Text" value="Tote Wheel Operations"/>
+	</static-widget>
+	<static-widget class="edu.wpi.first.smartdashboard.gui.elements.Label">
+		<location x="668" y="90"/>
+		<property name="Text" value="Tote Lift Operations"/>
+	</static-widget>
+	<static-widget class="edu.wpi.first.smartdashboard.gui.elements.Label">
+		<location x="503" y="88"/>
+		<property name="Text" value="Drivetrain Settings"/>
+	</static-widget>
+	<static-widget class="edu.wpi.first.smartdashboard.gui.elements.Label">
+		<location x="370" y="249"/>
+		<property name="Text" value="Navigation"/>
+	</static-widget>
+	<widget field="RawGyro" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="241" y="385"/>
+	</widget>
+	<static-widget class="edu.wpi.first.smartdashboard.gui.elements.Label">
+		<location x="257" y="70"/>
+		<property name="Text" value="Autonomous Operations"/>
+	</static-widget>
+	<static-widget class="edu.wpi.first.smartdashboard.gui.elements.Label">
+		<location x="25" y="68"/>
+		<property name="Text" value="Subsystem Initialization States"/>
+	</static-widget>
+	<static-widget class="edu.wpi.first.smartdashboard.gui.elements.Label">
+		<location x="100" y="253"/>
+		<property name="Text" value="Run Counts"/>
+	</static-widget>
+	<widget field="Lift_Direction" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="620" y="154"/>
+	</widget>
+	<widget field="Lift_Target" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="629" y="132"/>
+	</widget>
+	<widget field="OrientModeBtn" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="1265" y="164"/>
+	</widget>
+	<widget field="SpinControlBtn" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="1265" y="142"/>
+	</widget>
+	<widget field="SprintModeBtn" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="1266" y="120"/>
+	</widget>
+	<widget field="ToteDNBtn" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="1285" y="208"/>
+	</widget>
+	<widget field="ToteUPBtn" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="1286" y="186"/>
+	</widget>
+	<widget field="RightWheel" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="1002" y="134"/>
+	</widget>
+	<widget field="RightArm" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="1012" y="113"/>
+	</widget>
+	<widget field="LeftWheel" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="817" y="133"/>
+	</widget>
+	<widget field="LeftArm" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="828" y="111"/>
+	</widget>
+	<widget field="ToteLift" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="1300" y="230"/>
+	</widget>
+	<widget field="DriveR" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="1306" y="297"/>
+	</widget>
+	<widget field="DriveY" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="1307" y="275"/>
+	</widget>
+	<widget field="DriveX" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="1307" y="253"/>
+	</widget>
+	<static-widget class="edu.wpi.first.smartdashboard.gui.elements.ConnectionIndicator">
+		<location x="0" y="0"/>
+	</static-widget>
+	<widget field="EnabledRuns" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="26" y="293"/>
+	</widget>
+	<widget field="Y Deviation" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="767" y="367"/>
+	</widget>
+	<widget field="X Deviation" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="610" y="368"/>
+	</widget>
+	<widget field="TWheel Right Speed" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="961" y="177"/>
+	</widget>
+	<widget field="TWheel Left Speed" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="777" y="177"/>
+	</widget>
+	<widget field="TWheel Right Posn" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="967" y="156"/>
+	</widget>
+	<widget field="TWheel Left Posn" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="783" y="155"/>
+	</widget>
+	<widget field="Lift_ToteCount" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="611" y="198"/>
+	</widget>
+	<widget field="Lift_Speed" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="632" y="176"/>
+	</widget>
+	<widget field="Lift_Position" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="624" y="110"/>
+	</widget>
+	<widget field="AutoState" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="239" y="134"/>
+	</widget>
+	<widget field="Drive_Orientation" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="425" y="175"/>
+	</widget>
+	<widget field="Drive_Heading" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="440" y="198"/>
+	</widget>
+	<widget field="Drive_SpinCorrection" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="409" y="152"/>
+	</widget>
+	<widget field="Drive_Spin_Control" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="418" y="130"/>
+	</widget>
+	<widget field="Drive_SprintFactor" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="420" y="108"/>
+	</widget>
+	<widget field="Comms GetCount" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="5" y="383"/>
+	</widget>
+	<widget field="Ycoord" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="408" y="317"/>
+	</widget>
+	<widget field="Xcoord" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="408" y="294"/>
+	</widget>
+	<widget field="Speed" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="411" y="341"/>
+	</widget>
+	<widget field="Direction" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="401" y="365"/>
+	</widget>
+	<widget field="GyroHeading" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="379" y="271"/>
+	</widget>
+	<widget field="Power_Consumption" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="221" y="9"/>
+	</widget>
+	<widget field="Battery_Voltage" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="48" y="8"/>
+	</widget>
+	<widget field="Autonomous_Step" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="200" y="157"/>
+	</widget>
+	<widget field="TotalLoops" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="36" y="361"/>
+	</widget>
+	<widget field="TeleopRuns" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="32" y="316"/>
+	</widget>
+	<widget field="AutonomousRuns" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="4" y="339"/>
+	</widget>
+	<widget field="DisabledRuns" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="23" y="271"/>
+	</widget>
+	<widget field="Autonomous Command" type="String" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="178" y="179"/>
+	</widget>
+	<widget field="Action Timeout" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="217" y="222"/>
+	</widget>
+	<widget field="Autonomous Action" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="195" y="200"/>
+	</widget>
+	<widget field="Autonomous Steps" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="198" y="111"/>
+	</widget>
+	<widget field="Start_Y" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="248" y="315"/>
+	</widget>
+	<widget field="Start_X" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="248" y="292"/>
+	</widget>
+	<widget field="Start_Heading" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="216" y="269"/>
+	</widget>
+	<widget field="AutoInit" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="45" y="221"/>
+	</widget>
+	<widget field="Y Tip" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="798" y="389"/>
+	</widget>
+	<widget field="X Tip" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="641" y="391"/>
+	</widget>
+	<widget field="Z Axis" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="949" y="280"/>
+	</widget>
+	<widget field="Y Axis" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="791" y="279"/>
+	</widget>
+	<widget field="X Axis" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="634" y="279"/>
+	</widget>
+	<widget field="SampleLoopTime" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="208" y="508"/>
+	</widget>
+	<widget field="SampleRunTime" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="375" y="507"/>
+	</widget>
+	<widget field="GyroCalibrating" type="Boolean" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="210" y="484"/>
+	</widget>
+	<widget field="GyroCenter_Z" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="217" y="459"/>
+	</widget>
+	<widget field="Ydist" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="261" y="360"/>
+	</widget>
+	<widget field="Xdist" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="261" y="338"/>
+	</widget>
+	<widget field="WheelsInit" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="33" y="199"/>
+	</widget>
+	<widget field="LiftInit" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="53" y="177"/>
+	</widget>
+	<widget field="DriveInit" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="43" y="154"/>
+	</widget>
+	<widget field="ZaccelCenter" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="915" y="324"/>
+	</widget>
+	<widget field="YaccelCenter" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="757" y="323"/>
+	</widget>
+	<widget field="XaccelCenter" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="600" y="323"/>
+	</widget>
+	<widget field="Thermo_sensitivity" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="1068" y="346"/>
+	</widget>
+	<widget field="AccelNoiseSqch" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="1084" y="301"/>
+	</widget>
+	<widget field="AccelNoiseBase" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="1083" y="279"/>
+	</widget>
+	<widget field="FrictionEffect" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="1094" y="323"/>
+	</widget>
+	<widget field="Yalign" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="257" y="433"/>
+	</widget>
+	<widget field="Xalign" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="257" y="410"/>
+	</widget>
+	<widget field="Ysensitivity" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="766" y="345"/>
+	</widget>
+	<widget field="Xsensitivity" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="609" y="346"/>
+	</widget>
+	<widget field="ZAinitCenter" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="918" y="302"/>
+	</widget>
+	<widget field="YAinitCenter" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="760" y="301"/>
+	</widget>
+	<widget field="XAinitCenter" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="603" y="301"/>
+	</widget>
+	<widget field="GyroNoiseSqch" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="379" y="435"/>
+	</widget>
+	<widget field="GyroNoiseBase" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="379" y="411"/>
+	</widget>
+	<widget field="GyroYsensitivity" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="373" y="483"/>
+	</widget>
+	<widget field="GyroXsensitivity" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="373" y="459"/>
+	</widget>
+	<widget field="NavInit" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="50" y="131"/>
+	</widget>
+	<widget field="RobotInit" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="40" y="86"/>
+	</widget>
+	<widget field="CommsInit" type="Number" class="edu.wpi.first.smartdashboard.gui.elements.TextBox">
+		<location x="35" y="108"/>
+	</widget>
+</dashboard>
+<live-window>
+</live-window>
+</xml>
