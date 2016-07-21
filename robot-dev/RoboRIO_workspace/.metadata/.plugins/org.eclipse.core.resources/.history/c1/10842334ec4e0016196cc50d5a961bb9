@@ -1,0 +1,52 @@
+/*
+ * SuperDuperScooperShooter.h
+ *
+ *  Created on: Feb 21, 2016
+ *      Author: Rod
+ */
+
+#ifndef SCOOPER_H_
+#define SCOOPER_H_
+
+#include "Definitions.h"
+
+class SCOOPER
+{
+public:
+	SCOOPER();
+
+	void Init(RobotStateBuffer *pRobotState, RobotStateBuffer *pTargetState, INPUT *pInput);
+	void RunElevator();
+	void RunShooter();
+	void GetElevator();
+
+private:
+	void Initialize_Scooper();
+	void StopMotors();
+
+	Talon 		*pShooter, *pLeftElevator, *pRightElevator;
+	Encoder		*pLeftScooperEncoder, *pRightScooperEncoder;
+	Servo		*pBoulderHolderLeft, *pBoulderHolderRight;
+	Timer		FireTimer;
+
+	int			init_cycles, verify_cycles, intake_button_debouncer, readyBtn_button_debouncer, upbtncount, dnbtncount;
+	int			left_encoder, right_encoder, prev_left, prev_right, left_delta, right_delta, delta;
+	double		left_elevator_power, right_elevator_power, launch_power, prev_target, hold_multiplier;
+	double		elevator_left_up_power, elevator_left_down_power, elevator_right_up_power, elevator_right_down_power, elevator_left_hold_power, elevator_right_hold_power;
+	double		left_elevation, right_elevation, left_off_target, right_off_target, left_converge_power, right_converge_power;
+	bool		elevator_initialized, intakeBtn_enabled, readyBtn_enabled, prev_intakeBtn, prev_readyBtn;
+
+
+	/*	Brought over from old ToteLift Code
+
+	int Lift_Position, Init_Lift_Position, Init_Verify_Count;
+	double LiftPower;
+	int initcnt;
+	bool ToteLiftStateInited;
+	int max_init_cycles;
+	 *
+	 */
+};
+
+
+#endif /* SCOOPER_H_ */

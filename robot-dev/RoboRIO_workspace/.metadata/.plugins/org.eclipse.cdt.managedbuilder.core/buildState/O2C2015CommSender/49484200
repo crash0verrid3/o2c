@@ -1,7 +1,30 @@
 #
-#Wed Jul 20 20:21:00 EDT 2016
-Debug/FRCUserProgram=1
+#Wed Jul 20 21:08:07 CDT 2016
+src/ToteLift.h=1
+Debug/src/Robot.o=1
+src/Comms.cpp=1
+src/Comms.h=1
+Debug/src/Field.o=1
 src/Autonomous.cpp=1
-Debug/src/xNavigator.o=1
+src/Navigator.cpp=1
+src/xDefinitions.h=1
+Debug/src/ToteWheels.o=1
+src/Robot.h=1
+src/Field.h=1
+src/ToteWheels.h=1
+src/ToteLift.cpp=1
 Debug/src/Autonomous.o=1
+Debug/src/ToteLift.o=1
+Debug/FRCUserProgram=1
+Debug/src/MecanumDrivetrain.o=1
+src/Autonomous.h=1
+src/Field.cpp=1
+Debug/src/xNavigator.o=1
+Debug/src/Navigator.o=1
+src/Navigator.h=1
+src/Robot.cpp=1
+src/MecanumDrivetrain.cpp=1
 src/xNavigator.cpp=1
+Debug/src/Comms.o=1
+src/MecanumDrivetrain.h=1
+src/ToteWheels.cpp=1

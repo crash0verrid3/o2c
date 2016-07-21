@@ -1,1 +1,10 @@
-Info: Nothing to build for Example
+21:08:01 **** Incremental Build of configuration Debug for project Example ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Kett/wpilib/cpp/current/include" "-IC:\\Users\\Kevin Forbin\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\Example\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ExampleRobot.o" "..\\src\\ExampleRobot.cpp" 
+..\src\ExampleRobot.cpp:1:20: fatal error: WPILib.h: No such file or directory
+ #include "WPILib.h"
+                    ^
+compilation terminated.
+
+21:08:01 Build Finished (took 386ms)
+

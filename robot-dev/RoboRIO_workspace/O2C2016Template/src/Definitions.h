@@ -200,7 +200,7 @@
 #define SCOOPER_FULL_DOWN				-20			// -20 degrees will lift the front of the bot by pushing the scooper down
 #define SCOOPER_MAX_DEGREES_PER_CYCLE	2.5			// maximum movement per cycle (= approx 75 dps when holding the button)
 #define SCOOPER_INIT_CYCLES				5
-#define SCOOPER_UP_POWER				60.0		// UP power = 40% - (elevation * (SCOOPER_UP_POWER / SCOOPER_FULL_ELEVATION)).
+#define SCOOPER_UP_POWER				80.0		// UP power = 40% - (elevation * (SCOOPER_UP_POWER / SCOOPER_FULL_ELEVATION)).
 #define SCOOPER_DN_POWER				40.0		// DN power = 40%
 #define SCOOPER_NEAR_WINDOW				5.0			// When within 5 degrees, begin transition from move to hold
 #define SCOOPER_HOLD_WINDOW				5.0			// Adjust motor power to maintain elevation within 2 degrees
@@ -208,6 +208,9 @@
 #define	SCOOPER_DOWN_STATE				-1
 #define	SCOOPER_HOLD_STATE				0
 #define	SCOOPER_UP_STATE				1
+
+#define SCOOPER_POWER_COMPENSATION		.05			// Higher compensates scooper position more aggressively but more accurately (to an extent). Values too high may overshoot the destination.
+
 #ifdef PRACTICEBOT
 	#define SCOOPER_INTAKE_POWER		-24			// Set to Reverse direction at -12 Watts (12V * -1A) Practice Bot needs more power to run the PG188 test motor
 	#define SCOOPER_ENC_TICKS_PER_DEGREE	3.66		// This is for a PG188 (manufacturer's spec = 1440 ticks per rev; measured = 1318 ticks per rev)

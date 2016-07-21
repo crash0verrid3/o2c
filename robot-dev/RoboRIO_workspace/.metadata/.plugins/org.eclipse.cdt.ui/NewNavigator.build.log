@@ -1,1 +1,12 @@
-Info: Nothing to build for NewNavigator
+21:08:03 **** Incremental Build of configuration Debug for project NewNavigator ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Kett/wpilib/cpp/current/include" "-IC:\\Users\\Kevin Forbin\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\NewNavigator\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\NewNavigator.o" "..\\src\\NewNavigator.cpp" 
+In file included from C:\Users\Kevin Forbin\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\src/Navigator.h:4:0,
+                 from ..\src\NewNavigator.cpp:1:
+C:\Users\Kevin Forbin\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\src/Definitions.h:4:44: fatal error: SmartDashboard/SendableChooser.h: No such file or directory
+ #include "SmartDashboard/SendableChooser.h"
+                                            ^
+compilation terminated.
+
+21:08:04 Build Finished (took 396ms)
+

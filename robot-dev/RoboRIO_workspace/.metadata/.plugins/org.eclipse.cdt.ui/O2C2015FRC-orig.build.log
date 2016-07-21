@@ -1,46 +1,12 @@
-20:21:01 **** Incremental Build of configuration Debug for project O2C2015FRC-orig ****
+21:08:09 **** Incremental Build of configuration Debug for project O2C2015FRC-orig ****
 Info: Internal Builder is used for build
-arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Kett/wpilib/cpp/current/include" "-IC:\\Users\\Kett\\RoboRIO_workspace\\O2C2015FRC-orig\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\xNavigator.o" "..\\src\\xNavigator.cpp" 
-..\src\xNavigator.cpp: In member function 'void NAVIGATOR::Init(RobotStateBuffer*, INPUT*)':
-..\src\xNavigator.cpp:403:43: error: 'initializeMutexRecursive' was not declared in this scope
-  INS_semaphore = initializeMutexRecursive();
-                                           ^
-..\src\xNavigator.cpp: In member function 'void NAVIGATOR::Push_Navigation_Data_Frame(double, double, double, double, double, double, double, double, double)':
-..\src\xNavigator.cpp:788:31: error: 'CRITICAL_REGION' was not declared in this scope
-  CRITICAL_REGION(INS_semaphore)  // we need to reference values that are updated outside of this procedure
-                               ^
-..\src\xNavigator.cpp:792:2: error: 'END_REGION' was not declared in this scope
-  END_REGION;
-  ^
-..\src\xNavigator.cpp:805:4: error: 'Synchronized' was not declared in this scope
-    Synchronized sync(INS_semaphore); // we are going to update values referenced by other procedure.
-    ^
-..\src\xNavigator.cpp:818:4: error: 'Synchronized' was not declared in this scope
-    Synchronized sync(INS_semaphore); // we are going to update values referenced by other procedure.
-    ^
-..\src\xNavigator.cpp: In member function 'void NAVIGATOR::Zero()':
-..\src\xNavigator.cpp:923:3: error: 'Synchronized' was not declared in this scope
-   Synchronized sync(INS_semaphore); // we are going to update values referenced by other procedure.
-   ^
-..\src\xNavigator.cpp: In member function 'bool NAVIGATOR::Pop_Navigation_Data_Frame()':
-..\src\xNavigator.cpp:948:31: error: 'CRITICAL_REGION' was not declared in this scope
-  CRITICAL_REGION(INS_semaphore)  // we need to reference values that are updated outside of this procedure
-                               ^
-..\src\xNavigator.cpp:952:2: error: 'END_REGION' was not declared in this scope
-  END_REGION;
-  ^
-..\src\xNavigator.cpp:956:3: error: 'Synchronized' was not declared in this scope
-   Synchronized sync(INS_semaphore); // we are going to update values referenced by other procedure.
-   ^
-..\src\xNavigator.cpp:970:3: error: 'Synchronized' was not declared in this scope
-   Synchronized sync(INS_semaphore); // we are going to update values referenced by other procedure.
-   ^
-In file included from C:\Users\Kett\RoboRIO_workspace\O2C2015FRC-orig\src/Navigator.h:5:0,
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Kett/wpilib/cpp/current/include" "-IC:\\Users\\Kevin Forbin\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\O2C2015FRC-orig\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\xNavigator.o" "..\\src\\xNavigator.cpp" 
+In file included from C:\Users\Kevin Forbin\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\O2C2015FRC-orig\src/Navigator.h:5:0,
                  from ..\src\xNavigator.cpp:1:
-C:\Users\Kett\RoboRIO_workspace\O2C2015FRC-orig\src/Definitions.h: At global scope:
-C:\Users\Kett\RoboRIO_workspace\O2C2015FRC-orig\src/Definitions.h:165:5: warning: 'pMyFieldState' defined but not used [-Wunused-variable]
-  } *pMyFieldState;
-     ^
+C:\Users\Kevin Forbin\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\O2C2015FRC-orig\src/Definitions.h:4:44: fatal error: SmartDashboard/SendableChooser.h: No such file or directory
+ #include "SmartDashboard/SendableChooser.h"
+                                            ^
+compilation terminated.
 
-20:21:03 Build Finished (took 1s.387ms)
+21:08:09 Build Finished (took 371ms)
 

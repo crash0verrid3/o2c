@@ -1,0 +1,213 @@
+﻿
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch is up-to-date with 'origin/master'.
+#
+# Changes to be committed:
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.log
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.core/.log
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.core/BNO055INAV2016.1439708335959.pdom
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.core/Brent.1420912454140.pdom
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.core/Brent.language.settings.xml
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.core/Example.1454370441143.pdom
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.core/Example.language.settings.xml
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.core/IterativeRobotTemplate.1454384130452.pdom
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.core/IterativeRobotTemplate.language.settings.xml
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.core/NewNavigator.1453767410283.pdom
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.core/NewNavigator.language.settings.xml
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.core/O2C2014BigBall.1464618679043.pdom
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.core/O2C2014BigBall.language.settings.xml
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.core/O2C2015CommSender.1436931035778.pdom
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.core/O2C2015CommSender.language.settings.xml
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.core/O2C2015FRC-orig.1453435379072.pdom
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.core/O2C2015FRC.1453435822039.pdom
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.core/O2C2015FRC.language.settings.xml
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.core/O2C2015FRCRockRiver.1436931070726.pdom
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.core/O2C2015FRCRockRiver.language.settings.xml
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.core/O2C2015FRCStemFest.1444172745681.pdom
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.core/O2C2015FRCStemFest.language.settings.xml
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.core/O2C2015FRCStemFestAuto.1444855629964.pdom
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.core/O2C2015FRCStemFestAuto.language.settings.xml
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.core/O2C2016Template.1453767497799.pdom
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.core/O2C2016Template.language.settings.xml
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.core/Simple Vision.1456172163483.pdom
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.core/Simple Vision.language.settings.xml
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.core/TK1.1421705645843.pdom
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.core/TK1.language.settings.xml
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.core/Testing Bed.1468365599585.pdom
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.core/Testing Bed.language.settings.xml
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.core/ThunderKiwi.1421698970044.pdom
+#	new file:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.core/language.settings.xml
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.managedbuilder.core/buildState/BNO055INAV2016/1558603500
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.managedbuilder.core/buildState/Brent/988981932
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.managedbuilder.core/buildState/Example/307039365
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.managedbuilder.core/buildState/IterativeRobotTemplate/1829176363
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.managedbuilder.core/buildState/NewNavigator/1287401390
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.managedbuilder.core/buildState/O2C2014BigBall/869042811
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.managedbuilder.core/buildState/O2C2015CommSender/49484200
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.managedbuilder.core/buildState/O2C2015FRC-orig/1462595872
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.managedbuilder.core/buildState/O2C2015FRC/1177498326
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.managedbuilder.core/buildState/O2C2015FRCRockRiver/563995711
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.managedbuilder.core/buildState/O2C2015FRCStemFest/88190383
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.managedbuilder.core/buildState/O2C2015FRCStemFestAuto/1895968687
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.managedbuilder.core/buildState/O2C2016Template/1940364841
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.managedbuilder.core/buildState/Simple Vision/717288627
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.managedbuilder.core/buildState/TK1/838957628
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.managedbuilder.core/buildState/Testing Bed/2004370161
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.managedbuilder.core/buildState/ThunderKiwi/327631647
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.ui/BNO055INAV2016.build.log
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.ui/Brent.build.log
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.ui/Example.build.log
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.ui/IterativeRobotTemplate.build.log
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.ui/NewNavigator.build.log
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.ui/O2C2014BigBall.build.log
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.ui/O2C2015CommSender.build.log
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.ui/O2C2015FRC-orig.build.log
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.ui/O2C2015FRC.build.log
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.ui/O2C2015FRCStemFest.build.log
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.ui/O2C2015FRCStemFestAuto.build.log
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.ui/O2C2016Template.build.log
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.ui/Simple Vision.build.log
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.ui/TK1.build.log
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.ui/Testing Bed.build.log
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.ui/ThunderKiwi.build.log
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.cdt.ui/global-build.log
+#	new file:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.history/27/305fcec2e94e001613e7dff4e0429c3b
+#	new file:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.history/33/10a6c17fea4e001613e7dff4e0429c3b
+#	new file:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.history/3f/006442cfe94e001613e7dff4e0429c3b
+#	new file:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.history/4d/50d03bdde94e001613e7dff4e0429c3b
+#	new file:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.history/59/f0030577ea4e001613e7dff4e0429c3b
+#	new file:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.history/6b/b0344ebbe94e001613e7dff4e0429c3b
+#	new file:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.history/7d/e0f5ee37ea4e001613e7dff4e0429c3b
+#	new file:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.history/8d/c055e60aea4e001613e7dff4e0429c3b
+#	new file:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.history/a9/e0820350ea4e001613e7dff4e0429c3b
+#	new file:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.history/a9/f08acb33ea4e001613e7dff4e0429c3b
+#	new file:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.history/ba/d082d228e94e001613e7dff4e0429c3b
+#	new file:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.history/cb/e01c3075ea4e001613e7dff4e0429c3b
+#	new file:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.history/ed/60298070ea4e001613e7dff4e0429c3b
+#	new file:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.history/ed/e0575808ea4e001613e7dff4e0429c3b
+#	new file:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/BNO055INAV2016/.markers
+#	deleted:    robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/BNO055INAV2016/.markers.snap
+#	deleted:    robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/BNO055INAV2016/.syncinfo.snap
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/Brent/.markers
+#	deleted:    robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/Brent/.markers.snap
+#	deleted:    robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/Brent/.syncinfo.snap
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/Example/.markers
+#	deleted:    robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/Example/.markers.snap
+#	deleted:    robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/Example/.syncinfo.snap
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/IterativeRobotTemplate/.markers
+#	deleted:    robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/IterativeRobotTemplate/.markers.snap
+#	deleted:    robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/IterativeRobotTemplate/.syncinfo.snap
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/NewNavigator/.markers
+#	deleted:    robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/NewNavigator/.markers.snap
+#	deleted:    robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/NewNavigator/.syncinfo.snap
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/O2C2014BigBall/.markers
+#	deleted:    robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/O2C2014BigBall/.markers.snap
+#	deleted:    robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/O2C2014BigBall/.syncinfo.snap
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/O2C2015CommSender/.markers
+#	deleted:    robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/O2C2015CommSender/.markers.snap
+#	deleted:    robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/O2C2015CommSender/.syncinfo.snap
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/O2C2015FRC-orig/.markers
+#	deleted:    robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/O2C2015FRC-orig/.markers.snap
+#	deleted:    robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/O2C2015FRC-orig/.syncinfo.snap
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/O2C2015FRC/.markers
+#	deleted:    robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/O2C2015FRC/.markers.snap
+#	deleted:    robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/O2C2015FRC/.syncinfo.snap
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/O2C2015FRCRockRiver/.markers
+#	deleted:    robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/O2C2015FRCRockRiver/.markers.snap
+#	deleted:    robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/O2C2015FRCRockRiver/.syncinfo.snap
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/O2C2015FRCStemFest/.markers
+#	deleted:    robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/O2C2015FRCStemFest/.markers.snap
+#	deleted:    robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/O2C2015FRCStemFest/.syncinfo.snap
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/O2C2015FRCStemFestAuto/.markers
+#	deleted:    robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/O2C2015FRCStemFestAuto/.markers.snap
+#	deleted:    robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/O2C2015FRCStemFestAuto/.syncinfo.snap
+#	new file:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/O2C2016Template/.indexes/e4/history.index
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/O2C2016Template/.markers
+#	deleted:    robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/O2C2016Template/.markers.snap
+#	deleted:    robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/O2C2016Template/.syncinfo.snap
+#	deleted:    robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/RemoteSystemsTempFiles/.markers.snap
+#	deleted:    robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/RemoteSystemsTempFiles/.syncinfo.snap
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/Simple Vision/.markers
+#	deleted:    robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/Simple Vision/.markers.snap
+#	deleted:    robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/Simple Vision/.syncinfo.snap
+#	new file:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/TK1/.markers
+#	deleted:    robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/TK1/.markers.snap
+#	deleted:    robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/TK1/.syncinfo.snap
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/Testing Bed/.markers
+#	deleted:    robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/Testing Bed/.markers.snap
+#	deleted:    robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/Testing Bed/.syncinfo.snap
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/ThunderKiwi/.markers
+#	deleted:    robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/ThunderKiwi/.markers.snap
+#	deleted:    robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.projects/ThunderKiwi/.syncinfo.snap
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.root/.indexes/properties.index
+#	deleted:    robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.root/.markers
+#	deleted:    robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.root/.markers.snap
+#	deleted:    robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.root/256.tree
+#	new file:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.root/259.tree
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/.safetable/org.eclipse.core.resources
+#	deleted:    robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.resources/256.snap
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.core.resources.prefs
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.editors.prefs
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.ide.prefs
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.core.runtime/.settings/org.eclipse.ui.workbench.prefs
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.e4.workbench/workbench.xmi
+#	deleted:    robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.epp.logging.aeri.ui/history/write.lock
+#	deleted:    robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.epp.logging.aeri.ui/remote-index/_8.nrm
+#	renamed:    robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.epp.logging.aeri.ui/remote-index/_8.fdt -> robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.epp.logging.aeri.ui/remote-index/_a.fdt
+#	renamed:    robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.epp.logging.aeri.ui/remote-index/_8.fdx -> robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.epp.logging.aeri.ui/remote-index/_a.fdx
+#	renamed:    robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.epp.logging.aeri.ui/remote-index/_9.fnm -> robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.epp.logging.aeri.ui/remote-index/_a.fnm
+#	renamed:    robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.epp.logging.aeri.ui/remote-index/_8.frq -> robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.epp.logging.aeri.ui/remote-index/_a.frq
+#	renamed:    robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.epp.logging.aeri.ui/remote-index/_9.nrm -> robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.epp.logging.aeri.ui/remote-index/_a.nrm
+#	renamed:    robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.epp.logging.aeri.ui/remote-index/_8.prx -> robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.epp.logging.aeri.ui/remote-index/_a.prx
+#	renamed:    robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.epp.logging.aeri.ui/remote-index/_9.tii -> robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.epp.logging.aeri.ui/remote-index/_a.tii
+#	renamed:    robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.epp.logging.aeri.ui/remote-index/_8.tis -> robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.epp.logging.aeri.ui/remote-index/_a.tis
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.epp.logging.aeri.ui/remote-index/segments.gen
+#	deleted:    robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.epp.logging.aeri.ui/remote-index/segments_a
+#	new file:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.epp.logging.aeri.ui/remote-index/segments_b
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.epp.logging.aeri.ui/server-config.json
+#	new file:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.oomph.setup.ui/dialog_settings.xml
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.rse.core/.log
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/.plugins/org.eclipse.ui.workbench.texteditor/dialog_settings.xml
+#	modified:   robot-dev/RoboRIO_workspace/.metadata/version.ini
+#	modified:   robot-dev/RoboRIO_workspace/BNO055INAV2016/.settings/language.settings.xml
+#	deleted:    robot-dev/RoboRIO_workspace/BNO055INAV2016/Debug/src/Robot.o
+#	modified:   robot-dev/RoboRIO_workspace/Brent/.settings/language.settings.xml
+#	deleted:    robot-dev/RoboRIO_workspace/Brent/Debug/src/Comms.o
+#	modified:   robot-dev/RoboRIO_workspace/Example/.settings/language.settings.xml
+#	deleted:    robot-dev/RoboRIO_workspace/Example/Debug/src/ExampleRobot.o
+#	modified:   robot-dev/RoboRIO_workspace/IterativeRobotTemplate/.settings/language.settings.xml
+#	deleted:    robot-dev/RoboRIO_workspace/IterativeRobotTemplate/Debug/src/IterativeRobot.o
+#	modified:   robot-dev/RoboRIO_workspace/NewNavigator/.settings/language.settings.xml
+#	deleted:    robot-dev/RoboRIO_workspace/NewNavigator/Debug/src/NewNavigator.o
+#	modified:   robot-dev/RoboRIO_workspace/O2C2014BigBall/.settings/language.settings.xml
+#	deleted:    robot-dev/RoboRIO_workspace/O2C2014BigBall/Debug/src/Claw.o
+#	modified:   robot-dev/RoboRIO_workspace/O2C2015CommSender/.settings/language.settings.xml
+#	deleted:    robot-dev/RoboRIO_workspace/O2C2015CommSender/Debug/src/ToteLift.o
+#	modified:   robot-dev/RoboRIO_workspace/O2C2015FRC-orig/.settings/language.settings.xml
+#	modified:   robot-dev/RoboRIO_workspace/O2C2015FRC/.settings/language.settings.xml
+#	deleted:    robot-dev/RoboRIO_workspace/O2C2015FRC/Debug/src/ToteWheels.o
+#	modified:   robot-dev/RoboRIO_workspace/O2C2015FRCRockRiver/.settings/language.settings.xml
+#	deleted:    robot-dev/RoboRIO_workspace/O2C2015FRCRockRiver/Debug/src/Autonomous.o
+#	modified:   robot-dev/RoboRIO_workspace/O2C2015FRCStemFest/.settings/language.settings.xml
+#	deleted:    robot-dev/RoboRIO_workspace/O2C2015FRCStemFest/Debug/src/Comms.o
+#	modified:   robot-dev/RoboRIO_workspace/O2C2015FRCStemFestAuto/.settings/language.settings.xml
+#	deleted:    robot-dev/RoboRIO_workspace/O2C2015FRCStemFestAuto/Debug/src/Robot.o
+#	modified:   robot-dev/RoboRIO_workspace/O2C2016Template/.settings/language.settings.xml
+#	deleted:    robot-dev/RoboRIO_workspace/O2C2016Template/Debug/src/Climber.o
+#	deleted:    robot-dev/RoboRIO_workspace/O2C2016Template/Debug/src/DriveTrain.o
+#	deleted:    robot-dev/RoboRIO_workspace/O2C2016Template/Debug/src/Robot.o
+#	modified:   robot-dev/RoboRIO_workspace/O2C2016Template/src/Definitions.h
+#	modified:   robot-dev/RoboRIO_workspace/O2C2016Template/src/ScooperShooter.cpp
+#	modified:   robot-dev/RoboRIO_workspace/O2C2016Template/src/ScooperShooter.h
+#	modified:   robot-dev/RoboRIO_workspace/Simple Vision/.settings/language.settings.xml
+#	deleted:    robot-dev/RoboRIO_workspace/Simple Vision/Debug/src/Robot.o
+#	modified:   robot-dev/RoboRIO_workspace/TK1/.settings/language.settings.xml
+#	deleted:    robot-dev/RoboRIO_workspace/TK1/Debug/src/Drivetrain.o
+#	modified:   robot-dev/RoboRIO_workspace/Testing Bed/.settings/language.settings.xml
+#	deleted:    robot-dev/RoboRIO_workspace/Testing Bed/Debug/src/ExampleRobot.o
+#	modified:   robot-dev/RoboRIO_workspace/ThunderKiwi/.settings/language.settings.xml
+#	deleted:    robot-dev/RoboRIO_workspace/ThunderKiwi/Debug/src/Comms.o
+#
+

@@ -1,53 +1,11 @@
-20:20:56 **** Incremental Build of configuration Debug for project Brent ****
+21:08:00 **** Incremental Build of configuration Debug for project Brent ****
 Info: Internal Builder is used for build
-arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Kett/wpilib/cpp/current/include" "-IC:\\Users\\Kett\\RoboRIO_workspace\\Brent\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Navigator.Dev.o" "..\\src\\Navigator.Dev.cpp" 
-..\src\Navigator.Dev.cpp: In member function 'void NAVIGATOR::InitMyGyro()':
-..\src\Navigator.Dev.cpp:63:44: error: 'initializeMutexRecursive' was not declared in this scope
-  gyro_semaphore = initializeMutexRecursive();
-                                            ^
-..\src\Navigator.Dev.cpp: In member function 'void NAVIGATOR::InitMyAccelerometer()':
-..\src\Navigator.Dev.cpp:79:46: error: 'initializeMutexRecursive' was not declared in this scope
-   accel_semaphore = initializeMutexRecursive();
-                                              ^
-..\src\Navigator.Dev.cpp: In member function 'void NAVIGATOR::Init()':
-..\src\Navigator.Dev.cpp:101:43: error: 'initializeMutexRecursive' was not declared in this scope
-  INS_semaphore = initializeMutexRecursive();
-                                           ^
-..\src\Navigator.Dev.cpp: In member function 'void NAVIGATOR::OversampleGyro()':
-..\src\Navigator.Dev.cpp:118:4: error: 'Synchronized' was not declared in this scope
-    Synchronized sync(gyro_semaphore); // we are going to update values referenced by other procedure.
-    ^
-..\src\Navigator.Dev.cpp: In member function 'void NAVIGATOR::Zero()':
-..\src\Navigator.Dev.cpp:177:3: error: 'Synchronized' was not declared in this scope
-   Synchronized sync(gyro_semaphore); // we are going to update values referenced by other procedure.
-   ^
-..\src\Navigator.Dev.cpp: In member function 'void NAVIGATOR::UpdateHeading()':
-..\src\Navigator.Dev.cpp:202:32: error: 'CRITICAL_REGION' was not declared in this scope
-  CRITICAL_REGION(gyro_semaphore)  // we need to reference values that are updated outside of this procedure
-                                ^
-..\src\Navigator.Dev.cpp:207:2: error: 'END_REGION' was not declared in this scope
-  END_REGION;
-  ^
-..\src\Navigator.Dev.cpp: In member function 'void NAVIGATOR::Calculate()':
-..\src\Navigator.Dev.cpp:228:32: error: 'CRITICAL_REGION' was not declared in this scope
-  CRITICAL_REGION(gyro_semaphore)  // we need to reference values that are updated outside of this procedure
-                                ^
-..\src\Navigator.Dev.cpp:232:2: error: 'END_REGION' was not declared in this scope
-  END_REGION;
-  ^
-..\src\Navigator.Dev.cpp:237:3: error: 'Synchronized' was not declared in this scope
-   Synchronized sync(INS_semaphore); // we are going to update values referenced by other procedure.
-   ^
-..\src\Navigator.Dev.cpp: In member function 'double NAVIGATOR::GetRobotHeading()':
-..\src\Navigator.Dev.cpp:258:31: error: 'CRITICAL_REGION' was not declared in this scope
-  CRITICAL_REGION(INS_semaphore)  // we need to reference values that are updated outside of this procedure
-                               ^
-..\src\Navigator.Dev.cpp:262:2: error: 'END_REGION' was not declared in this scope
-  END_REGION;
-  ^
-..\src\Navigator.Dev.cpp:263:2: warning: no return statement in function returning non-void [-Wreturn-type]
-  }
-  ^
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Kett/wpilib/cpp/current/include" "-IC:\\Users\\Kevin Forbin\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\Brent\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Comms.o" "..\\src\\Comms.cpp" 
+In file included from ..\src\Comms.cpp:1:0:
+..\src\Comms.h:5:20: fatal error: WPILib.h: No such file or directory
+ #include "WPILib.h"
+                    ^
+compilation terminated.
 
-20:20:58 Build Finished (took 1s.238ms)
+21:08:01 Build Finished (took 454ms)
 
