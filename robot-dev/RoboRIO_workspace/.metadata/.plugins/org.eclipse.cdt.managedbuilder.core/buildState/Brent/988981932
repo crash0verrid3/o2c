@@ -1,25 +1,7 @@
 #
-#Wed Jul 20 21:08:01 CDT 2016
-src/Drivetrain.h=1
+#Fri Jul 22 17:05:54 CDT 2016
 Debug/src/Robot.o=1
-src/Comms.cpp=1
-src/Comms.h=1
-src/Navigator.Dev.h=1
-Debug/src/Field.o=1
-src/Robot.h=1
-src/Claw.cpp=1
-src/Field.h=1
-Debug/src/Claw.o=1
-Debug/src/Drivetrain.o=1
-Debug/src/Quadapult.o=1
-src/Quadapult.h=1
-src/Quadapult.cpp=1
 Debug/FRCUserProgram=1
-src/Drivetrain.cpp=1
 src/Navigator.Dev.cpp=1
-src/Field.cpp=1
-src/Claw.h=1
 src/Robot.cpp=1
-Debug/src/Comms.o=1
-src/Definitions.h=1
 Debug/src/Navigator.Dev.o=1
