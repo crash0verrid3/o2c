@@ -1,4 +1,4 @@
-activeuserprofiles=Galileo;Team
+activeuserprofiles=Galileo;LAPTOP-GUFUEGEH;Team
 eclipse.preferences.version=1
 org.eclipse.rse.systemtype.local.systemType.defaultUserId=Rod
-useridperkey=Galileo.Local\=Rod;Galileo.roboRIO-2704-FRC.local\=lvuser;Galileo.roboRIO-2704.local\=lvuser;
+useridperkey=LAPTOP-GUFUEGEH.Local\=Rod;Galileo.Local\=Rod;Galileo.roboRIO-2704-FRC.local\=lvuser;Galileo.roboRIO-2704.local\=lvuser;
