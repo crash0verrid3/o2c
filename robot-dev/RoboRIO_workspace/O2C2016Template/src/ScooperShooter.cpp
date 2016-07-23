@@ -62,31 +62,31 @@ void SCOOPER :: Init(RobotStateBuffer *pRobotState, RobotStateBuffer *pTargetSta
 	}
 
 void SCOOPER :: Initialize_Scooper()
-	{
+{
 	if (init_cycles-- == SCOOPER_INIT_CYCLES)
-		{													// Start moving the scooper to the target position
+	{													// Start moving the scooper to the target position
 		pLeftScooperEncoder->Reset();
 		pRightScooperEncoder->Reset();
 		left_encoder = right_encoder = prev_left = prev_right = left_delta = right_delta = 0;
 		pMyTargetState->Shooter_Elevation += (10.0 * SCOOPER_MAX_DEGREES_PER_CYCLE);
 		pMyTargetState->Shooter_Elevator_State = SCOOPER_UP_STATE;
-		}
+	}
 	else if (init_cycles-- <= 0)
-		{													// Done trying to init, go with what we got
+	{													// Done trying to init, go with what we got
 		elevator_initialized = true;
 		pMyRobotState->Shooter_Elevation = pMyTargetState->Shooter_Elevation = (double) SCOOPER_FULL_ELEVATION;
 		left_elevation = right_elevation = (double) SCOOPER_FULL_ELEVATION;
 		pMyTargetState->Shooter_Elevator_State = SCOOPER_HOLD_STATE;
 		pMyRobotState->Scooper_Init++;
-		}
+	}
 	else if (delta != 0)									// Elevator is still moving
-		{
+	{
 		verify_cycles = 0;
 		pMyTargetState->Shooter_Elevator_State = SCOOPER_UP_STATE;
 		pMyTargetState->Shooter_Elevation += (10.0 * SCOOPER_MAX_DEGREES_PER_CYCLE);
-		}
+	}
 	else if (verify_cycles++ > 5)							// elevator has stabilized at the top for 6 cycles
-		{
+	{
 		elevator_initialized = true;
 		pMyRobotState->Shooter_Elevation = pMyTargetState->Shooter_Elevation = (double) SCOOPER_FULL_ELEVATION;	// We are at the target state
 		left_elevation = right_elevation = (double) SCOOPER_FULL_ELEVATION;
@@ -94,9 +94,9 @@ void SCOOPER :: Initialize_Scooper()
 		pMyTargetState->Shooter_Elevator_State = SCOOPER_HOLD_STATE;		// Hold it right there
 		pMyTargetState->Shooter_Elevation_Speed = 0;
 		pMyRobotState->Scooper_Init += 2;
-		}
-	pMyRobotState->Shooter_Elevator_State = pMyTargetState->Shooter_Elevator_State;
 	}
+	pMyRobotState->Shooter_Elevator_State = pMyTargetState->Shooter_Elevator_State;
+}
 
 void SCOOPER :: GetElevator()
 	{
@@ -127,31 +127,32 @@ void SCOOPER :: RunElevator()
 
 //	if (! elevator_initialized) Initialize_Scooper();	// make sure the scooper starts in a known position (up to SCOOPER_INIT_CYCLES wasted to do this)
 //	else
-//		{
+//	{
 		if (pMyInput->ScooperUpBtn)
-			{
+		{
 			left_elevator_power = (pMyRobotState->Shooter_Elevation * (SCOOPER_UP_POWER / SCOOPER_FULL_ELEVATION));
 			right_elevator_power = (pMyRobotState->Shooter_Elevation * (SCOOPER_UP_POWER / SCOOPER_FULL_ELEVATION));
 			elev = false;
-			}
+		}
 		else if (pMyInput->ScooperDnBtn)
-			{
+		{
 			left_elevator_power = -SCOOPER_UP_POWER;
 			right_elevator_power = -SCOOPER_UP_POWER;
 			elev = false;
-			}
+		}
 		else
-			{
+		{
 			if(!elev){
 				pMyTargetState->Shooter_Elevation = fmin((double) SCOOPER_FULL_ELEVATION, fmax((double) SCOOPER_FULL_DOWN, pMyRobotState->Shooter_Elevation));
 				elev = true;
 				left_elevator_power = right_elevator_power = 0;
-				}
+				SmartDashboard::PutNumber("target elevation", pMyTargetState->Shooter_Elevation);
 			}
-//		}
-	pLeftElevator->Set(-(left_elevator_power/100));  			// Set scooper power to converge to target position.
-	pRightElevator->Set((right_elevator_power/100));  		// Set scooper power to converge to target position.
-	}
+		}
+//	}
+	pLeftElevator->Set(-left_elevator_power/100);  			// Set scooper power to converge to target position.
+	pRightElevator->Set(right_elevator_power/100);  		// Set scooper power to converge to target position.
+}
 
 
 void SCOOPER :: RunShooter()
