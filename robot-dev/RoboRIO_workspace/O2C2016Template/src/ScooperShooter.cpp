@@ -120,9 +120,9 @@ void SCOOPER :: RunElevator()
 		if(pMyTargetState->Shooter_Elevation > pMyRobotState->Shooter_Elevation){
 			left_elevator_power = fmin(SCOOPER_UP_POWER, (abs(pMyTargetState->Shooter_Elevation - pMyRobotState->Shooter_Elevation) * SCOOPER_POWER_COMPENSATION) * SCOOPER_UP_POWER);
 			right_elevator_power = fmin(SCOOPER_UP_POWER, (abs(pMyTargetState->Shooter_Elevation - pMyRobotState->Shooter_Elevation) * SCOOPER_POWER_COMPENSATION) * SCOOPER_UP_POWER);
-		} else if(pMyTargetState->Shooter_Elevation > pMyRobotState->Shooter_Elevation){
-			left_elevator_power = fmin(SCOOPER_UP_POWER, (abs(pMyTargetState->Shooter_Elevation - pMyRobotState->Shooter_Elevation) * SCOOPER_POWER_COMPENSATION) * SCOOPER_UP_POWER);
-			right_elevator_power = fmin(SCOOPER_UP_POWER, (abs(pMyTargetState->Shooter_Elevation - pMyRobotState->Shooter_Elevation) * SCOOPER_POWER_COMPENSATION) * SCOOPER_UP_POWER);
+		} else if(pMyTargetState->Shooter_Elevation < pMyRobotState->Shooter_Elevation){
+			left_elevator_power = -fmin(SCOOPER_DN_POWER, (abs(pMyTargetState->Shooter_Elevation - pMyRobotState->Shooter_Elevation) * SCOOPER_POWER_COMPENSATION) * SCOOPER_DN_POWER);
+			right_elevator_power = -fmin(SCOOPER_DN_POWER, (abs(pMyTargetState->Shooter_Elevation - pMyRobotState->Shooter_Elevation) * SCOOPER_POWER_COMPENSATION) * SCOOPER_DN_POWER);
 		}
 
 //	if (! elevator_initialized) Initialize_Scooper();	// make sure the scooper starts in a known position (up to SCOOPER_INIT_CYCLES wasted to do this)
@@ -130,28 +130,28 @@ void SCOOPER :: RunElevator()
 //	{
 		if (pMyInput->ScooperUpBtn)
 		{
-			left_elevator_power = (pMyRobotState->Shooter_Elevation * (SCOOPER_UP_POWER / SCOOPER_FULL_ELEVATION));
-			right_elevator_power = (pMyRobotState->Shooter_Elevation * (SCOOPER_UP_POWER / SCOOPER_FULL_ELEVATION));
+			left_elevator_power = SCOOPER_UP_POWER;
+			right_elevator_power = SCOOPER_UP_POWER;
 			elev = false;
 		}
 		else if (pMyInput->ScooperDnBtn)
 		{
-			left_elevator_power = -SCOOPER_UP_POWER;
-			right_elevator_power = -SCOOPER_UP_POWER;
+			left_elevator_power = -SCOOPER_DN_POWER;
+			right_elevator_power = -SCOOPER_DN_POWER;
 			elev = false;
 		}
 		else
 		{
 			if(!elev){
-				pMyTargetState->Shooter_Elevation = fmin((double) SCOOPER_FULL_ELEVATION, fmax((double) SCOOPER_FULL_DOWN, pMyRobotState->Shooter_Elevation));
+				pMyTargetState->Shooter_Elevation = pMyRobotState->Shooter_Elevation;
 				elev = true;
 				left_elevator_power = right_elevator_power = 0;
 				SmartDashboard::PutNumber("target elevation", pMyTargetState->Shooter_Elevation);
 			}
 		}
 //	}
-	pLeftElevator->Set(-left_elevator_power/100);  			// Set scooper power to converge to target position.
-	pRightElevator->Set(right_elevator_power/100);  		// Set scooper power to converge to target position.
+	pLeftElevator->Set(-left_elevator_power/100.0);  			// Set scooper power to converge to target position.
+	pRightElevator->Set(right_elevator_power/100.0);  		// Set scooper power to converge to target position.
 }
 
 

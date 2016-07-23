@@ -1,11 +1,53 @@
-21:08:18 **** Incremental Build of configuration Debug for project ThunderKiwi ****
+11:03:51 **** Incremental Build of configuration Debug for project ThunderKiwi ****
 Info: Internal Builder is used for build
-arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Kett/wpilib/cpp/current/include" "-IC:\\Users\\Kevin Forbin\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\ThunderKiwi\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Comms.o" "..\\src\\Comms.cpp" 
-In file included from ..\src\Comms.cpp:1:0:
-..\src\Comms.h:5:20: fatal error: WPILib.h: No such file or directory
- #include "WPILib.h"
-                    ^
-compilation terminated.
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\ThunderKiwi\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Navigator.o" "..\\src\\Navigator.cpp" 
+..\src\Navigator.cpp: In member function 'void NAVIGATOR::Init(RobotStateBuffer*)':
+..\src\Navigator.cpp:136:43: error: 'initializeMutexRecursive' was not declared in this scope
+  INS_semaphore = initializeMutexRecursive();
+                                           ^
+..\src\Navigator.cpp: In member function 'int NAVIGATOR::ReadGyro()':
+..\src\Navigator.cpp:152:68: error: no matching function for call to 'AnalogInput::GetAccumulatorOutput(long long int*, uint*)'
+  MyGyro->GetAccumulatorOutput(&accumulator, &gyro_accumulator_count);
+                                                                    ^
+..\src\Navigator.cpp:152:68: note: candidate is:
+In file included from C:\Users\Cryogenica/wpilib/cpp/current/include/AnalogAccelerometer.h:10:0,
+                 from C:\Users\Cryogenica/wpilib/cpp/current/include/WPILib.h:19,
+                 from C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\ThunderKiwi\src/Navigator.h:11,
+                 from ..\src\Navigator.cpp:1:
+C:\Users\Cryogenica/wpilib/cpp/current/include/AnalogInput.h:67:8: note: void AnalogInput::GetAccumulatorOutput(int64_t&, uint32_t&) const
+   void GetAccumulatorOutput(int64_t &value, uint32_t &count) const;
+        ^
+C:\Users\Cryogenica/wpilib/cpp/current/include/AnalogInput.h:67:8: note:   no known conversion for argument 1 from 'long long int*' to 'int64_t& {aka long long int&}'
+..\src\Navigator.cpp: In member function 'void NAVIGATOR::Push_Navigation_Data_Frame(double, double, int, int, int)':
+..\src\Navigator.cpp:206:31: error: 'CRITICAL_REGION' was not declared in this scope
+  CRITICAL_REGION(INS_semaphore)  // we need to reference values that are updated outside of this procedure
+                               ^
+..\src\Navigator.cpp:210:2: error: 'END_REGION' was not declared in this scope
+  END_REGION;
+  ^
+..\src\Navigator.cpp:222:4: error: 'Synchronized' was not declared in this scope
+    Synchronized sync(INS_semaphore); // we are going to update values referenced by other procedure.
+    ^
+..\src\Navigator.cpp:231:4: error: 'Synchronized' was not declared in this scope
+    Synchronized sync(INS_semaphore); // we are going to update values referenced by other procedure.
+    ^
+..\src\Navigator.cpp: In member function 'void NAVIGATOR::Zero()':
+..\src\Navigator.cpp:270:3: error: 'Synchronized' was not declared in this scope
+   Synchronized sync(INS_semaphore); // we are going to update values referenced by other procedure.
+   ^
+..\src\Navigator.cpp: In member function 'bool NAVIGATOR::Pop_Navigation_Data_Frame()':
+..\src\Navigator.cpp:294:31: error: 'CRITICAL_REGION' was not declared in this scope
+  CRITICAL_REGION(INS_semaphore)  // we need to reference values that are updated outside of this procedure
+                               ^
+..\src\Navigator.cpp:298:2: error: 'END_REGION' was not declared in this scope
+  END_REGION;
+  ^
+..\src\Navigator.cpp:302:3: error: 'Synchronized' was not declared in this scope
+   Synchronized sync(INS_semaphore); // we are going to update values referenced by other procedure.
+   ^
+..\src\Navigator.cpp:311:3: error: 'Synchronized' was not declared in this scope
+   Synchronized sync(INS_semaphore); // we are going to update values referenced by other procedure.
+   ^
 
-21:08:19 Build Finished (took 395ms)
+11:03:54 Build Finished (took 3s.21ms)
 

@@ -12,6 +12,10 @@
 		<item value="false" key="caseSensitive"/>
 		<item value="227191" key="searchFlags"/>
 		<list key="previousPatterns">
+			<item value="pInput"/>
+			<item value="WinchUpBtn"/>
+			<item value="BTN_WINCH_EXTEND"/>
+			<item value="pMyInput"/>
 			<item value="I2C_CHANNEL"/>
 		</list>
 	</section>

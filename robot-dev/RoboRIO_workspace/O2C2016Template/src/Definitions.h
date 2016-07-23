@@ -116,7 +116,7 @@
 #if DRIVETRAINTYPE==TankDriveTrain
 	#define LEFTDRIVEMOTOR_PWM_PORT		0
 	#define RIGHTDRIVEMOTOR_PWM_PORT	1
-	#define DRIVEPOWERBALANCEFACTOR	1.15		// Adjustment to left drive power to match performance of right drive
+	#define DRIVEPOWERBALANCEFACTOR	.91			// Adjustment to left drive power to match performance of right drive
 	#define DRIVEPOWERBALANCEOFFSET	0.0			// Adjustment to left drive power to match center point of right drive
 	#define	INVERTLEFTDRIVEMOTORPOWER	false
 	#define	INVERTRIGHTDRIVEMOTORPOWER	false	// Right motor power is inverted by default.  Set this to true to put it back.
@@ -209,7 +209,7 @@
 #define	SCOOPER_HOLD_STATE				0
 #define	SCOOPER_UP_STATE				1
 
-#define SCOOPER_POWER_COMPENSATION		.05			// Higher compensates scooper position more aggressively but more accurately (to an extent). Values too high may overshoot the destination.
+#define SCOOPER_POWER_COMPENSATION		1			// Higher compensates scooper position more aggressively but more accurately (to an extent). Values too high may overshoot the destination.
 
 #ifdef PRACTICEBOT
 	#define SCOOPER_INTAKE_POWER		-24			// Set to Reverse direction at -12 Watts (12V * -1A) Practice Bot needs more power to run the PG188 test motor

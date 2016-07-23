@@ -1,12 +1,67 @@
-21:08:03 **** Incremental Build of configuration Debug for project NewNavigator ****
+11:03:27 **** Incremental Build of configuration Debug for project NewNavigator ****
 Info: Internal Builder is used for build
-arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Kett/wpilib/cpp/current/include" "-IC:\\Users\\Kevin Forbin\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\NewNavigator\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\NewNavigator.o" "..\\src\\NewNavigator.cpp" 
-In file included from C:\Users\Kevin Forbin\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\src/Navigator.h:4:0,
-                 from ..\src\NewNavigator.cpp:1:
-C:\Users\Kevin Forbin\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\src/Definitions.h:4:44: fatal error: SmartDashboard/SendableChooser.h: No such file or directory
- #include "SmartDashboard/SendableChooser.h"
-                                            ^
-compilation terminated.
+arm-frc-linux-gnueabi-g++ "-LC:\\Users\\Cryogenica/wpilib/cpp/current/lib" -Wl,-rpath,/opt/GenICam_v2_3/bin/Linux_armv7-a,-rpath,/usr/local/frc/rpath-lib -o FRCUserProgram "src\\Comms.o" "src\\Navigator.o" "src\\NewNavigator.o" "src\\Robot.o" -lwpi 
+src\NewNavigator.o: In function `std::tuple<> std::forward_as_tuple<>()':
+C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/NewNavigator.cpp:3: multiple definition of `NAVIGATOR::NAVIGATOR()'
+src\Navigator.o:C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/Navigator.cpp:3: first defined here
+src\NewNavigator.o: In function `NAVIGATOR::CallReadSensors(void*)':
+C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/NewNavigator.cpp:602: multiple definition of `NAVIGATOR::CallReadSensors(void*)'
+src\Navigator.o:C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/Navigator.cpp:602: first defined here
+src\NewNavigator.o: In function `NAVIGATOR::CallUpdateINS(void*)':
+C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/NewNavigator.cpp:756: multiple definition of `NAVIGATOR::CallUpdateINS(void*)'
+src\Navigator.o:C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/Navigator.cpp:756: first defined here
+src\NewNavigator.o: In function `std::tuple<> std::forward_as_tuple<>()':
+C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/NewNavigator.cpp:3: multiple definition of `NAVIGATOR::NAVIGATOR()'
+src\Navigator.o:C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/Navigator.cpp:3: first defined here
+src\NewNavigator.o: In function `NAVIGATOR::InitMyIMU()':
+C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/NewNavigator.cpp:40: multiple definition of `NAVIGATOR::InitMyIMU()'
+src\Navigator.o:C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/Navigator.cpp:40: first defined here
+src\NewNavigator.o: In function `NAVIGATOR::SetStartingPosition()':
+C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/NewNavigator.cpp:146: multiple definition of `NAVIGATOR::SetStartingPosition()'
+src\Navigator.o:C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/Navigator.cpp:146: first defined here
+src\NewNavigator.o: In function `NAVIGATOR::Init(RobotStateBuffer*, INPUT*)':
+C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/NewNavigator.cpp:158: multiple definition of `NAVIGATOR::Init(RobotStateBuffer*, INPUT*)'
+src\Navigator.o:C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/Navigator.cpp:158: first defined here
+src\NewNavigator.o: In function `NAVIGATOR::ReadThermostat()':
+C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/NewNavigator.cpp:244: multiple definition of `NAVIGATOR::ReadThermostat()'
+src\Navigator.o:C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/Navigator.cpp:244: first defined here
+src\NewNavigator.o: In function `NAVIGATOR::ReadAccel()':
+C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/NewNavigator.cpp:384: multiple definition of `NAVIGATOR::ReadAccel()'
+src\Navigator.o:C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/Navigator.cpp:384: first defined here
+src\NewNavigator.o: In function `NAVIGATOR::ReadEuler()':
+C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/NewNavigator.cpp:258: multiple definition of `NAVIGATOR::ReadEuler()'
+src\Navigator.o:C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/Navigator.cpp:258: first defined here
+src\NewNavigator.o: In function `NAVIGATOR::ReadGyro()':
+C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/NewNavigator.cpp:323: multiple definition of `NAVIGATOR::ReadGyro()'
+src\Navigator.o:C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/Navigator.cpp:323: first defined here
+src\NewNavigator.o: In function `NAVIGATOR::ReadIMUCalStat()':
+C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/NewNavigator.cpp:182: multiple definition of `NAVIGATOR::ReadIMUCalStat()'
+src\Navigator.o:C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/Navigator.cpp:182: first defined here
+src\NewNavigator.o: In function `NAVIGATOR::Push_Navigation_Data_Frame(double, double, double, double, double, double, double)':
+C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/NewNavigator.cpp:430: multiple definition of `NAVIGATOR::Push_Navigation_Data_Frame(double, double, double, double, double, double, double)'
+src\Navigator.o:C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/Navigator.cpp:430: first defined here
+src\NewNavigator.o: In function `NAVIGATOR::ReadIMUdata()':
+C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/NewNavigator.cpp:471: multiple definition of `NAVIGATOR::ReadIMUdata()'
+src\Navigator.o:C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/Navigator.cpp:471: first defined here
+src\NewNavigator.o: In function `NAVIGATOR::ReadSensors()':
+C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/NewNavigator.cpp:581: multiple definition of `NAVIGATOR::ReadSensors()'
+src\Navigator.o:C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/Navigator.cpp:581: first defined here
+src\NewNavigator.o: In function `NAVIGATOR::Zero()':
+C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/NewNavigator.cpp:609: multiple definition of `NAVIGATOR::Zero()'
+src\Navigator.o:C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/Navigator.cpp:609: first defined here
+src\NewNavigator.o: In function `NAVIGATOR::Pop_Navigation_Data_Frame()':
+C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/NewNavigator.cpp:632: multiple definition of `NAVIGATOR::Pop_Navigation_Data_Frame()'
+src\Navigator.o:C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/Navigator.cpp:632: first defined here
+src\NewNavigator.o: In function `NAVIGATOR::Compute_Gyro_Orientation()':
+C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/NewNavigator.cpp:667: multiple definition of `NAVIGATOR::Compute_Gyro_Orientation()'
+src\Navigator.o:C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/Navigator.cpp:667: first defined here
+src\NewNavigator.o: In function `NAVIGATOR::UpdatePosition()':
+C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/NewNavigator.cpp:705: multiple definition of `NAVIGATOR::UpdatePosition()'
+src\Navigator.o:C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/Navigator.cpp:705: first defined here
+src\NewNavigator.o: In function `NAVIGATOR::UpdateINS()':
+C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/NewNavigator.cpp:737: multiple definition of `NAVIGATOR::UpdateINS()'
+src\Navigator.o:C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/Navigator.cpp:737: first defined here
+collect2.exe: error: ld returned 1 exit status
 
-21:08:04 Build Finished (took 396ms)
+11:03:31 Build Finished (took 3s.681ms)
 

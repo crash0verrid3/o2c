@@ -1,12 +1,40 @@
-21:08:12 **** Incremental Build of configuration Debug for project O2C2015FRCStemFest ****
+11:03:44 **** Incremental Build of configuration Debug for project O2C2015FRCStemFest ****
 Info: Internal Builder is used for build
-arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Kett/wpilib/cpp/current/include" "-IC:\\Users\\Kevin Forbin\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\O2C2015FRCStemFest\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Comms.o" "..\\src\\Comms.cpp" 
-In file included from ..\src\Comms.h:5:0,
-                 from ..\src\Comms.cpp:1:
-C:\Users\Kevin Forbin\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\O2C2015FRCStemFest\src/Definitions.h:31:44: fatal error: SmartDashboard/SendableChooser.h: No such file or directory
- #include "SmartDashboard/SendableChooser.h"
-                                            ^
-compilation terminated.
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\O2C2015FRCStemFest\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Navigator.o" "..\\src\\Navigator.cpp" 
+..\src\Navigator.cpp: In member function 'void NAVIGATOR::Init(RobotStateBuffer*, INPUT*)':
+..\src\Navigator.cpp:403:43: error: 'initializeMutexRecursive' was not declared in this scope
+  INS_semaphore = initializeMutexRecursive();
+                                           ^
+..\src\Navigator.cpp: In member function 'void NAVIGATOR::Push_Navigation_Data_Frame(double, double, double, double, double, double, double, double, double)':
+..\src\Navigator.cpp:788:31: error: 'CRITICAL_REGION' was not declared in this scope
+  CRITICAL_REGION(INS_semaphore)  // we need to reference values that are updated outside of this procedure
+                               ^
+..\src\Navigator.cpp:792:2: error: 'END_REGION' was not declared in this scope
+  END_REGION;
+  ^
+..\src\Navigator.cpp:805:4: error: 'Synchronized' was not declared in this scope
+    Synchronized sync(INS_semaphore); // we are going to update values referenced by other procedure.
+    ^
+..\src\Navigator.cpp:818:4: error: 'Synchronized' was not declared in this scope
+    Synchronized sync(INS_semaphore); // we are going to update values referenced by other procedure.
+    ^
+..\src\Navigator.cpp: In member function 'void NAVIGATOR::Zero()':
+..\src\Navigator.cpp:923:3: error: 'Synchronized' was not declared in this scope
+   Synchronized sync(INS_semaphore); // we are going to update values referenced by other procedure.
+   ^
+..\src\Navigator.cpp: In member function 'bool NAVIGATOR::Pop_Navigation_Data_Frame()':
+..\src\Navigator.cpp:948:31: error: 'CRITICAL_REGION' was not declared in this scope
+  CRITICAL_REGION(INS_semaphore)  // we need to reference values that are updated outside of this procedure
+                               ^
+..\src\Navigator.cpp:952:2: error: 'END_REGION' was not declared in this scope
+  END_REGION;
+  ^
+..\src\Navigator.cpp:956:3: error: 'Synchronized' was not declared in this scope
+   Synchronized sync(INS_semaphore); // we are going to update values referenced by other procedure.
+   ^
+..\src\Navigator.cpp:970:3: error: 'Synchronized' was not declared in this scope
+   Synchronized sync(INS_semaphore); // we are going to update values referenced by other procedure.
+   ^
 
-21:08:12 Build Finished (took 373ms)
+11:03:47 Build Finished (took 3s.66ms)
 

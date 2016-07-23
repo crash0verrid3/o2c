@@ -1,12 +1,1 @@
-21:07:59 **** Incremental Build of configuration Debug for project BNO055INAV2016 ****
-Info: Internal Builder is used for build
-arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Kett/wpilib/cpp/current/include" "-IC:\\Users\\Kevin Forbin\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\BNO055INAV2016\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Robot.o" "..\\src\\Robot.cpp" 
-In file included from C:\Users\Kevin Forbin\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\BNO055INAV2016\src/Robot.h:4:0,
-                 from ..\src\Robot.cpp:1:
-C:\Users\Kevin Forbin\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\BNO055INAV2016\src/Definitions.h:4:44: fatal error: SmartDashboard/SendableChooser.h: No such file or directory
- #include "SmartDashboard/SendableChooser.h"
-                                            ^
-compilation terminated.
-
-21:08:00 Build Finished (took 1s.157ms)
-
+Info: Nothing to build for BNO055INAV2016

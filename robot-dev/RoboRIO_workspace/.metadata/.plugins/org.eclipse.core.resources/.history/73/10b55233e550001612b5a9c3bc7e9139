@@ -1,0 +1,296 @@
+/*
+ * SuperDuperScooperShooter.cpp
+ *
+ *  Created on: Feb 21, 2016
+ *      Author: Rod
+ */
+
+#include <ScooperShooter.h>
+
+/*
+ */
+
+SCOOPER :: SCOOPER()
+	{
+	pShooter = new Talon(SHOOTERMOTORPWMPORT);
+	pLeftElevator = new Talon(SCOOPERLEFTMOTORPWMPORT);
+	pRightElevator = new Talon(SCOOPERRIGHTMOTORPWMPORT);
+	pRightElevator->SetInverted(true);
+	pLeftScooperEncoder = new Encoder(SCOOPERLEFT_ENC_DIO_PORT1, SCOOPERLEFT_ENC_DIO_PORT2, SCOOPER_REVERSE_DIRECTION_LEFT, Encoder::k4X);
+	pRightScooperEncoder = new Encoder(SCOOPERRIGHT_ENC_DIO_PORT1, SCOOPERRIGHT_ENC_DIO_PORT2, SCOOPER_REVERSE_DIRECTION_RIGHT, Encoder::k4X);
+	pBoulderHolderLeft = new Servo(BOULDERHOLDERLEFTPWMPORT);
+	pBoulderHolderRight = new Servo(BOULDERHOLDERRIGHTPWMPORT);
+	elevator_initialized = false;
+	delta = left_elevator_power = right_elevator_power = launch_power = 0;
+	left_encoder = right_encoder = prev_left = prev_right = left_delta = right_delta = 0;
+	left_elevation = right_elevation = 0.000;
+//	prev_target = (double) SCOOPER_FULL_ELEVATION / 2.0;
+	prev_target = (double) SCOOPER_START_ELEVATION;
+	init_cycles = SCOOPER_INIT_CYCLES;
+	verify_cycles = 0;
+	hold_multiplier = 0;
+	upbtncount = dnbtncount = 0;
+	intakeBtn_enabled = readyBtn_enabled = prev_intakeBtn = prev_readyBtn = true;
+	intake_button_debouncer = readyBtn_button_debouncer = 0;
+	elevator_left_hold_power = elevator_right_hold_power = SCOOPER_HOLD_POWER;
+	elevator_left_up_power = elevator_right_up_power = SCOOPER_UP_POWER;
+	elevator_left_down_power = elevator_right_down_power = SCOOPER_DN_POWER;
+	left_off_target = right_off_target = left_converge_power = right_converge_power = 0;
+	}
+
+void SCOOPER :: Init(RobotStateBuffer *pRobotState, RobotStateBuffer *pTargetState, INPUT *pInput)
+	{
+	pMyRobotState = pRobotState;
+	pMyTargetState = pTargetState;
+	pMyInput = pInput;
+	pMyRobotState->Scooper_Init++;
+	StopMotors();  // Make sure all motors are stopped.
+	pMyRobotState->Shooter_Elevation = prev_target;		// encoder does not provide absolute position, so we guess poorly and correct in Initialize_Scooper
+	left_elevation = right_elevation = pMyRobotState->Shooter_Elevation;
+	pMyTargetState->Shooter_Elevation = (double) SCOOPER_START_ELEVATION;			// this is where we should be at the start
+	pMyTargetState->Shooter_Boulder_Position = BOULDER_HOLD;
+	pMyTargetState->Shooter_Launch_Power = 0;
+	pLeftScooperEncoder->Reset();
+	pRightScooperEncoder->Reset();
+	pMyRobotState->Shooter_Elevation = pMyTargetState->Shooter_Elevation = (double) SCOOPER_START_ELEVATION;	// We are at the target state
+	left_elevation = right_elevation = (double) SCOOPER_START_ELEVATION;
+	left_encoder = right_encoder = prev_left = prev_right = left_delta = right_delta = 0;
+	pMyTargetState->Shooter_Elevator_State = SCOOPER_HOLD_STATE;		// Hold it right there
+	pMyTargetState->Shooter_Elevation_Speed = 0;
+	FireTimer.Start();
+	pMyRobotState->Scooper_Init++;
+	}
+
+void SCOOPER :: Initialize_Scooper()
+{
+	if (init_cycles-- == SCOOPER_INIT_CYCLES)
+	{													// Start moving the scooper to the target position
+		pLeftScooperEncoder->Reset();
+		pRightScooperEncoder->Reset();
+		left_encoder = right_encoder = prev_left = prev_right = left_delta = right_delta = 0;
+		pMyTargetState->Shooter_Elevation += (10.0 * SCOOPER_MAX_DEGREES_PER_CYCLE);
+		pMyTargetState->Shooter_Elevator_State = SCOOPER_UP_STATE;
+	}
+	else if (init_cycles-- <= 0)
+	{													// Done trying to init, go with what we got
+		elevator_initialized = true;
+		pMyRobotState->Shooter_Elevation = pMyTargetState->Shooter_Elevation = (double) SCOOPER_FULL_ELEVATION;
+		left_elevation = right_elevation = (double) SCOOPER_FULL_ELEVATION;
+		pMyTargetState->Shooter_Elevator_State = SCOOPER_HOLD_STATE;
+		pMyRobotState->Scooper_Init++;
+	}
+	else if (delta != 0)									// Elevator is still moving
+	{
+		verify_cycles = 0;
+		pMyTargetState->Shooter_Elevator_State = SCOOPER_UP_STATE;
+		pMyTargetState->Shooter_Elevation += (10.0 * SCOOPER_MAX_DEGREES_PER_CYCLE);
+	}
+	else if (verify_cycles++ > 5)							// elevator has stabilized at the top for 6 cycles
+	{
+		elevator_initialized = true;
+		pMyRobotState->Shooter_Elevation = pMyTargetState->Shooter_Elevation = (double) SCOOPER_FULL_ELEVATION;	// We are at the target state
+		left_elevation = right_elevation = (double) SCOOPER_FULL_ELEVATION;
+		left_encoder = right_encoder = prev_left = prev_right = left_delta = right_delta = 0;
+		pMyTargetState->Shooter_Elevator_State = SCOOPER_HOLD_STATE;		// Hold it right there
+		pMyTargetState->Shooter_Elevation_Speed = 0;
+		pMyRobotState->Scooper_Init += 2;
+	}
+	pMyRobotState->Shooter_Elevator_State = pMyTargetState->Shooter_Elevator_State;
+}
+
+void SCOOPER :: GetElevator()
+	{
+	right_encoder = pRightScooperEncoder->Get();
+	left_encoder = pLeftScooperEncoder->Get();
+	left_delta = left_encoder - prev_left;
+	right_delta = right_encoder - prev_right;
+	SmartDashboard::PutNumber("left_encoder",left_encoder);
+	SmartDashboard::PutNumber("right_encoder",right_encoder);
+
+
+	}
+
+void SCOOPER :: RunElevator()
+	{
+	GetElevator();
+
+	pMyRobotState->Shooter_Elevation = (left_elevation + right_elevation) / 2.0;
+
+
+		if(pMyTargetState->Shooter_Elevation < pMyRobotState->Shooter_Elevation){
+			left_elevator_power = -SCOOPER_DN_POWER;
+			right_elevator_power = -SCOOPER_DN_POWER;
+		} else if(pMyTargetState->Shooter_Elevation > pMyRobotState->Shooter_Elevation){
+			left_elevator_power = SCOOPER_UP_POWER;
+			right_elevator_power = SCOOPER_UP_POWER;
+		}
+
+//	if (! elevator_initialized) Initialize_Scooper();	// make sure the scooper starts in a known position (up to SCOOPER_INIT_CYCLES wasted to do this)
+//	else
+//	{
+		if (pMyInput->ScooperUpBtn)
+		{
+			left_elevator_power = (pMyRobotState->Shooter_Elevation * (SCOOPER_UP_POWER / SCOOPER_FULL_ELEVATION));
+			right_elevator_power = (pMyRobotState->Shooter_Elevation * (SCOOPER_UP_POWER / SCOOPER_FULL_ELEVATION));
+			elev = false;
+			SmartDashboard::PutString("Scooper status", "going up");
+		}
+		else if (pMyInput->ScooperDnBtn)
+		{
+			left_elevator_power = -SCOOPER_DN_POWER;
+			right_elevator_power = -SCOOPER_DN_POWER;
+			elev = false;
+			SmartDashboard::PutString("Scooper status", "going down");
+		}
+		else
+		{
+			if(!elev){
+				pMyTargetState->Shooter_Elevation = pMyRobotState->Shooter_Elevation;
+				elev = true;
+				left_elevator_power = right_elevator_power = 0;
+				SmartDashboard::PutNumber("target elevation", pMyTargetState->Shooter_Elevation);
+			}
+			SmartDashboard::PutString("Scooper status", "holding position");
+		}
+//	}
+	pLeftElevator->Set(-left_elevator_power/100);  			// Set scooper power to converge to target position.
+	pRightElevator->Set(right_elevator_power/100);  		// Set scooper power to converge to target position.
+}
+
+
+void SCOOPER :: RunShooter()
+	{
+	/*
+	 * Pressing the ScooperIntakeBtn turns on the intake wheels and sets the boulder holder servos to the launch position.
+	 * Pressing the ScooperIntakeBtn again turns off the intake wheels and sets the boulder holder servos to hold position.
+	 * Pressing the ShooterReadyBtn sets the boulder holder servos to the hold position and turns on the launch wheels.
+	 * Pressing the ShooterReadyBtn again turns off the launch wheels.
+	 * Pressing the ShooterFireBtn sets the boulder holder servos to the launch position and turns on the launch wheels.
+	 * 3 seconds after pressing the ShooterFireBtn, the launch wheels power off.
+	 */
+
+	// First, debounce the buttons.  Old game controllers often will open and close the button switch many times
+	// while the driver only intended to do it once.  So, as soon as we detect that the button was pressed, we disable it for 5 cycles.
+	// Likewise, as soon as we detect that the button was released, we disable it for 5 cycles.
+	// Given that the DriverStation inputs cycle at 50Hz, this means the fastest we allow the button to be pressed and released repeatedly is 5Hz.
+
+	// Do not allow the intakeBtn to be pressed while the shooter motors are running at launch power
+	//intakeBtn_enabled = (intake_button_debouncer-- < 1) && (int(pMyTargetState->Shooter_Launch_Power + 0.5) != SHOOTER_LAUNCH_POWER);
+
+	intakeBtn_enabled = (intake_button_debouncer-- < 1);	// we can do this because we spin up and down in increments instead of all at once
+
+	// Do not allow the readyBtn unless the shooter is in the BOULDER_HOLD position
+	readyBtn_enabled = (readyBtn_button_debouncer-- < 1) && (pMyTargetState->Shooter_Boulder_Position == BOULDER_HOLD);
+
+	// The intakeBtn, readyBtn and fireBtn are mutually exclusive operations, but there is not code (yet) to enforce this.
+	// First, we'll check the intakeBtn
+	if (intakeBtn_enabled)			// if the intake button is enabled, check to see if it went from released to pressed
+		{
+		if ((pMyInput->ScopperIntakeBtn) && (! prev_intakeBtn))
+			{
+			if (fabs(pMyTargetState->Shooter_Launch_Power - (double) SCOOPER_INTAKE_POWER) < 5)
+				{																	// Cancel boulder intake operation
+				SmartDashboard::PutString("ShooterMode","CancelIntake");
+				pMyTargetState->Shooter_Launch_Power = 0;
+				pMyTargetState->Shooter_Boulder_Position = BOULDER_HOLD;
+				}
+			else
+				{																	// Initiate boulder intake operation
+				SmartDashboard::PutString("ShooterMode","Intake");
+				pMyTargetState->Shooter_Launch_Power = (double) SCOOPER_INTAKE_POWER;
+				pMyTargetState->Shooter_Boulder_Position = BOULDER_INTAKE;
+				}
+			}
+		if (pMyInput->ScopperIntakeBtn != prev_intakeBtn)			// whenever the button changes state, disable it for 5 cycles
+			{
+			intake_button_debouncer = 5;
+			}
+		prev_intakeBtn = pMyInput->ScopperIntakeBtn;
+		}
+
+	// Next, we'll check the readyBtn
+	if (readyBtn_enabled)			// if the launch ready button is enabled, check to see if it went from released to pressed
+		{
+		if ((pMyInput->ShooterReadyBtn) && (! prev_readyBtn))
+			{
+			if (pMyTargetState->Shooter_Launch_Power == (double) SHOOTER_LAUNCH_POWER)
+				{																	// Cancel Ready to fire
+				SmartDashboard::PutString("ShooterMode","CancelReady");
+				pMyTargetState->Shooter_Launch_Power = 0;
+				}
+			else
+				{																	// Prepare to fire
+				SmartDashboard::PutString("ShooterMode","ReadyToFire");
+				pMyTargetState->Shooter_Launch_Power = (double) SHOOTER_LAUNCH_POWER;
+				}
+			}
+		if (pMyInput->ShooterReadyBtn != prev_readyBtn)				// whenever the button changes state, disable it for 5 cycles
+			{
+			readyBtn_button_debouncer = 5;
+			}
+		prev_readyBtn = pMyInput->ShooterReadyBtn;
+		}
+
+	// Finally, we'll check the fireBtn
+	if (pMyInput->ShooterFireBtn)
+		{																		// Launch the boulder
+		SmartDashboard::PutString("ShooterMode","FIRE!!!");
+		pMyTargetState->Shooter_Boulder_Position = BOULDER_LAUNCH;
+		pMyTargetState->Shooter_Launch_Power = (double) SHOOTER_LAUNCH_POWER;
+		intakeBtn_enabled = readyBtn_enabled = false;
+		intake_button_debouncer = readyBtn_button_debouncer = 150;				// Disable intake and ready buttons for 3 seconds
+		FireTimer.Reset();														// Start the clock (in 3 seconds, turn off the launcher)
+		}
+
+	// Note:  The autonomous shooter function is not yet coded, so there is no reason to check the button
+//	if ((pMyInput->ShooterAutoBtn) && (autoBtn_enabled))
+//		{
+//		if (pMyRobotState->Shooter_Boulder_Position == BOULDER_HOLD)
+//			{																	// Engage Autonomous program to search for goal and fire
+//			}
+//		}
+
+
+	// 3 seconds after launching, turn off the launcher motors
+	if ((fabs(pMyTargetState->Shooter_Launch_Power - (double) SHOOTER_LAUNCH_POWER) < 10)
+			&& (pMyTargetState->Shooter_Boulder_Position == BOULDER_LAUNCH)
+			&& (! pMyInput->ShooterFireBtn)
+			&& (FireTimer.Get() > 3))
+		{
+		SmartDashboard::PutString("ShooterMode","Cease Fire");
+		pMyTargetState->Shooter_Launch_Power = 0;							// Launch complete
+		intake_button_debouncer = readyBtn_button_debouncer = 0;			// Re-enable intake and ready buttons
+		}
+
+	if (pMyRobotState->Shooter_Boulder_Position != pMyTargetState->Shooter_Boulder_Position)
+		{
+		pBoulderHolderLeft->Set((float) pMyTargetState->Shooter_Boulder_Position/100);
+		pBoulderHolderRight->Set((((float) pMyTargetState->Shooter_Boulder_Position * BOULDER_RIGHT_MULTIPLIER) + BOULDER_RIGHT_OFFSET)/100);
+//		SmartDashboard::PutNumber("left_boulder",pMyTargetState->Shooter_Boulder_Position);
+//		SmartDashboard::PutNumber("right_boulder",(pMyTargetState->Shooter_Boulder_Position * BOULDER_RIGHT_MULTIPLIER) + BOULDER_RIGHT_OFFSET);
+		pMyRobotState->Shooter_Boulder_Position = pMyTargetState->Shooter_Boulder_Position;		// not measured, just assumed to work
+		}
+
+	if (pMyTargetState->Shooter_Launch_Power == 0) launch_power = 0;
+	else if (fabs(pMyRobotState->Shooter_Launch_Power - pMyTargetState->Shooter_Launch_Power) > 10)
+		{
+		launch_power += (pMyTargetState->Shooter_Launch_Power - pMyRobotState->Shooter_Launch_Power) / 10;
+		}
+	else
+		{
+		launch_power = pMyTargetState->Shooter_Launch_Power;
+		}
+	pShooter->Set(fmin(1, fmax(-1, launch_power/(double) SHOOTER_LAUNCH_POWER)));
+	}
+
+
+void SCOOPER :: StopMotors()
+	{
+	//stop the motors
+	pShooter->Set(0);
+	pMyRobotState->Shooter_Elevation_Speed = 0;
+	pLeftElevator->Set(0);
+	pRightElevator->Set(0);
+	pMyRobotState->Shooter_Launch_Power = 0;
+	}
+

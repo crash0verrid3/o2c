@@ -1,12 +1,18 @@
-21:08:13 **** Incremental Build of configuration Debug for project O2C2015FRCStemFestAuto ****
+11:03:47 **** Incremental Build of configuration Debug for project O2C2015FRCStemFestAuto ****
 Info: Internal Builder is used for build
-arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Kett/wpilib/cpp/current/include" "-IC:\\Users\\Kevin Forbin\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\O2C2015FRCStemFestAuto\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Robot.o" "..\\src\\Robot.cpp" 
-In file included from ..\src\Robot.h:5:0,
-                 from ..\src\Robot.cpp:1:
-C:\Users\Kevin Forbin\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\O2C2015FRCStemFestAuto\src/Definitions.h:31:44: fatal error: SmartDashboard/SendableChooser.h: No such file or directory
- #include "SmartDashboard/SendableChooser.h"
-                                            ^
-compilation terminated.
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\O2C2015FRCStemFestAuto\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Autonomous.o" "..\\src\\Autonomous.cpp" 
+..\src\Autonomous.cpp: In member function 'void AUTONOMOUS::ExecWait4()':
+..\src\Autonomous.cpp:402:107: error: no matching function for call to 'SmartDashboard::GetString(const char [19])'
+  SmartDashboard::PutString("Autonomous Command", "Wait4_" + SmartDashboard::GetString("Autonomous Command"));
+                                                                                                           ^
+..\src\Autonomous.cpp:402:107: note: candidate is:
+In file included from C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\O2C2015FRCStemFestAuto\src/Definitions.h:32:0,
+                 from C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\O2C2015FRCStemFestAuto\src/Autonomous.h:11,
+                 from ..\src\Autonomous.cpp:8:
+C:\Users\Cryogenica/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:33:22: note: static std::string SmartDashboard::GetString(llvm::StringRef, llvm::StringRef)
+   static std::string GetString(llvm::StringRef keyName,
+                      ^
+C:\Users\Cryogenica/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:33:22: note:   candidate expects 2 arguments, 1 provided
 
-21:08:13 Build Finished (took 378ms)
+11:03:49 Build Finished (took 2s.21ms)
 
