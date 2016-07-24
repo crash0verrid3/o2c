@@ -10,6 +10,10 @@
 /*
  */
 
+double ramp_init;
+uint8_t ramp_mode = 0;
+bool elev = false;
+
 SCOOPER :: SCOOPER()
 	{
 	pShooter = new Talon(SHOOTERMOTORPWMPORT);
@@ -110,20 +114,31 @@ void SCOOPER :: GetElevator()
 
 	}
 
-void SCOOPER :: RunElevator()
+void SCOOPER :: RunElevator() // Scooper arm auto-adjustment requires at least one encoder measuring elevation properly
 	{
 	GetElevator();
 
 	pMyRobotState->Shooter_Elevation = (left_elevation + right_elevation) / 2.0;
 
-	double amt_correction = abs(pMyTargetState->Shooter_Elevation - pMyRobotState->Shooter_Elevation);
-	double adj_power = fmin(SCOOPER_ADJ_POWER, amt_correction / SCOOPER_POWER_COMPENSATION * SCOOPER_ADJ_POWER);
+	double amt_correction = fabs(pMyTargetState->Shooter_Elevation - pMyRobotState->Shooter_Elevation);
+	double amt_change = fabs(ramp_init - pMyRobotState->Shooter_Elevation);
+	double ramp_in = fmin(1.0, amt_change / SCOOPER_POWER_COMPENSATION);
+	double adj_power = fmin(1.0, amt_correction / SCOOPER_POWER_COMPENSATION);
+	adj_power = fmin(ramp_in, adj_power) * SCOOPER_ADJ_POWER;
 		if(pMyTargetState->Shooter_Elevation > pMyRobotState->Shooter_Elevation){
 			left_elevator_power = adj_power;
 			right_elevator_power = adj_power;
+			if(ramp_mode != 1){
+				ramp_init = pMyRobotState->Shooter_Elevation;
+				ramp_mode = 1;
+			}
 		} else if(pMyTargetState->Shooter_Elevation < pMyRobotState->Shooter_Elevation){
 			left_elevator_power = -adj_power;
 			right_elevator_power = -adj_power;
+			if(ramp_mode != 2){
+				ramp_init = pMyRobotState->Shooter_Elevation;
+				ramp_mode = 2;
+			}
 		}
 
 //	if (! elevator_initialized) Initialize_Scooper();	// make sure the scooper starts in a known position (up to SCOOPER_INIT_CYCLES wasted to do this)
@@ -148,6 +163,7 @@ void SCOOPER :: RunElevator()
 				elev = true;
 				left_elevator_power = right_elevator_power = 0;
 				SmartDashboard::PutNumber("target elevation", pMyTargetState->Shooter_Elevation);
+				ramp_mode = 0;
 			}
 		}
 //	}
@@ -156,7 +172,7 @@ void SCOOPER :: RunElevator()
 }
 
 
-void SCOOPER :: RunShooter()
+void SCOOPER :: RunShooter() // To shoot, press and release the A button to intake, then press the Y and B buttons in that order to shoot.
 	{
 	/*
 	 * Pressing the ScooperIntakeBtn turns on the intake wheels and sets the boulder holder servos to the launch position.

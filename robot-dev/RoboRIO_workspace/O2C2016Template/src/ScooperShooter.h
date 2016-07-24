@@ -36,7 +36,6 @@ private:
 	double		left_elevation, right_elevation, left_off_target, right_off_target, left_converge_power, right_converge_power;
 	bool		elevator_initialized, intakeBtn_enabled, readyBtn_enabled, prev_intakeBtn, prev_readyBtn;
 
-	bool elev = false;
 
 	/*	Brought over from old ToteLift Code
 

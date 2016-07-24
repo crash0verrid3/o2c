@@ -1,6 +1,9 @@
 #ifndef Definitions_H
 #define Definitions_H
 
+#define STRING2(x) #x
+#define STRING(x) STRING2(x)
+
 #include "SmartDashboard/SendableChooser.h"
 #include "SmartDashboard/SmartDashboard.h"
 #include "math.h"
@@ -209,8 +212,18 @@
 #define	SCOOPER_HOLD_STATE				0
 #define	SCOOPER_UP_STATE				1
 
-#define SCOOPER_POWER_COMPENSATION		5			// Lower values use steeper ramping.
+// Scooper height adjustment macros
+#define SCOOPER_INSTALLED_ENCODERS		2			// Number of encoders installed to measure scooper height
+#define SCOOPER_WORKING_ENCODERS		0			// Number of encoders measuring scooper height
+#if SCOOPER_INSTALLED_ENCODERS < SCOOPER_WORKING_ENCODERS
+	#error You cannot have more encoders woking than you have installed! See SCOOPER_INSTALLED_ENCODERS and SCOOPER_WORKING_ENCODERS
+#endif
+#if SCOOPER_WORKING_ENCODERS < 0
+	#error You cannot have less than 0 encoders working! See SCOOPER_WORKING_ENCODERS
+#endif
+#define SCOOPER_POWER_COMPENSATION		5.0			/* Lower values use steeper ramping; e.g. this is how many degrees it takes to ramp down*/		/((SCOOPER_INSTALLED_ENCODERS+1)-SCOOPER_WORKING_ENCODERS)
 #define SCOOPER_ADJ_POWER				80			// Higher compensates scooper position more aggressively but more accurately (to an extent). Values too high may overshoot the destination if the ramping isn't done right.
+// End of scooper height adjustment macros
 
 #ifdef PRACTICEBOT
 	#define SCOOPER_INTAKE_POWER		-24			// Set to Reverse direction at -12 Watts (12V * -1A) Practice Bot needs more power to run the PG188 test motor

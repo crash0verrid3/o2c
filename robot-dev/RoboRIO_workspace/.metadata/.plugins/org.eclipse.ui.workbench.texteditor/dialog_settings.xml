@@ -2,20 +2,20 @@
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
 		<item value="false" key="isRegEx"/>
-		<item value="SCOOPER_POWER" key="selection"/>
+		<item value="elev" key="selection"/>
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
-		<item value="false" key="wholeword"/>
+		<item value="true" key="wholeword"/>
 		<list key="findhistory">
-			<item value="SCOOPER_POWER"/>
-			<item value="SHOOTER"/>
-			<item value="INPUT"/>
-			<item value="pInput"/>
-			<item value="BTN_"/>
-			<item value="FORK"/>
-			<item value="left_stick"/>
-			<item value="RobotDrive"/>
+			<item value="elev"/>
+			<item value="boolean elev"/>
+			<item value="bool elev"/>
+			<item value="#pragma"/>
+			<item value="#ifndef"/>
+			<item value="SCOOPER_ADJ"/>
+			<item value="SCOOPER_"/>
+			<item value="BTN_SHOOTER"/>
 		</list>
 		<list key="replacehistory">
 			<item value="Speedy, true"/>
