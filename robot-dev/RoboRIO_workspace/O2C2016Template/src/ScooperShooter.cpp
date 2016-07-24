@@ -117,7 +117,7 @@ void SCOOPER :: RunElevator()
 	pMyRobotState->Shooter_Elevation = (left_elevation + right_elevation) / 2.0;
 
 	double amt_correction = abs(pMyTargetState->Shooter_Elevation - pMyRobotState->Shooter_Elevation);
-	double adj_power = fmin(SCOOPER_ADJ_POWER, (amt_correction > SCOOPER_POWER_COMPENSATION ? 1 : sin(amt_correction / SCOOPER_POWER_COMPENSATION * PI)) * SCOOPER_ADJ_POWER);
+	double adj_power = fmin(SCOOPER_ADJ_POWER, amt_correction / SCOOPER_POWER_COMPENSATION * SCOOPER_ADJ_POWER);
 		if(pMyTargetState->Shooter_Elevation > pMyRobotState->Shooter_Elevation){
 			left_elevator_power = adj_power;
 			right_elevator_power = adj_power;
