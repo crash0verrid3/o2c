@@ -116,13 +116,14 @@ void SCOOPER :: RunElevator()
 
 	pMyRobotState->Shooter_Elevation = (left_elevation + right_elevation) / 2.0;
 
-
+	double amt_correction = abs(pMyTargetState->Shooter_Elevation - pMyRobotState->Shooter_Elevation);
+	double adj_power = fmin(SCOOPER_ADJ_POWER, (amt_correction > SCOOPER_POWER_COMPENSATION ? 1 : sin(amt_correction / SCOOPER_POWER_COMPENSATION * PI)) * SCOOPER_ADJ_POWER);
 		if(pMyTargetState->Shooter_Elevation > pMyRobotState->Shooter_Elevation){
-			left_elevator_power = fmin(SCOOPER_UP_POWER, (abs(pMyTargetState->Shooter_Elevation - pMyRobotState->Shooter_Elevation) * SCOOPER_POWER_COMPENSATION) * SCOOPER_UP_POWER);
-			right_elevator_power = fmin(SCOOPER_UP_POWER, (abs(pMyTargetState->Shooter_Elevation - pMyRobotState->Shooter_Elevation) * SCOOPER_POWER_COMPENSATION) * SCOOPER_UP_POWER);
+			left_elevator_power = adj_power;
+			right_elevator_power = adj_power;
 		} else if(pMyTargetState->Shooter_Elevation < pMyRobotState->Shooter_Elevation){
-			left_elevator_power = -fmin(SCOOPER_DN_POWER, (abs(pMyTargetState->Shooter_Elevation - pMyRobotState->Shooter_Elevation) * SCOOPER_POWER_COMPENSATION) * SCOOPER_DN_POWER);
-			right_elevator_power = -fmin(SCOOPER_DN_POWER, (abs(pMyTargetState->Shooter_Elevation - pMyRobotState->Shooter_Elevation) * SCOOPER_POWER_COMPENSATION) * SCOOPER_DN_POWER);
+			left_elevator_power = -adj_power;
+			right_elevator_power = -adj_power;
 		}
 
 //	if (! elevator_initialized) Initialize_Scooper();	// make sure the scooper starts in a known position (up to SCOOPER_INIT_CYCLES wasted to do this)

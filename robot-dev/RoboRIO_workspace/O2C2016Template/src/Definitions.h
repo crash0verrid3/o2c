@@ -210,6 +210,7 @@
 #define	SCOOPER_UP_STATE				1
 
 #define SCOOPER_POWER_COMPENSATION		1			// Higher compensates scooper position more aggressively but more accurately (to an extent). Values too high may overshoot the destination.
+#define SCOOPER_ADJ_POWER				80			// Higher compensates scooper position more aggressively but more accurately (to an extent). Values too high may overshoot the destination.
 
 #ifdef PRACTICEBOT
 	#define SCOOPER_INTAKE_POWER		-24			// Set to Reverse direction at -12 Watts (12V * -1A) Practice Bot needs more power to run the PG188 test motor
