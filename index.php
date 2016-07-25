@@ -89,24 +89,23 @@ hr{
 	<div class="body">
 		<br>
 		<h3>
-			Article Title Here
+			Welcome to the Roaring Robotics Devlopment Page!
 		</h3>
-		<p>
-A <a href="https://en.wikipedia.org/wiki/Paragraph">paragraph</a> (from the Ancient Greek παράγραφος paragraphos, "to write beside" or "written beside") is a self-contained unit of a discourse in writing dealing with a particular point or idea. A paragraph consists of one or more sentences.[1][2] Though not required by the syntax of any language, paragraphs are usually an expected part of formal writing, used to organize longer prose.
-		</p>
-		<p>
-The oldest classical Greek and Latin writing had little or no space between words, and could be written in boustrophedon (alternating directions). Over time, text direction (left to right) became standardized, and word dividers and terminal punctuation became common. The first way to divide sentences into groups was the original paragraphos, similar to an underscore at the beginning of the new group.[3] The Greek paragraphos evolved into the pilcrow (¶), which in English manuscripts in the Middle Ages can be seen inserted inline between sentences. The hedera leaf (e.g. ☙) has also been used in the same way.
-		</p>
-		<p>
-Indented paragraphs demonstrated in the US Constitution
-In ancient manuscripts, another means to divide sentences into paragraphs was a line break (newline) followed by an initial at the beginning of the next paragraph. An initial is an oversize capital letter, sometimes outdented beyond the margin of text. This style can be seen, for example, in the original Old English manuscript of Beowulf. Outdenting is still used in English typography, though not commonly.[4] Modern English typography usually indicates a new paragraph by indenting the first line. This style can be seen in the (handwritten) United States Constitution from 1787. For additional ornamentation, a hedera leaf or other symbol can be added to the inter-paragraph whitespace, or put in the indentation space.
-		</p>
-		<p>
-A second common modern English style is to use no indenting, but add vertical whitespace to create "block paragraphs." On a typewriter, a double carriage return produces a blank line for this purpose; professional typesetters (or word processing software) may put in an arbitrary vertical space by adjusting leading. This style is very common in electronic formats, such as on the World Wide Web and email.
-		</p>
+		<table>
+			<tr style="">
+				<b>
+					<td>Date</td><td>Version</td><td>Build mode</td><td>What changed</td>
+				</b>
+			</tr>
+			<tr>
+				<td>7/23/2016</td><td>2016.1.1</td><td>Development</td><td>The robot now travels more straight due to some fine-tuning of the adjustment factor</td>
+			</tr>
+				<td>7/21/2016</td><td>2016.1</td><td>Development <i>untested</i></td><td>The scooper now holds in place when not moving by correcting for the effect of gravity (experimental)</td>
+		</table>
+*Releases can be downloaded at https://github.com/crash0verrid3/o2c/releases/*
 	</div>
 	<footer>
-		Designed by Alex Anderson (2016). All rights reserved.
+		Designed by Alex Anderson (2016).
 	</footer>
 </body>
 </html>
