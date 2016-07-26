@@ -164,6 +164,7 @@ void SCOOPER :: RunElevator() // Scooper arm auto-adjustment requires at least o
 				left_elevator_power = right_elevator_power = 0;
 				SmartDashboard::PutNumber("target elevation", pMyTargetState->Shooter_Elevation);
 				ramp_mode = 0;
+				ramp_init = pMyRobotState->Shooter_Elevation;
 			}
 		}
 //	}
