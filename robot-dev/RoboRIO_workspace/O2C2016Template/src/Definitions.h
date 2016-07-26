@@ -222,7 +222,8 @@
 	#error You cannot have less than 0 encoders working! See SCOOPER_WORKING_ENCODERS
 #endif
 #define SCOOPER_POWER_COMPENSATION		5.0			/* Lower values use steeper ramping; e.g. this is how many degrees it takes to ramp down*/		/((SCOOPER_INSTALLED_ENCODERS+1)-SCOOPER_WORKING_ENCODERS)
-#define SCOOPER_ADJ_POWER				80			// Higher compensates scooper position more aggressively but more accurately (to an extent). Values too high may overshoot the destination if the ramping isn't done right.
+#define SCOOPER_MAX_ADJ_POWER			80			// Higher compensates scooper position more aggressively but more accurately (to an extent). Values too high may overshoot the destination if the ramping isn't done right.
+#define SCOOPER_MIN_ADJ_POWER			20
 // End of scooper height adjustment macros
 
 #ifdef PRACTICEBOT

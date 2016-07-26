@@ -122,9 +122,9 @@ void SCOOPER :: RunElevator() // Scooper arm auto-adjustment requires at least o
 
 	double amt_correction = fabs(pMyTargetState->Shooter_Elevation - pMyRobotState->Shooter_Elevation);
 	double amt_change = fabs(ramp_init - pMyRobotState->Shooter_Elevation);
-	double ramp_in = fmin(1.0, amt_change / SCOOPER_POWER_COMPENSATION);
+	double ramp_in = fmin(1.0, fmax(amt_change / SCOOPER_POWER_COMPENSATION - ((double)SCOOPER_MIN_ADJ_POWER / 100), ((double)SCOOPER_MIN_ADJ_POWER / 100)) + ((double)SCOOPER_MIN_ADJ_POWER / 100));
 	double adj_power = fmin(1.0, amt_correction / SCOOPER_POWER_COMPENSATION);
-	adj_power = fmin(ramp_in, adj_power) * SCOOPER_ADJ_POWER;
+	adj_power = fmin(ramp_in, adj_power) * SCOOPER_MAX_ADJ_POWER;
 		if(pMyTargetState->Shooter_Elevation > pMyRobotState->Shooter_Elevation){
 			left_elevator_power = adj_power;
 			right_elevator_power = adj_power;
