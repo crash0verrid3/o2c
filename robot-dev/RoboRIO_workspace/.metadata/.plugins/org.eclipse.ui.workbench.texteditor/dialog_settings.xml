@@ -1,21 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item value="false" key="isRegEx"/>
-		<item value="elev" key="selection"/>
+		<item value="true" key="isRegEx"/>
+		<item value="SCOOPER_INTAKE_POWER" key="selection"/>
 		<item value="true" key="casesensitive"/>
 		<item value="false" key="incremental"/>
 		<item value="true" key="wrap"/>
 		<item value="true" key="wholeword"/>
 		<list key="findhistory">
+			<item value="SCOOPER_[a-zA-Z0-9]+_POWER"/>
+			<item value="SCOOPER_[a-z_POWER"/>
+			<item value="SCOOPER_*_POWER"/>
+			<item value="SCOOPER_POWER"/>
+			<item value="SCOOPER_(*)_POWER"/>
+			<item value="SCOOPER_INTAKE_POWER"/>
 			<item value="elev"/>
 			<item value="boolean elev"/>
-			<item value="bool elev"/>
-			<item value="#pragma"/>
-			<item value="#ifndef"/>
-			<item value="SCOOPER_ADJ"/>
-			<item value="SCOOPER_"/>
-			<item value="BTN_SHOOTER"/>
 		</list>
 		<list key="replacehistory">
 			<item value="Speedy, true"/>

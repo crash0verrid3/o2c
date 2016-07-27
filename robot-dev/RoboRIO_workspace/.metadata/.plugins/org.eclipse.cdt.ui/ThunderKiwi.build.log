@@ -1,5 +1,7 @@
-11:03:51 **** Incremental Build of configuration Debug for project ThunderKiwi ****
+19:58:34 **** Rebuild of configuration Debug for project ThunderKiwi ****
 Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\ThunderKiwi\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Comms.o" "..\\src\\Comms.cpp" 
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\ThunderKiwi\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Drivetrain.o" "..\\src\\Drivetrain.cpp" 
 arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\ThunderKiwi\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Navigator.o" "..\\src\\Navigator.cpp" 
 ..\src\Navigator.cpp: In member function 'void NAVIGATOR::Init(RobotStateBuffer*)':
 ..\src\Navigator.cpp:136:43: error: 'initializeMutexRecursive' was not declared in this scope
@@ -49,5 +51,5 @@ C:\Users\Cryogenica/wpilib/cpp/current/include/AnalogInput.h:67:8: note:   no kn
    Synchronized sync(INS_semaphore); // we are going to update values referenced by other procedure.
    ^
 
-11:03:54 Build Finished (took 3s.21ms)
+19:58:44 Build Finished (took 10s.235ms)
 

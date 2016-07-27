@@ -1,4 +1,4 @@
-11:03:31 **** Incremental Build of configuration Debug for project O2C2014BigBall ****
+19:56:46 **** Rebuild of configuration Debug for project O2C2014BigBall ****
 Info: Internal Builder is used for build
 arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\O2C2014BigBall\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Robot.o" "..\\src\\Robot.cpp" 
 ..\src\Robot.cpp: In member function 'void ROBOT::AutoInit(INPUT*)':
@@ -95,5 +95,5 @@ C:\Users\Cryogenica/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:2
                ^
 C:\Users\Cryogenica/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:27:15: note:   candidate expects 2 arguments, 1 provided
 
-11:03:35 Build Finished (took 3s.128ms)
+19:56:49 Build Finished (took 3s.563ms)
 

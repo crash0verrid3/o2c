@@ -1,11 +1,695 @@
-20:43:50 **** Rebuild of configuration Debug for project O2C2016Template ****
+19:53:50 **** Rebuild of configuration Debug for project O2C2016Template ****
 Info: Internal Builder is used for build
-arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\O2C2016Template\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\DriveTrain.o" "..\\src\\DriveTrain.cpp" 
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\O2C2016Template\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Comms.o" "..\\src\\Comms.cpp" 
 arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\O2C2016Template\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\AutoPilot.o" "..\\src\\AutoPilot.cpp" 
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\O2C2016Template\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Robot.o" "..\\src\\Robot.cpp" 
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\O2C2016Template\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Navigator.o" "..\\src\\Navigator.cpp" 
 arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\O2C2016Template\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Sensors.o" "..\\src\\Sensors.cpp" 
 arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\O2C2016Template\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Climber.o" "..\\src\\Climber.cpp" 
-arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\O2C2016Template\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Robot.o" "..\\src\\Robot.cpp" 
 arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\O2C2016Template\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ScooperShooter.o" "..\\src\\ScooperShooter.cpp" 
-arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\O2C2016Template\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Navigator.o" "..\\src\\Navigator.cpp" 
-arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\O2C2016Template\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Comms.o" "..\\src\\Comms.cpp" 
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\O2C2016Template\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\DriveTrain.o" "..\\src\\DriveTrain.cpp" 
 arm-frc-linux-gnueabi-g++ "-LC:\\Users\\Cryogenica/wpilib/cpp/current/lib" -Wl,-rpath,/opt/GenICam_v2_3/bin/Linux_armv7-a,-rpath,/usr/local/frc/rpath-lib -o FRCUserProgram "src\\AutoPilot.o" "src\\Climber.o" "src\\Comms.o" "src\\DriveTrain.o" "src\\Navigator.o" "src\\Robot.o" "src\\ScooperShooter.o" "src\\Sensors.o" -lwpi 
+Info: Nothing to build for O2C2016Template
+19:55:28 **** Rebuild of configuration Debug for project BNO055INAV2016 ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\BNO055INAV2016\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Comms.o" "..\\src\\Comms.cpp" 
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\BNO055INAV2016\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Robot.o" "..\\src\\Robot.cpp" 
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\BNO055INAV2016\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Main.o" "..\\src\\Main.cpp" 
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\BNO055INAV2016\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Navigator.o" "..\\src\\Navigator.cpp" 
+arm-frc-linux-gnueabi-g++ "-LC:\\Users\\Cryogenica/wpilib/cpp/current/lib" -Wl,-rpath,/opt/GenICam_v2_3/bin/Linux_armv7-a -o FRCUserProgram "src\\Comms.o" "src\\Main.o" "src\\Navigator.o" "src\\Robot.o" -lwpi 
+19:56:01 **** Rebuild of configuration Debug for project Brent ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\Brent\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Quadapult.o" "..\\src\\Quadapult.cpp" 
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\Brent\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Robot.o" "..\\src\\Robot.cpp" 
+..\src\Robot.cpp: In member function 'void ROBOT::AutoInit(INPUT*)':
+..\src\Robot.cpp:48:59: error: no matching function for call to 'SmartDashboard::GetNumber(const char [12])'
+  TwoBallMode = int(SmartDashboard::GetNumber("TwoBallMode")); // default to 0 if not input
+                                                           ^
+..\src\Robot.cpp:48:59: note: candidate is:
+In file included from ..\src\Definitions.h:5:0,
+                 from ..\src\Robot.h:5,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Cryogenica/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:30:17: note: static double SmartDashboard::GetNumber(llvm::StringRef, double)
+   static double GetNumber(llvm::StringRef keyName, double defaultValue);
+                 ^
+C:\Users\Cryogenica/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:30:17: note:   candidate expects 2 arguments, 1 provided
+..\src\Robot.cpp: In member function 'void ROBOT::TestInit()':
+..\src\Robot.cpp:239:59: error: no matching function for call to 'SmartDashboard::GetNumber(const char [12])'
+  TwoBallMode = int(SmartDashboard::GetNumber("TwoBallMode")); // default to 0 if not input
+                                                           ^
+..\src\Robot.cpp:239:59: note: candidate is:
+In file included from ..\src\Definitions.h:5:0,
+                 from ..\src\Robot.h:5,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Cryogenica/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:30:17: note: static double SmartDashboard::GetNumber(llvm::StringRef, double)
+   static double GetNumber(llvm::StringRef keyName, double defaultValue);
+                 ^
+C:\Users\Cryogenica/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:30:17: note:   candidate expects 2 arguments, 1 provided
+..\src\Robot.cpp: In member function 'void ROBOT::TestClaw()':
+..\src\Robot.cpp:313:52: error: no matching function for call to 'SmartDashboard::GetNumber(const char [10])'
+  forktarget = SmartDashboard::GetNumber("ClawState");
+                                                    ^
+..\src\Robot.cpp:313:52: note: candidate is:
+In file included from ..\src\Definitions.h:5:0,
+                 from ..\src\Robot.h:5,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Cryogenica/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:30:17: note: static double SmartDashboard::GetNumber(llvm::StringRef, double)
+   static double GetNumber(llvm::StringRef keyName, double defaultValue);
+                 ^
+C:\Users\Cryogenica/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:30:17: note:   candidate expects 2 arguments, 1 provided
+..\src\Robot.cpp: In member function 'void ROBOT::TestDrive(INPUT*)':
+..\src\Robot.cpp:323:52: error: no matching function for call to 'SmartDashboard::GetNumber(const char [7])'
+  input->DriveX = SmartDashboard::GetNumber("DriveX");
+                                                    ^
+..\src\Robot.cpp:323:52: note: candidate is:
+In file included from ..\src\Definitions.h:5:0,
+                 from ..\src\Robot.h:5,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Cryogenica/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:30:17: note: static double SmartDashboard::GetNumber(llvm::StringRef, double)
+   static double GetNumber(llvm::StringRef keyName, double defaultValue);
+                 ^
+C:\Users\Cryogenica/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:30:17: note:   candidate expects 2 arguments, 1 provided
+..\src\Robot.cpp:324:52: error: no matching function for call to 'SmartDashboard::GetNumber(const char [7])'
+  input->DriveY = SmartDashboard::GetNumber("DriveY");
+                                                    ^
+..\src\Robot.cpp:324:52: note: candidate is:
+In file included from ..\src\Definitions.h:5:0,
+                 from ..\src\Robot.h:5,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Cryogenica/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:30:17: note: static double SmartDashboard::GetNumber(llvm::StringRef, double)
+   static double GetNumber(llvm::StringRef keyName, double defaultValue);
+                 ^
+C:\Users\Cryogenica/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:30:17: note:   candidate expects 2 arguments, 1 provided
+..\src\Robot.cpp:325:52: error: no matching function for call to 'SmartDashboard::GetNumber(const char [7])'
+  input->DriveR = SmartDashboard::GetNumber("DriveR");
+                                                    ^
+..\src\Robot.cpp:325:52: note: candidate is:
+In file included from ..\src\Definitions.h:5:0,
+                 from ..\src\Robot.h:5,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Cryogenica/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:30:17: note: static double SmartDashboard::GetNumber(llvm::StringRef, double)
+   static double GetNumber(llvm::StringRef keyName, double defaultValue);
+                 ^
+C:\Users\Cryogenica/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:30:17: note:   candidate expects 2 arguments, 1 provided
+..\src\Robot.cpp: In member function 'void ROBOT::TestFire(INPUT*)':
+..\src\Robot.cpp:331:62: error: no matching function for call to 'SmartDashboard::GetBoolean(const char [9])'
+  input->fire_catapult = SmartDashboard::GetBoolean("TestFire");
+                                                              ^
+..\src\Robot.cpp:331:62: note: candidate is:
+In file included from ..\src\Definitions.h:5:0,
+                 from ..\src\Robot.h:5,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Cryogenica/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:27:15: note: static bool SmartDashboard::GetBoolean(llvm::StringRef, bool)
+   static bool GetBoolean(llvm::StringRef keyName, bool defaultValue);
+               ^
+C:\Users\Cryogenica/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:27:15: note:   candidate expects 2 arguments, 1 provided
+..\src\Robot.cpp:332:59: error: no matching function for call to 'SmartDashboard::GetBoolean(const char [10])'
+  input->catmanual = SmartDashboard::GetBoolean("ManualCat");
+                                                           ^
+..\src\Robot.cpp:332:59: note: candidate is:
+In file included from ..\src\Definitions.h:5:0,
+                 from ..\src\Robot.h:5,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Cryogenica/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:27:15: note: static bool SmartDashboard::GetBoolean(llvm::StringRef, bool)
+   static bool GetBoolean(llvm::StringRef keyName, bool defaultValue);
+               ^
+C:\Users\Cryogenica/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:27:15: note:   candidate expects 2 arguments, 1 provided
+19:56:10 **** Rebuild of configuration Debug for project Example ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\Example\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ExampleRobot.o" "..\\src\\ExampleRobot.cpp" 
+arm-frc-linux-gnueabi-g++ "-LC:\\Users\\Cryogenica/wpilib/cpp/current/lib" -Wl,-rpath,/opt/GenICam_v2_3/bin/Linux_armv7-a,-rpath,/usr/local/frc/rpath-lib -o FRCUserProgram "src\\ExampleRobot.o" -lwpi 
+19:56:18 **** Rebuild of configuration Debug for project IterativeRobotTemplate ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\IterativeRobotTemplate\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\IterativeRobot.o" "..\\src\\IterativeRobot.cpp" 
+arm-frc-linux-gnueabi-g++ "-LC:\\Users\\Cryogenica/wpilib/cpp/current/lib" -Wl,-rpath,/opt/GenICam_v2_3/bin/Linux_armv7-a,-rpath,/usr/local/frc/rpath-lib -o FRCUserProgram "src\\IterativeRobot.o" -lwpi 
+19:56:25 **** Rebuild of configuration Debug for project NewNavigator ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\NewNavigator\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Robot.o" "..\\src\\Robot.cpp" 
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\NewNavigator\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Navigator.o" "..\\src\\Navigator.cpp" 
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\NewNavigator\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\NewNavigator.o" "..\\src\\NewNavigator.cpp" 
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\NewNavigator\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Comms.o" "..\\src\\Comms.cpp" 
+arm-frc-linux-gnueabi-g++ "-LC:\\Users\\Cryogenica/wpilib/cpp/current/lib" -Wl,-rpath,/opt/GenICam_v2_3/bin/Linux_armv7-a,-rpath,/usr/local/frc/rpath-lib -o FRCUserProgram "src\\Comms.o" "src\\Navigator.o" "src\\NewNavigator.o" "src\\Robot.o" -lwpi 
+src\NewNavigator.o: In function `std::tuple<> std::forward_as_tuple<>()':
+C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/NewNavigator.cpp:3: multiple definition of `NAVIGATOR::NAVIGATOR()'
+src\Navigator.o:C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/Navigator.cpp:3: first defined here
+src\NewNavigator.o: In function `NAVIGATOR::CallReadSensors(void*)':
+C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/NewNavigator.cpp:602: multiple definition of `NAVIGATOR::CallReadSensors(void*)'
+src\Navigator.o:C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/Navigator.cpp:602: first defined here
+src\NewNavigator.o: In function `NAVIGATOR::CallUpdateINS(void*)':
+C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/NewNavigator.cpp:756: multiple definition of `NAVIGATOR::CallUpdateINS(void*)'
+src\Navigator.o:C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/Navigator.cpp:756: first defined here
+src\NewNavigator.o: In function `std::tuple<> std::forward_as_tuple<>()':
+C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/NewNavigator.cpp:3: multiple definition of `NAVIGATOR::NAVIGATOR()'
+src\Navigator.o:C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/Navigator.cpp:3: first defined here
+src\NewNavigator.o: In function `NAVIGATOR::InitMyIMU()':
+C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/NewNavigator.cpp:40: multiple definition of `NAVIGATOR::InitMyIMU()'
+src\Navigator.o:C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/Navigator.cpp:40: first defined here
+src\NewNavigator.o: In function `NAVIGATOR::SetStartingPosition()':
+C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/NewNavigator.cpp:146: multiple definition of `NAVIGATOR::SetStartingPosition()'
+src\Navigator.o:C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/Navigator.cpp:146: first defined here
+src\NewNavigator.o: In function `NAVIGATOR::Init(RobotStateBuffer*, INPUT*)':
+C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/NewNavigator.cpp:158: multiple definition of `NAVIGATOR::Init(RobotStateBuffer*, INPUT*)'
+src\Navigator.o:C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/Navigator.cpp:158: first defined here
+src\NewNavigator.o: In function `NAVIGATOR::ReadThermostat()':
+C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/NewNavigator.cpp:244: multiple definition of `NAVIGATOR::ReadThermostat()'
+src\Navigator.o:C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/Navigator.cpp:244: first defined here
+src\NewNavigator.o: In function `NAVIGATOR::ReadAccel()':
+C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/NewNavigator.cpp:384: multiple definition of `NAVIGATOR::ReadAccel()'
+src\Navigator.o:C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/Navigator.cpp:384: first defined here
+src\NewNavigator.o: In function `NAVIGATOR::ReadEuler()':
+C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/NewNavigator.cpp:258: multiple definition of `NAVIGATOR::ReadEuler()'
+src\Navigator.o:C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/Navigator.cpp:258: first defined here
+src\NewNavigator.o: In function `NAVIGATOR::ReadGyro()':
+C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/NewNavigator.cpp:323: multiple definition of `NAVIGATOR::ReadGyro()'
+src\Navigator.o:C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/Navigator.cpp:323: first defined here
+src\NewNavigator.o: In function `NAVIGATOR::ReadIMUCalStat()':
+C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/NewNavigator.cpp:182: multiple definition of `NAVIGATOR::ReadIMUCalStat()'
+src\Navigator.o:C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/Navigator.cpp:182: first defined here
+src\NewNavigator.o: In function `NAVIGATOR::Push_Navigation_Data_Frame(double, double, double, double, double, double, double)':
+C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/NewNavigator.cpp:430: multiple definition of `NAVIGATOR::Push_Navigation_Data_Frame(double, double, double, double, double, double, double)'
+src\Navigator.o:C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/Navigator.cpp:430: first defined here
+src\NewNavigator.o: In function `NAVIGATOR::ReadIMUdata()':
+C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/NewNavigator.cpp:471: multiple definition of `NAVIGATOR::ReadIMUdata()'
+src\Navigator.o:C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/Navigator.cpp:471: first defined here
+src\NewNavigator.o: In function `NAVIGATOR::ReadSensors()':
+C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/NewNavigator.cpp:581: multiple definition of `NAVIGATOR::ReadSensors()'
+src\Navigator.o:C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/Navigator.cpp:581: first defined here
+src\NewNavigator.o: In function `NAVIGATOR::Zero()':
+C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/NewNavigator.cpp:609: multiple definition of `NAVIGATOR::Zero()'
+src\Navigator.o:C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/Navigator.cpp:609: first defined here
+src\NewNavigator.o: In function `NAVIGATOR::Pop_Navigation_Data_Frame()':
+C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/NewNavigator.cpp:632: multiple definition of `NAVIGATOR::Pop_Navigation_Data_Frame()'
+src\Navigator.o:C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/Navigator.cpp:632: first defined here
+src\NewNavigator.o: In function `NAVIGATOR::Compute_Gyro_Orientation()':
+C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/NewNavigator.cpp:667: multiple definition of `NAVIGATOR::Compute_Gyro_Orientation()'
+src\Navigator.o:C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/Navigator.cpp:667: first defined here
+src\NewNavigator.o: In function `NAVIGATOR::UpdatePosition()':
+C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/NewNavigator.cpp:705: multiple definition of `NAVIGATOR::UpdatePosition()'
+src\Navigator.o:C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/Navigator.cpp:705: first defined here
+src\NewNavigator.o: In function `NAVIGATOR::UpdateINS()':
+C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/NewNavigator.cpp:737: multiple definition of `NAVIGATOR::UpdateINS()'
+src\Navigator.o:C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/Navigator.cpp:737: first defined here
+collect2.exe: error: ld returned 1 exit status
+19:56:46 **** Rebuild of configuration Debug for project O2C2014BigBall ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\O2C2014BigBall\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Robot.o" "..\\src\\Robot.cpp" 
+..\src\Robot.cpp: In member function 'void ROBOT::AutoInit(INPUT*)':
+..\src\Robot.cpp:48:59: error: no matching function for call to 'SmartDashboard::GetNumber(const char [12])'
+  TwoBallMode = int(SmartDashboard::GetNumber("TwoBallMode")); // default to 0 if not input
+                                                           ^
+..\src\Robot.cpp:48:59: note: candidate is:
+In file included from ..\src\Definitions.h:5:0,
+                 from ..\src\Robot.h:5,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Cryogenica/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:30:17: note: static double SmartDashboard::GetNumber(llvm::StringRef, double)
+   static double GetNumber(llvm::StringRef keyName, double defaultValue);
+                 ^
+C:\Users\Cryogenica/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:30:17: note:   candidate expects 2 arguments, 1 provided
+..\src\Robot.cpp: In member function 'void ROBOT::TestInit()':
+..\src\Robot.cpp:239:59: error: no matching function for call to 'SmartDashboard::GetNumber(const char [12])'
+  TwoBallMode = int(SmartDashboard::GetNumber("TwoBallMode")); // default to 0 if not input
+                                                           ^
+..\src\Robot.cpp:239:59: note: candidate is:
+In file included from ..\src\Definitions.h:5:0,
+                 from ..\src\Robot.h:5,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Cryogenica/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:30:17: note: static double SmartDashboard::GetNumber(llvm::StringRef, double)
+   static double GetNumber(llvm::StringRef keyName, double defaultValue);
+                 ^
+C:\Users\Cryogenica/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:30:17: note:   candidate expects 2 arguments, 1 provided
+..\src\Robot.cpp: In member function 'void ROBOT::TestClaw()':
+..\src\Robot.cpp:313:52: error: no matching function for call to 'SmartDashboard::GetNumber(const char [10])'
+  forktarget = SmartDashboard::GetNumber("ClawState");
+                                                    ^
+..\src\Robot.cpp:313:52: note: candidate is:
+In file included from ..\src\Definitions.h:5:0,
+                 from ..\src\Robot.h:5,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Cryogenica/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:30:17: note: static double SmartDashboard::GetNumber(llvm::StringRef, double)
+   static double GetNumber(llvm::StringRef keyName, double defaultValue);
+                 ^
+C:\Users\Cryogenica/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:30:17: note:   candidate expects 2 arguments, 1 provided
+..\src\Robot.cpp: In member function 'void ROBOT::TestDrive(INPUT*)':
+..\src\Robot.cpp:323:52: error: no matching function for call to 'SmartDashboard::GetNumber(const char [7])'
+  input->DriveX = SmartDashboard::GetNumber("DriveX");
+                                                    ^
+..\src\Robot.cpp:323:52: note: candidate is:
+In file included from ..\src\Definitions.h:5:0,
+                 from ..\src\Robot.h:5,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Cryogenica/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:30:17: note: static double SmartDashboard::GetNumber(llvm::StringRef, double)
+   static double GetNumber(llvm::StringRef keyName, double defaultValue);
+                 ^
+C:\Users\Cryogenica/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:30:17: note:   candidate expects 2 arguments, 1 provided
+..\src\Robot.cpp:324:52: error: no matching function for call to 'SmartDashboard::GetNumber(const char [7])'
+  input->DriveY = SmartDashboard::GetNumber("DriveY");
+                                                    ^
+..\src\Robot.cpp:324:52: note: candidate is:
+In file included from ..\src\Definitions.h:5:0,
+                 from ..\src\Robot.h:5,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Cryogenica/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:30:17: note: static double SmartDashboard::GetNumber(llvm::StringRef, double)
+   static double GetNumber(llvm::StringRef keyName, double defaultValue);
+                 ^
+C:\Users\Cryogenica/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:30:17: note:   candidate expects 2 arguments, 1 provided
+..\src\Robot.cpp:325:52: error: no matching function for call to 'SmartDashboard::GetNumber(const char [7])'
+  input->DriveR = SmartDashboard::GetNumber("DriveR");
+                                                    ^
+..\src\Robot.cpp:325:52: note: candidate is:
+In file included from ..\src\Definitions.h:5:0,
+                 from ..\src\Robot.h:5,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Cryogenica/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:30:17: note: static double SmartDashboard::GetNumber(llvm::StringRef, double)
+   static double GetNumber(llvm::StringRef keyName, double defaultValue);
+                 ^
+C:\Users\Cryogenica/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:30:17: note:   candidate expects 2 arguments, 1 provided
+..\src\Robot.cpp: In member function 'void ROBOT::TestFire(INPUT*)':
+..\src\Robot.cpp:331:62: error: no matching function for call to 'SmartDashboard::GetBoolean(const char [9])'
+  input->fire_catapult = SmartDashboard::GetBoolean("TestFire");
+                                                              ^
+..\src\Robot.cpp:331:62: note: candidate is:
+In file included from ..\src\Definitions.h:5:0,
+                 from ..\src\Robot.h:5,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Cryogenica/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:27:15: note: static bool SmartDashboard::GetBoolean(llvm::StringRef, bool)
+   static bool GetBoolean(llvm::StringRef keyName, bool defaultValue);
+               ^
+C:\Users\Cryogenica/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:27:15: note:   candidate expects 2 arguments, 1 provided
+..\src\Robot.cpp:332:59: error: no matching function for call to 'SmartDashboard::GetBoolean(const char [10])'
+  input->catmanual = SmartDashboard::GetBoolean("ManualCat");
+                                                           ^
+..\src\Robot.cpp:332:59: note: candidate is:
+In file included from ..\src\Definitions.h:5:0,
+                 from ..\src\Robot.h:5,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Cryogenica/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:27:15: note: static bool SmartDashboard::GetBoolean(llvm::StringRef, bool)
+   static bool GetBoolean(llvm::StringRef keyName, bool defaultValue);
+               ^
+C:\Users\Cryogenica/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:27:15: note:   candidate expects 2 arguments, 1 provided
+19:56:50 **** Rebuild of configuration Debug for project O2C2015CommSender ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\O2C2015CommSender\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Navigator.o" "..\\src\\Navigator.cpp" 
+In file included from C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\O2C2015CommSender\src/Navigator.h:5:0,
+                 from ..\src\Navigator.cpp:1:
+C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\O2C2015CommSender\src/xDefinitions.h:783:0: warning: "XWHEEL_IN_PER_TICK_FWD" redefined
+  #define XWHEEL_IN_PER_TICK_FWD 0.0467 // 19.2 encoder ticks equals 1 inch of travel
+ ^
+C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\O2C2015CommSender\src/xDefinitions.h:768:0: note: this is the location of the previous definition
+  #define XWHEEL_IN_PER_TICK_FWD 0.0518 // 19.2 encoder ticks equals 1 inch of travel
+ ^
+C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\O2C2015CommSender\src/xDefinitions.h:784:0: warning: "XWHEEL_IN_PER_TICK_REV" redefined
+  #define XWHEEL_IN_PER_TICK_REV 0.05222 // 19.8 encoder ticks equals 1 inch of travel (wheel slips less in reversed direction)
+ ^
+C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\O2C2015CommSender\src/xDefinitions.h:769:0: note: this is the location of the previous definition
+  #define XWHEEL_IN_PER_TICK_REV 0.0517 // 19.8 encoder ticks equals 1 inch of travel (wheel slips less in reversed direction)
+ ^
+C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\O2C2015CommSender\src/xDefinitions.h:785:0: warning: "YWHEEL_IN_PER_TICK_FWD" redefined
+  #define YWHEEL_IN_PER_TICK_FWD 0.05215 // 22.1 encoder ticks equals 1 inch of travel
+ ^
+C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\O2C2015CommSender\src/xDefinitions.h:770:0: note: this is the location of the previous definition
+  #define YWHEEL_IN_PER_TICK_FWD 0.0507 // 22.1 encoder ticks equals 1 inch of travel
+ ^
+C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\O2C2015CommSender\src/xDefinitions.h:786:0: warning: "YWHEEL_IN_PER_TICK_REV" redefined
+  #define YWHEEL_IN_PER_TICK_REV 0.05151 // 19.6 encoder ticks equals 1 inch of travel
+ ^
+C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\O2C2015CommSender\src/xDefinitions.h:771:0: note: this is the location of the previous definition
+  #define YWHEEL_IN_PER_TICK_REV 0.05034 // 19.6 encoder ticks equals 1 inch of travel
+ ^
+C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\O2C2015CommSender\src/xDefinitions.h:787:0: warning: "XWHEEL_ANGLE_OFFSET" redefined
+  #define XWHEEL_ANGLE_OFFSET  -3.0  // X wheel is -2 degrees off relative to robot directional reference
+ ^
+C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\O2C2015CommSender\src/xDefinitions.h:772:0: note: this is the location of the previous definition
+  #define XWHEEL_ANGLE_OFFSET  -1   // X wheel is -1 degrees off relative to robot directional reference
+ ^
+C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\O2C2015CommSender\src/xDefinitions.h:788:0: warning: "YWHEEL_ANGLE_OFFSET" redefined
+  #define YWHEEL_ANGLE_OFFSET  -3.0  // Y wheel is -2 degrees off relative to robot directional reference
+ ^
+C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\O2C2015CommSender\src/xDefinitions.h:773:0: note: this is the location of the previous definition
+  #define YWHEEL_ANGLE_OFFSET  -1   // Y wheel is -1 degrees off relative to robot directional reference
+ ^
+..\src\Navigator.cpp: In member function 'void NAVIGATOR::InitMyGyro()':
+..\src\Navigator.cpp:126:35: error: 'GYRO_Reg_PWR_MGM' was not declared in this scope
+    if ((! MyGyro->Write((uint8_t) GYRO_Reg_PWR_MGM, (uint8_t) GYRO_Clock_Z))
+                                   ^
+..\src\Navigator.cpp:126:63: error: 'GYRO_Clock_Z' was not declared in this scope
+    if ((! MyGyro->Write((uint8_t) GYRO_Reg_PWR_MGM, (uint8_t) GYRO_Clock_Z))
+                                                               ^
+..\src\Navigator.cpp:127:36: error: 'GYRO_Reg_DLPF_FS' was not declared in this scope
+      && (! MyGyro->Write((uint8_t) GYRO_Reg_DLPF_FS, (uint8_t) (GYRO_2000dps | GYRO_8kHz)))
+                                    ^
+..\src\Navigator.cpp:127:65: error: 'GYRO_2000dps' was not declared in this scope
+      && (! MyGyro->Write((uint8_t) GYRO_Reg_DLPF_FS, (uint8_t) (GYRO_2000dps | GYRO_8kHz)))
+                                                                 ^
+..\src\Navigator.cpp:127:80: error: 'GYRO_8kHz' was not declared in this scope
+      && (! MyGyro->Write((uint8_t) GYRO_Reg_DLPF_FS, (uint8_t) (GYRO_2000dps | GYRO_8kHz)))
+                                                                                ^
+..\src\Navigator.cpp:128:36: error: 'GYRO_Reg_SMPLRT_DIV' was not declared in this scope
+      && (! MyGyro->Write((uint8_t) GYRO_Reg_SMPLRT_DIV, (uint8_t) GYRO_5Samples))
+                                    ^
+..\src\Navigator.cpp:128:67: error: 'GYRO_5Samples' was not declared in this scope
+      && (! MyGyro->Write((uint8_t) GYRO_Reg_SMPLRT_DIV, (uint8_t) GYRO_5Samples))
+                                                                   ^
+..\src\Navigator.cpp:129:36: error: 'GYRO_Reg_INT_CFG' was not declared in this scope
+      && (! MyGyro->Write((uint8_t) GYRO_Reg_INT_CFG, (uint8_t) (GYRO_DataRdy | GYRO_Latch))))
+                                    ^
+..\src\Navigator.cpp:129:65: error: 'GYRO_DataRdy' was not declared in this scope
+      && (! MyGyro->Write((uint8_t) GYRO_Reg_INT_CFG, (uint8_t) (GYRO_DataRdy | GYRO_Latch))))
+                                                                 ^
+..\src\Navigator.cpp:129:80: error: 'GYRO_Latch' was not declared in this scope
+      && (! MyGyro->Write((uint8_t) GYRO_Reg_INT_CFG, (uint8_t) (GYRO_DataRdy | GYRO_Latch))))
+                                                                                ^
+..\src\Navigator.cpp: In member function 'void NAVIGATOR::InitMyAccelerometer()':
+..\src\Navigator.cpp:190:8: error: 'MyAccel' was not declared in this scope
+  if (! MyAccel->AddressOnly()    // if the accelerometer is present, initialize its registers
+        ^
+..\src\Navigator.cpp:191:35: error: 'ACCEL_PWR_CTL' was not declared in this scope
+    && (! MyAccel->Write((uint8_t) ACCEL_PWR_CTL, (uint8_t) ACCEL_PWR_STANDBY)))
+                                   ^
+..\src\Navigator.cpp:191:60: error: 'ACCEL_PWR_STANDBY' was not declared in this scope
+    && (! MyAccel->Write((uint8_t) ACCEL_PWR_CTL, (uint8_t) ACCEL_PWR_STANDBY)))
+                                                            ^
+..\src\Navigator.cpp:195:59: error: 'ACCEL_PWR_MEASURE' was not declared in this scope
+   if (! MyAccel->Write((uint8_t) ACCEL_PWR_CTL, (uint8_t) ACCEL_PWR_MEASURE))
+                                                           ^
+..\src\Navigator.cpp:197:36: error: 'ACCEL_BW_RATE' was not declared in this scope
+    if ((! MyAccel->Write((uint8_t) ACCEL_BW_RATE, (uint8_t) ACCEL_RATE_50Hz))
+                                    ^
+..\src\Navigator.cpp:197:61: error: 'ACCEL_RATE_50Hz' was not declared in this scope
+    if ((! MyAccel->Write((uint8_t) ACCEL_BW_RATE, (uint8_t) ACCEL_RATE_50Hz))
+                                                             ^
+..\src\Navigator.cpp:198:36: error: 'ACCEL_INT_ENA' was not declared in this scope
+     && (! MyAccel->Write((uint8_t) ACCEL_INT_ENA, (uint8_t) ACCEL_DATA_RDY))
+                                    ^
+..\src\Navigator.cpp:198:61: error: 'ACCEL_DATA_RDY' was not declared in this scope
+     && (! MyAccel->Write((uint8_t) ACCEL_INT_ENA, (uint8_t) ACCEL_DATA_RDY))
+                                                             ^
+..\src\Navigator.cpp:199:36: error: 'ACCEL_DATA_FMT' was not declared in this scope
+     && (! MyAccel->Write((uint8_t) ACCEL_DATA_FMT, (uint8_t) (ACCEL_FULL_RES | ACCEL_2g))))
+                                    ^
+..\src\Navigator.cpp:199:63: error: 'ACCEL_FULL_RES' was not declared in this scope
+     && (! MyAccel->Write((uint8_t) ACCEL_DATA_FMT, (uint8_t) (ACCEL_FULL_RES | ACCEL_2g))))
+                                                               ^
+..\src\Navigator.cpp:199:80: error: 'ACCEL_2g' was not declared in this scope
+     && (! MyAccel->Write((uint8_t) ACCEL_DATA_FMT, (uint8_t) (ACCEL_FULL_RES | ACCEL_2g))))
+                                                                                ^
+..\src\Navigator.cpp: At global scope:
+..\src\Navigator.cpp:230:6: error: redefinition of 'void NAVIGATOR::InitMyGyro()'
+ void NAVIGATOR :: InitMyGyro()
+      ^
+..\src\Navigator.cpp:101:6: note: 'void NAVIGATOR::InitMyGyro()' previously defined here
+ void NAVIGATOR :: InitMyGyro()
+      ^
+..\src\Navigator.cpp:289:6: error: redefinition of 'void NAVIGATOR::InitMyThermostat()'
+ void NAVIGATOR :: InitMyThermostat()
+      ^
+..\src\Navigator.cpp:154:6: note: 'void NAVIGATOR::InitMyThermostat()' previously defined here
+ void NAVIGATOR :: InitMyThermostat()
+      ^
+..\src\Navigator.cpp:297:6: error: redefinition of 'void NAVIGATOR::InitMyAccelerometer()'
+ void NAVIGATOR :: InitMyAccelerometer()
+      ^
+..\src\Navigator.cpp:186:6: note: 'void NAVIGATOR::InitMyAccelerometer()' previously defined here
+ void NAVIGATOR :: InitMyAccelerometer()
+      ^
+..\src\Navigator.cpp: In member function 'void NAVIGATOR::Init(RobotStateBuffer*, INPUT*)':
+..\src\Navigator.cpp:403:43: error: 'initializeMutexRecursive' was not declared in this scope
+  INS_semaphore = initializeMutexRecursive();
+                                           ^
+..\src\Navigator.cpp: In member function 'void NAVIGATOR::ReadGyro()':
+..\src\Navigator.cpp:430:16: error: 'GYRO_Reg_XOUT_H' was not declared in this scope
+   MyGyro->Read(GYRO_Reg_XOUT_H, GYRO_READ_CNT, gyro_rcv_buff); // I mounted the gyro 90 degrees off ?
+                ^
+..\src\Navigator.cpp:430:48: error: 'gyro_rcv_buff' was not declared in this scope
+   MyGyro->Read(GYRO_Reg_XOUT_H, GYRO_READ_CNT, gyro_rcv_buff); // I mounted the gyro 90 degrees off ?
+                                                ^
+..\src\Navigator.cpp: In member function 'void NAVIGATOR::ReadThermostat()':
+..\src\Navigator.cpp:478:15: error: 'GYRO_Reg_TEMP_OUT_H' was not declared in this scope
+  MyGyro->Read(GYRO_Reg_TEMP_OUT_H, 2, gyro_rcv_buff);
+               ^
+..\src\Navigator.cpp:478:39: error: 'gyro_rcv_buff' was not declared in this scope
+  MyGyro->Read(GYRO_Reg_TEMP_OUT_H, 2, gyro_rcv_buff);
+                                       ^
+..\src\Navigator.cpp: In member function 'void NAVIGATOR::ReadAccel()':
+..\src\Navigator.cpp:492:2: error: 'MyAccel' was not declared in this scope
+  MyAccel->Read(ACCEL_INT_SRC, 1, accel_rcv_buff); //read the interupt status to determine if new data is ready
+  ^
+..\src\Navigator.cpp:492:16: error: 'ACCEL_INT_SRC' was not declared in this scope
+  MyAccel->Read(ACCEL_INT_SRC, 1, accel_rcv_buff); //read the interupt status to determine if new data is ready
+                ^
+..\src\Navigator.cpp:492:34: error: 'accel_rcv_buff' was not declared in this scope
+  MyAccel->Read(ACCEL_INT_SRC, 1, accel_rcv_buff); //read the interupt status to determine if new data is ready
+                                  ^
+..\src\Navigator.cpp:493:41: error: 'ACCEL_DATA_RDY' was not declared in this scope
+  accel_data_ready = accel_rcv_buff[0] & ACCEL_DATA_RDY;
+                                         ^
+..\src\Navigator.cpp:507:17: error: 'ACCEL_X0_DATA' was not declared in this scope
+   MyAccel->Read(ACCEL_X0_DATA, ACCEL_READ_CNT, accel_rcv_buff);
+                 ^
+..\src\Navigator.cpp: At global scope:
+..\src\Navigator.cpp:657:6: error: redefinition of 'void NAVIGATOR::ReadGyro()'
+ void NAVIGATOR :: ReadGyro()
+      ^
+..\src\Navigator.cpp:414:6: note: 'void NAVIGATOR::ReadGyro()' previously defined here
+ void NAVIGATOR :: ReadGyro()
+      ^
+..\src\Navigator.cpp:712:6: error: redefinition of 'void NAVIGATOR::ReadAccel()'
+ void NAVIGATOR :: ReadAccel()
+      ^
+..\src\Navigator.cpp:486:6: note: 'void NAVIGATOR::ReadAccel()' previously defined here
+ void NAVIGATOR :: ReadAccel()
+      ^
+..\src\Navigator.cpp: In member function 'void NAVIGATOR::Push_Navigation_Data_Frame(double, double, double, double, double, double, double, double, double)':
+..\src\Navigator.cpp:788:31: error: 'CRITICAL_REGION' was not declared in this scope
+  CRITICAL_REGION(INS_semaphore)  // we need to reference values that are updated outside of this procedure
+                               ^
+..\src\Navigator.cpp:792:2: error: 'END_REGION' was not declared in this scope
+  END_REGION;
+  ^
+..\src\Navigator.cpp:805:4: error: 'Synchronized' was not declared in this scope
+    Synchronized sync(INS_semaphore); // we are going to update values referenced by other procedure.
+    ^
+..\src\Navigator.cpp:818:4: error: 'Synchronized' was not declared in this scope
+    Synchronized sync(INS_semaphore); // we are going to update values referenced by other procedure.
+    ^
+..\src\Navigator.cpp: In member function 'void NAVIGATOR::Zero()':
+..\src\Navigator.cpp:923:3: error: 'Synchronized' was not declared in this scope
+   Synchronized sync(INS_semaphore); // we are going to update values referenced by other procedure.
+   ^
+..\src\Navigator.cpp: In member function 'bool NAVIGATOR::Pop_Navigation_Data_Frame()':
+..\src\Navigator.cpp:948:31: error: 'CRITICAL_REGION' was not declared in this scope
+  CRITICAL_REGION(INS_semaphore)  // we need to reference values that are updated outside of this procedure
+                               ^
+..\src\Navigator.cpp:952:2: error: 'END_REGION' was not declared in this scope
+  END_REGION;
+  ^
+..\src\Navigator.cpp:956:3: error: 'Synchronized' was not declared in this scope
+   Synchronized sync(INS_semaphore); // we are going to update values referenced by other procedure.
+   ^
+..\src\Navigator.cpp:970:3: error: 'Synchronized' was not declared in this scope
+   Synchronized sync(INS_semaphore); // we are going to update values referenced by other procedure.
+   ^
+In file included from C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\O2C2015CommSender\src/Navigator.h:5:0,
+                 from ..\src\Navigator.cpp:1:
+C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\O2C2015CommSender\src/xDefinitions.h: At global scope:
+C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\O2C2015CommSender\src/xDefinitions.h:238:20: warning: 'TestStateBuffer' defined but not used [-Wunused-variable]
+ static StatusValue TestStateBuffer[Buffer_Length] = {
+                    ^
+19:56:54 **** Rebuild of configuration Debug for project O2C2015FRC ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\O2C2015FRC\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Comms.o" "..\\src\\Comms.cpp" 
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\O2C2015FRC\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\OldNavigator.o" "..\\src\\OldNavigator.cpp" 
+..\src\OldNavigator.cpp: In member function 'void NAVIGATOR::Init(RobotStateBuffer*, INPUT*)':
+..\src\OldNavigator.cpp:403:43: error: 'initializeMutexRecursive' was not declared in this scope
+  INS_semaphore = initializeMutexRecursive();
+                                           ^
+..\src\OldNavigator.cpp: In member function 'void NAVIGATOR::Push_Navigation_Data_Frame(double, double, double, double, double, double, double, double, double)':
+..\src\OldNavigator.cpp:788:31: error: 'CRITICAL_REGION' was not declared in this scope
+  CRITICAL_REGION(INS_semaphore)  // we need to reference values that are updated outside of this procedure
+                               ^
+..\src\OldNavigator.cpp:792:2: error: 'END_REGION' was not declared in this scope
+  END_REGION;
+  ^
+..\src\OldNavigator.cpp:805:4: error: 'Synchronized' was not declared in this scope
+    Synchronized sync(INS_semaphore); // we are going to update values referenced by other procedure.
+    ^
+..\src\OldNavigator.cpp:818:4: error: 'Synchronized' was not declared in this scope
+    Synchronized sync(INS_semaphore); // we are going to update values referenced by other procedure.
+    ^
+..\src\OldNavigator.cpp: In member function 'void NAVIGATOR::Zero()':
+..\src\OldNavigator.cpp:923:3: error: 'Synchronized' was not declared in this scope
+   Synchronized sync(INS_semaphore); // we are going to update values referenced by other procedure.
+   ^
+..\src\OldNavigator.cpp: In member function 'bool NAVIGATOR::Pop_Navigation_Data_Frame()':
+..\src\OldNavigator.cpp:948:31: error: 'CRITICAL_REGION' was not declared in this scope
+  CRITICAL_REGION(INS_semaphore)  // we need to reference values that are updated outside of this procedure
+                               ^
+..\src\OldNavigator.cpp:952:2: error: 'END_REGION' was not declared in this scope
+  END_REGION;
+  ^
+..\src\OldNavigator.cpp:956:3: error: 'Synchronized' was not declared in this scope
+   Synchronized sync(INS_semaphore); // we are going to update values referenced by other procedure.
+   ^
+..\src\OldNavigator.cpp:970:3: error: 'Synchronized' was not declared in this scope
+   Synchronized sync(INS_semaphore); // we are going to update values referenced by other procedure.
+   ^
+19:57:02 **** Rebuild of configuration Debug for project O2C2015FRC-orig ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\O2C2015FRC-orig\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Robot.o" "..\\src\\Robot.cpp" 
+In file included from ..\src\Robot.h:5:0,
+                 from ..\src\Robot.cpp:1:
+C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\O2C2015FRC-orig\src/Definitions.h:165:5: warning: 'pMyFieldState' defined but not used [-Wunused-variable]
+  } *pMyFieldState;
+     ^
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\O2C2015FRC-orig\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Autonomous.o" "..\\src\\Autonomous.cpp" 
+..\src\Autonomous.cpp: In member function 'void AUTONOMOUS::ExecWait4()':
+..\src\Autonomous.cpp:412:107: error: no matching function for call to 'SmartDashboard::GetString(const char [19])'
+  SmartDashboard::PutString("Autonomous Command", "Wait4_" + SmartDashboard::GetString("Autonomous Command"));
+                                                                                                           ^
+..\src\Autonomous.cpp:412:107: note: candidate is:
+In file included from C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\O2C2015FRC-orig\src/Definitions.h:5:0,
+                 from C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\O2C2015FRC-orig\src/Autonomous.h:11,
+                 from ..\src\Autonomous.cpp:8:
+C:\Users\Cryogenica/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:33:22: note: static std::string SmartDashboard::GetString(llvm::StringRef, llvm::StringRef)
+   static std::string GetString(llvm::StringRef keyName,
+                      ^
+C:\Users\Cryogenica/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:33:22: note:   candidate expects 2 arguments, 1 provided
+In file included from C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\O2C2015FRC-orig\src/Autonomous.h:11:0,
+                 from ..\src\Autonomous.cpp:8:
+C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\O2C2015FRC-orig\src/Definitions.h: At global scope:
+C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\O2C2015FRC-orig\src/Definitions.h:165:5: warning: 'pMyFieldState' defined but not used [-Wunused-variable]
+  } *pMyFieldState;
+     ^
+19:57:10 **** Rebuild of configuration Debug for project O2C2015FRCRockRiver ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\O2C2015FRCRockRiver\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Comms.o" "..\\src\\Comms.cpp" 
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\O2C2015FRCRockRiver\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ToteWheels.o" "..\\src\\ToteWheels.cpp" 
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\O2C2015FRCRockRiver\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Navigator.o" "..\\src\\Navigator.cpp" 
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\O2C2015FRCRockRiver\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Field.o" "..\\src\\Field.cpp" 
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\O2C2015FRCRockRiver\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\MecanumDrivetrain.o" "..\\src\\MecanumDrivetrain.cpp" 
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\O2C2015FRCRockRiver\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ToteLift.o" "..\\src\\ToteLift.cpp" 
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\O2C2015FRCRockRiver\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Autonomous.o" "..\\src\\Autonomous.cpp" 
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\O2C2015FRCRockRiver\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Robot.o" "..\\src\\Robot.cpp" 
+arm-frc-linux-gnueabi-g++ "-LC:\\Users\\Cryogenica/wpilib/cpp/current/lib" -Wl,-rpath,/opt/GenICam_v2_3/bin/Linux_armv7-a -o FRCUserProgram "src\\Autonomous.o" "src\\Comms.o" "src\\Field.o" "src\\MecanumDrivetrain.o" "src\\Navigator.o" "src\\Robot.o" "src\\ToteLift.o" "src\\ToteWheels.o" -lwpi 
+19:57:43 **** Rebuild of configuration Debug for project O2C2015FRCStemFest ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\O2C2015FRCStemFest\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\MecanumDrivetrain.o" "..\\src\\MecanumDrivetrain.cpp" 
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\O2C2015FRCStemFest\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ToteWheels.o" "..\\src\\ToteWheels.cpp" 
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\O2C2015FRCStemFest\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Comms.o" "..\\src\\Comms.cpp" 
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\O2C2015FRCStemFest\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Navigator.o" "..\\src\\Navigator.cpp" 
+..\src\Navigator.cpp: In member function 'void NAVIGATOR::Init(RobotStateBuffer*, INPUT*)':
+..\src\Navigator.cpp:403:43: error: 'initializeMutexRecursive' was not declared in this scope
+  INS_semaphore = initializeMutexRecursive();
+                                           ^
+..\src\Navigator.cpp: In member function 'void NAVIGATOR::Push_Navigation_Data_Frame(double, double, double, double, double, double, double, double, double)':
+..\src\Navigator.cpp:788:31: error: 'CRITICAL_REGION' was not declared in this scope
+  CRITICAL_REGION(INS_semaphore)  // we need to reference values that are updated outside of this procedure
+                               ^
+..\src\Navigator.cpp:792:2: error: 'END_REGION' was not declared in this scope
+  END_REGION;
+  ^
+..\src\Navigator.cpp:805:4: error: 'Synchronized' was not declared in this scope
+    Synchronized sync(INS_semaphore); // we are going to update values referenced by other procedure.
+    ^
+..\src\Navigator.cpp:818:4: error: 'Synchronized' was not declared in this scope
+    Synchronized sync(INS_semaphore); // we are going to update values referenced by other procedure.
+    ^
+..\src\Navigator.cpp: In member function 'void NAVIGATOR::Zero()':
+..\src\Navigator.cpp:923:3: error: 'Synchronized' was not declared in this scope
+   Synchronized sync(INS_semaphore); // we are going to update values referenced by other procedure.
+   ^
+..\src\Navigator.cpp: In member function 'bool NAVIGATOR::Pop_Navigation_Data_Frame()':
+..\src\Navigator.cpp:948:31: error: 'CRITICAL_REGION' was not declared in this scope
+  CRITICAL_REGION(INS_semaphore)  // we need to reference values that are updated outside of this procedure
+                               ^
+..\src\Navigator.cpp:952:2: error: 'END_REGION' was not declared in this scope
+  END_REGION;
+  ^
+..\src\Navigator.cpp:956:3: error: 'Synchronized' was not declared in this scope
+   Synchronized sync(INS_semaphore); // we are going to update values referenced by other procedure.
+   ^
+..\src\Navigator.cpp:970:3: error: 'Synchronized' was not declared in this scope
+   Synchronized sync(INS_semaphore); // we are going to update values referenced by other procedure.
+   ^
+19:57:58 **** Rebuild of configuration Debug for project O2C2015FRCStemFestAuto ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\O2C2015FRCStemFestAuto\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Autonomous.o" "..\\src\\Autonomous.cpp" 
+..\src\Autonomous.cpp: In member function 'void AUTONOMOUS::ExecWait4()':
+..\src\Autonomous.cpp:402:107: error: no matching function for call to 'SmartDashboard::GetString(const char [19])'
+  SmartDashboard::PutString("Autonomous Command", "Wait4_" + SmartDashboard::GetString("Autonomous Command"));
+                                                                                                           ^
+..\src\Autonomous.cpp:402:107: note: candidate is:
+In file included from C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\O2C2015FRCStemFestAuto\src/Definitions.h:32:0,
+                 from C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\O2C2015FRCStemFestAuto\src/Autonomous.h:11,
+                 from ..\src\Autonomous.cpp:8:
+C:\Users\Cryogenica/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:33:22: note: static std::string SmartDashboard::GetString(llvm::StringRef, llvm::StringRef)
+   static std::string GetString(llvm::StringRef keyName,
+                      ^
+C:\Users\Cryogenica/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:33:22: note:   candidate expects 2 arguments, 1 provided
+Info: Nothing to build for O2C2016Template
+19:58:01 **** Rebuild of configuration Debug for project Simple Vision ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\Simple Vision\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Robot.o" "..\\src\\Robot.cpp" 
+arm-frc-linux-gnueabi-g++ "-LC:\\Users\\Cryogenica/wpilib/cpp/current/lib" -Wl,-rpath,/opt/GenICam_v2_3/bin/Linux_armv7-a,-rpath,/usr/local/frc/rpath-lib -o FRCUserProgram "src\\Robot.o" -lwpi 
+19:58:09 **** Rebuild of configuration Debug for project TK1 ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\TK1\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Drivetrain.o" "..\\src\\Drivetrain.cpp" 
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\TK1\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Comms.o" "..\\src\\Comms.cpp" 
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\TK1\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Field.o" "..\\src\\Field.cpp" 
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\TK1\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Robot.o" "..\\src\\Robot.cpp" 
+arm-frc-linux-gnueabi-g++ "-LC:\\Users\\Cryogenica/wpilib/cpp/current/lib" -Wl,-rpath,/opt/GenICam_v2_3/bin/Linux_armv7-a -o FRCUserProgram "src\\Comms.o" "src\\Drivetrain.o" "src\\Field.o" "src\\Robot.o" -lwpi 
+19:58:27 **** Rebuild of configuration Debug for project Testing Bed ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\Testing Bed\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ExampleRobot.o" "..\\src\\ExampleRobot.cpp" 
+arm-frc-linux-gnueabi-g++ "-LC:\\Users\\Cryogenica/wpilib/cpp/current/lib" -Wl,-rpath,/opt/GenICam_v2_3/bin/Linux_armv7-a,-rpath,/usr/local/frc/rpath-lib -o FRCUserProgram "src\\ExampleRobot.o" -lwpi 
+19:58:34 **** Rebuild of configuration Debug for project ThunderKiwi ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\ThunderKiwi\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Comms.o" "..\\src\\Comms.cpp" 
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\ThunderKiwi\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Drivetrain.o" "..\\src\\Drivetrain.cpp" 
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\ThunderKiwi\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Navigator.o" "..\\src\\Navigator.cpp" 
+..\src\Navigator.cpp: In member function 'void NAVIGATOR::Init(RobotStateBuffer*)':
+..\src\Navigator.cpp:136:43: error: 'initializeMutexRecursive' was not declared in this scope
+  INS_semaphore = initializeMutexRecursive();
+                                           ^
+..\src\Navigator.cpp: In member function 'int NAVIGATOR::ReadGyro()':
+..\src\Navigator.cpp:152:68: error: no matching function for call to 'AnalogInput::GetAccumulatorOutput(long long int*, uint*)'
+  MyGyro->GetAccumulatorOutput(&accumulator, &gyro_accumulator_count);
+                                                                    ^
+..\src\Navigator.cpp:152:68: note: candidate is:
+In file included from C:\Users\Cryogenica/wpilib/cpp/current/include/AnalogAccelerometer.h:10:0,
+                 from C:\Users\Cryogenica/wpilib/cpp/current/include/WPILib.h:19,
+                 from C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\ThunderKiwi\src/Navigator.h:11,
+                 from ..\src\Navigator.cpp:1:
+C:\Users\Cryogenica/wpilib/cpp/current/include/AnalogInput.h:67:8: note: void AnalogInput::GetAccumulatorOutput(int64_t&, uint32_t&) const
+   void GetAccumulatorOutput(int64_t &value, uint32_t &count) const;
+        ^
+C:\Users\Cryogenica/wpilib/cpp/current/include/AnalogInput.h:67:8: note:   no known conversion for argument 1 from 'long long int*' to 'int64_t& {aka long long int&}'
+..\src\Navigator.cpp: In member function 'void NAVIGATOR::Push_Navigation_Data_Frame(double, double, int, int, int)':
+..\src\Navigator.cpp:206:31: error: 'CRITICAL_REGION' was not declared in this scope
+  CRITICAL_REGION(INS_semaphore)  // we need to reference values that are updated outside of this procedure
+                               ^
+..\src\Navigator.cpp:210:2: error: 'END_REGION' was not declared in this scope
+  END_REGION;
+  ^
+..\src\Navigator.cpp:222:4: error: 'Synchronized' was not declared in this scope
+    Synchronized sync(INS_semaphore); // we are going to update values referenced by other procedure.
+    ^
+..\src\Navigator.cpp:231:4: error: 'Synchronized' was not declared in this scope
+    Synchronized sync(INS_semaphore); // we are going to update values referenced by other procedure.
+    ^
+..\src\Navigator.cpp: In member function 'void NAVIGATOR::Zero()':
+..\src\Navigator.cpp:270:3: error: 'Synchronized' was not declared in this scope
+   Synchronized sync(INS_semaphore); // we are going to update values referenced by other procedure.
+   ^
+..\src\Navigator.cpp: In member function 'bool NAVIGATOR::Pop_Navigation_Data_Frame()':
+..\src\Navigator.cpp:294:31: error: 'CRITICAL_REGION' was not declared in this scope
+  CRITICAL_REGION(INS_semaphore)  // we need to reference values that are updated outside of this procedure
+                               ^
+..\src\Navigator.cpp:298:2: error: 'END_REGION' was not declared in this scope
+  END_REGION;
+  ^
+..\src\Navigator.cpp:302:3: error: 'Synchronized' was not declared in this scope
+   Synchronized sync(INS_semaphore); // we are going to update values referenced by other procedure.
+   ^
+..\src\Navigator.cpp:311:3: error: 'Synchronized' was not declared in this scope
+   Synchronized sync(INS_semaphore); // we are going to update values referenced by other procedure.
+   ^

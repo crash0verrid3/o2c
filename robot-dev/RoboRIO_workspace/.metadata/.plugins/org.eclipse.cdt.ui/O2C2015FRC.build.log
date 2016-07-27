@@ -1,18 +1,41 @@
-11:03:37 **** Incremental Build of configuration Debug for project O2C2015FRC ****
+19:56:54 **** Rebuild of configuration Debug for project O2C2015FRC ****
 Info: Internal Builder is used for build
-arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\O2C2015FRC\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Autonomous.o" "..\\src\\Autonomous.cpp" 
-..\src\Autonomous.cpp: In member function 'void AUTONOMOUS::ExecWait4()':
-..\src\Autonomous.cpp:412:107: error: no matching function for call to 'SmartDashboard::GetString(const char [19])'
-  SmartDashboard::PutString("Autonomous Command", "Wait4_" + SmartDashboard::GetString("Autonomous Command"));
-                                                                                                           ^
-..\src\Autonomous.cpp:412:107: note: candidate is:
-In file included from C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\O2C2015FRC\src/Definitions.h:25:0,
-                 from C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\O2C2015FRC\src/Autonomous.h:11,
-                 from ..\src\Autonomous.cpp:8:
-C:\Users\Cryogenica/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:33:22: note: static std::string SmartDashboard::GetString(llvm::StringRef, llvm::StringRef)
-   static std::string GetString(llvm::StringRef keyName,
-                      ^
-C:\Users\Cryogenica/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:33:22: note:   candidate expects 2 arguments, 1 provided
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\O2C2015FRC\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Comms.o" "..\\src\\Comms.cpp" 
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\O2C2015FRC\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\OldNavigator.o" "..\\src\\OldNavigator.cpp" 
+..\src\OldNavigator.cpp: In member function 'void NAVIGATOR::Init(RobotStateBuffer*, INPUT*)':
+..\src\OldNavigator.cpp:403:43: error: 'initializeMutexRecursive' was not declared in this scope
+  INS_semaphore = initializeMutexRecursive();
+                                           ^
+..\src\OldNavigator.cpp: In member function 'void NAVIGATOR::Push_Navigation_Data_Frame(double, double, double, double, double, double, double, double, double)':
+..\src\OldNavigator.cpp:788:31: error: 'CRITICAL_REGION' was not declared in this scope
+  CRITICAL_REGION(INS_semaphore)  // we need to reference values that are updated outside of this procedure
+                               ^
+..\src\OldNavigator.cpp:792:2: error: 'END_REGION' was not declared in this scope
+  END_REGION;
+  ^
+..\src\OldNavigator.cpp:805:4: error: 'Synchronized' was not declared in this scope
+    Synchronized sync(INS_semaphore); // we are going to update values referenced by other procedure.
+    ^
+..\src\OldNavigator.cpp:818:4: error: 'Synchronized' was not declared in this scope
+    Synchronized sync(INS_semaphore); // we are going to update values referenced by other procedure.
+    ^
+..\src\OldNavigator.cpp: In member function 'void NAVIGATOR::Zero()':
+..\src\OldNavigator.cpp:923:3: error: 'Synchronized' was not declared in this scope
+   Synchronized sync(INS_semaphore); // we are going to update values referenced by other procedure.
+   ^
+..\src\OldNavigator.cpp: In member function 'bool NAVIGATOR::Pop_Navigation_Data_Frame()':
+..\src\OldNavigator.cpp:948:31: error: 'CRITICAL_REGION' was not declared in this scope
+  CRITICAL_REGION(INS_semaphore)  // we need to reference values that are updated outside of this procedure
+                               ^
+..\src\OldNavigator.cpp:952:2: error: 'END_REGION' was not declared in this scope
+  END_REGION;
+  ^
+..\src\OldNavigator.cpp:956:3: error: 'Synchronized' was not declared in this scope
+   Synchronized sync(INS_semaphore); // we are going to update values referenced by other procedure.
+   ^
+..\src\OldNavigator.cpp:970:3: error: 'Synchronized' was not declared in this scope
+   Synchronized sync(INS_semaphore); // we are going to update values referenced by other procedure.
+   ^
 
-11:03:39 Build Finished (took 2s.15ms)
+19:57:01 Build Finished (took 6s.972ms)
 

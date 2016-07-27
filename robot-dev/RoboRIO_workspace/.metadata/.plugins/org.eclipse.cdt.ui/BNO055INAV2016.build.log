@@ -1,1 +1,10 @@
-Info: Nothing to build for BNO055INAV2016
+19:55:28 **** Rebuild of configuration Debug for project BNO055INAV2016 ****
+Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\BNO055INAV2016\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Comms.o" "..\\src\\Comms.cpp" 
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\BNO055INAV2016\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Robot.o" "..\\src\\Robot.cpp" 
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\BNO055INAV2016\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Main.o" "..\\src\\Main.cpp" 
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\BNO055INAV2016\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Navigator.o" "..\\src\\Navigator.cpp" 
+arm-frc-linux-gnueabi-g++ "-LC:\\Users\\Cryogenica/wpilib/cpp/current/lib" -Wl,-rpath,/opt/GenICam_v2_3/bin/Linux_armv7-a -o FRCUserProgram "src\\Comms.o" "src\\Main.o" "src\\Navigator.o" "src\\Robot.o" -lwpi 
+
+19:55:59 Build Finished (took 31s.229ms)
+

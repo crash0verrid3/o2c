@@ -1,14 +1,1 @@
-20:43:50 **** Rebuild of configuration Debug for project O2C2016Template ****
-Info: Internal Builder is used for build
-arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\O2C2016Template\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\DriveTrain.o" "..\\src\\DriveTrain.cpp" 
-arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\O2C2016Template\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\AutoPilot.o" "..\\src\\AutoPilot.cpp" 
-arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\O2C2016Template\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Sensors.o" "..\\src\\Sensors.cpp" 
-arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\O2C2016Template\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Climber.o" "..\\src\\Climber.cpp" 
-arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\O2C2016Template\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Robot.o" "..\\src\\Robot.cpp" 
-arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\O2C2016Template\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\ScooperShooter.o" "..\\src\\ScooperShooter.cpp" 
-arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\O2C2016Template\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Navigator.o" "..\\src\\Navigator.cpp" 
-arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\O2C2016Template\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Comms.o" "..\\src\\Comms.cpp" 
-arm-frc-linux-gnueabi-g++ "-LC:\\Users\\Cryogenica/wpilib/cpp/current/lib" -Wl,-rpath,/opt/GenICam_v2_3/bin/Linux_armv7-a,-rpath,/usr/local/frc/rpath-lib -o FRCUserProgram "src\\AutoPilot.o" "src\\Climber.o" "src\\Comms.o" "src\\DriveTrain.o" "src\\Navigator.o" "src\\Robot.o" "src\\ScooperShooter.o" "src\\Sensors.o" -lwpi 
-
-20:44:29 Build Finished (took 38s.423ms)
-
+Info: Nothing to build for O2C2016Template

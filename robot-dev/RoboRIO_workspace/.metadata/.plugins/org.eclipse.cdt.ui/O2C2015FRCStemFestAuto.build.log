@@ -1,4 +1,4 @@
-11:03:47 **** Incremental Build of configuration Debug for project O2C2015FRCStemFestAuto ****
+19:57:58 **** Rebuild of configuration Debug for project O2C2015FRCStemFestAuto ****
 Info: Internal Builder is used for build
 arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\O2C2015FRCStemFestAuto\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Autonomous.o" "..\\src\\Autonomous.cpp" 
 ..\src\Autonomous.cpp: In member function 'void AUTONOMOUS::ExecWait4()':
@@ -14,5 +14,5 @@ C:\Users\Cryogenica/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:3
                       ^
 C:\Users\Cryogenica/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:33:22: note:   candidate expects 2 arguments, 1 provided
 
-11:03:49 Build Finished (took 2s.21ms)
+19:58:00 Build Finished (took 2s.132ms)
 

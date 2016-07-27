@@ -1,5 +1,9 @@
-11:03:27 **** Incremental Build of configuration Debug for project NewNavigator ****
+19:56:25 **** Rebuild of configuration Debug for project NewNavigator ****
 Info: Internal Builder is used for build
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\NewNavigator\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Robot.o" "..\\src\\Robot.cpp" 
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\NewNavigator\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Navigator.o" "..\\src\\Navigator.cpp" 
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\NewNavigator\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\NewNavigator.o" "..\\src\\NewNavigator.cpp" 
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\NewNavigator\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Comms.o" "..\\src\\Comms.cpp" 
 arm-frc-linux-gnueabi-g++ "-LC:\\Users\\Cryogenica/wpilib/cpp/current/lib" -Wl,-rpath,/opt/GenICam_v2_3/bin/Linux_armv7-a,-rpath,/usr/local/frc/rpath-lib -o FRCUserProgram "src\\Comms.o" "src\\Navigator.o" "src\\NewNavigator.o" "src\\Robot.o" -lwpi 
 src\NewNavigator.o: In function `std::tuple<> std::forward_as_tuple<>()':
 C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/NewNavigator.cpp:3: multiple definition of `NAVIGATOR::NAVIGATOR()'
@@ -63,5 +67,5 @@ C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigato
 src\Navigator.o:C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\NewNavigator\Debug/..\src/Navigator.cpp:737: first defined here
 collect2.exe: error: ld returned 1 exit status
 
-11:03:31 Build Finished (took 3s.681ms)
+19:56:45 Build Finished (took 19s.415ms)
 

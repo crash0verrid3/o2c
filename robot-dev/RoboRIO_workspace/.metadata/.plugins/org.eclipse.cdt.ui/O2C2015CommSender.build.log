@@ -1,8 +1,8 @@
-11:03:35 **** Incremental Build of configuration Debug for project O2C2015CommSender ****
+19:56:50 **** Rebuild of configuration Debug for project O2C2015CommSender ****
 Info: Internal Builder is used for build
-arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\O2C2015CommSender\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Autonomous.o" "..\\src\\Autonomous.cpp" 
-In file included from C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\O2C2015CommSender\src/Autonomous.h:11:0,
-                 from ..\src\Autonomous.cpp:8:
+arm-frc-linux-gnueabi-g++ -std=c++1y "-IC:\\Users\\Cryogenica/wpilib/cpp/current/include" "-IC:\\Users\\Cryogenica\\Documents\\GitHub\\o2c\\robot-dev\\RoboRIO_workspace\\O2C2015CommSender\\src" -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Navigator.o" "..\\src\\Navigator.cpp" 
+In file included from C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\O2C2015CommSender\src/Navigator.h:5:0,
+                 from ..\src\Navigator.cpp:1:
 C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\O2C2015CommSender\src/xDefinitions.h:783:0: warning: "XWHEEL_IN_PER_TICK_FWD" redefined
   #define XWHEEL_IN_PER_TICK_FWD 0.0467 // 19.2 encoder ticks equals 1 inch of travel
  ^
@@ -39,24 +39,173 @@ C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\O2C2015Comm
 C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\O2C2015CommSender\src/xDefinitions.h:773:0: note: this is the location of the previous definition
   #define YWHEEL_ANGLE_OFFSET  -1   // Y wheel is -1 degrees off relative to robot directional reference
  ^
-..\src\Autonomous.cpp: In member function 'void AUTONOMOUS::ExecWait4()':
-..\src\Autonomous.cpp:412:107: error: no matching function for call to 'SmartDashboard::GetString(const char [19])'
-  SmartDashboard::PutString("Autonomous Command", "Wait4_" + SmartDashboard::GetString("Autonomous Command"));
-                                                                                                           ^
-..\src\Autonomous.cpp:412:107: note: candidate is:
-In file included from C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\O2C2015CommSender\src/xDefinitions.h:25:0,
-                 from C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\O2C2015CommSender\src/Autonomous.h:11,
-                 from ..\src\Autonomous.cpp:8:
-C:\Users\Cryogenica/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:33:22: note: static std::string SmartDashboard::GetString(llvm::StringRef, llvm::StringRef)
-   static std::string GetString(llvm::StringRef keyName,
-                      ^
-C:\Users\Cryogenica/wpilib/cpp/current/include/SmartDashboard/SmartDashboard.h:33:22: note:   candidate expects 2 arguments, 1 provided
-In file included from C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\O2C2015CommSender\src/Autonomous.h:11:0,
-                 from ..\src\Autonomous.cpp:8:
+..\src\Navigator.cpp: In member function 'void NAVIGATOR::InitMyGyro()':
+..\src\Navigator.cpp:126:35: error: 'GYRO_Reg_PWR_MGM' was not declared in this scope
+    if ((! MyGyro->Write((uint8_t) GYRO_Reg_PWR_MGM, (uint8_t) GYRO_Clock_Z))
+                                   ^
+..\src\Navigator.cpp:126:63: error: 'GYRO_Clock_Z' was not declared in this scope
+    if ((! MyGyro->Write((uint8_t) GYRO_Reg_PWR_MGM, (uint8_t) GYRO_Clock_Z))
+                                                               ^
+..\src\Navigator.cpp:127:36: error: 'GYRO_Reg_DLPF_FS' was not declared in this scope
+      && (! MyGyro->Write((uint8_t) GYRO_Reg_DLPF_FS, (uint8_t) (GYRO_2000dps | GYRO_8kHz)))
+                                    ^
+..\src\Navigator.cpp:127:65: error: 'GYRO_2000dps' was not declared in this scope
+      && (! MyGyro->Write((uint8_t) GYRO_Reg_DLPF_FS, (uint8_t) (GYRO_2000dps | GYRO_8kHz)))
+                                                                 ^
+..\src\Navigator.cpp:127:80: error: 'GYRO_8kHz' was not declared in this scope
+      && (! MyGyro->Write((uint8_t) GYRO_Reg_DLPF_FS, (uint8_t) (GYRO_2000dps | GYRO_8kHz)))
+                                                                                ^
+..\src\Navigator.cpp:128:36: error: 'GYRO_Reg_SMPLRT_DIV' was not declared in this scope
+      && (! MyGyro->Write((uint8_t) GYRO_Reg_SMPLRT_DIV, (uint8_t) GYRO_5Samples))
+                                    ^
+..\src\Navigator.cpp:128:67: error: 'GYRO_5Samples' was not declared in this scope
+      && (! MyGyro->Write((uint8_t) GYRO_Reg_SMPLRT_DIV, (uint8_t) GYRO_5Samples))
+                                                                   ^
+..\src\Navigator.cpp:129:36: error: 'GYRO_Reg_INT_CFG' was not declared in this scope
+      && (! MyGyro->Write((uint8_t) GYRO_Reg_INT_CFG, (uint8_t) (GYRO_DataRdy | GYRO_Latch))))
+                                    ^
+..\src\Navigator.cpp:129:65: error: 'GYRO_DataRdy' was not declared in this scope
+      && (! MyGyro->Write((uint8_t) GYRO_Reg_INT_CFG, (uint8_t) (GYRO_DataRdy | GYRO_Latch))))
+                                                                 ^
+..\src\Navigator.cpp:129:80: error: 'GYRO_Latch' was not declared in this scope
+      && (! MyGyro->Write((uint8_t) GYRO_Reg_INT_CFG, (uint8_t) (GYRO_DataRdy | GYRO_Latch))))
+                                                                                ^
+..\src\Navigator.cpp: In member function 'void NAVIGATOR::InitMyAccelerometer()':
+..\src\Navigator.cpp:190:8: error: 'MyAccel' was not declared in this scope
+  if (! MyAccel->AddressOnly()    // if the accelerometer is present, initialize its registers
+        ^
+..\src\Navigator.cpp:191:35: error: 'ACCEL_PWR_CTL' was not declared in this scope
+    && (! MyAccel->Write((uint8_t) ACCEL_PWR_CTL, (uint8_t) ACCEL_PWR_STANDBY)))
+                                   ^
+..\src\Navigator.cpp:191:60: error: 'ACCEL_PWR_STANDBY' was not declared in this scope
+    && (! MyAccel->Write((uint8_t) ACCEL_PWR_CTL, (uint8_t) ACCEL_PWR_STANDBY)))
+                                                            ^
+..\src\Navigator.cpp:195:59: error: 'ACCEL_PWR_MEASURE' was not declared in this scope
+   if (! MyAccel->Write((uint8_t) ACCEL_PWR_CTL, (uint8_t) ACCEL_PWR_MEASURE))
+                                                           ^
+..\src\Navigator.cpp:197:36: error: 'ACCEL_BW_RATE' was not declared in this scope
+    if ((! MyAccel->Write((uint8_t) ACCEL_BW_RATE, (uint8_t) ACCEL_RATE_50Hz))
+                                    ^
+..\src\Navigator.cpp:197:61: error: 'ACCEL_RATE_50Hz' was not declared in this scope
+    if ((! MyAccel->Write((uint8_t) ACCEL_BW_RATE, (uint8_t) ACCEL_RATE_50Hz))
+                                                             ^
+..\src\Navigator.cpp:198:36: error: 'ACCEL_INT_ENA' was not declared in this scope
+     && (! MyAccel->Write((uint8_t) ACCEL_INT_ENA, (uint8_t) ACCEL_DATA_RDY))
+                                    ^
+..\src\Navigator.cpp:198:61: error: 'ACCEL_DATA_RDY' was not declared in this scope
+     && (! MyAccel->Write((uint8_t) ACCEL_INT_ENA, (uint8_t) ACCEL_DATA_RDY))
+                                                             ^
+..\src\Navigator.cpp:199:36: error: 'ACCEL_DATA_FMT' was not declared in this scope
+     && (! MyAccel->Write((uint8_t) ACCEL_DATA_FMT, (uint8_t) (ACCEL_FULL_RES | ACCEL_2g))))
+                                    ^
+..\src\Navigator.cpp:199:63: error: 'ACCEL_FULL_RES' was not declared in this scope
+     && (! MyAccel->Write((uint8_t) ACCEL_DATA_FMT, (uint8_t) (ACCEL_FULL_RES | ACCEL_2g))))
+                                                               ^
+..\src\Navigator.cpp:199:80: error: 'ACCEL_2g' was not declared in this scope
+     && (! MyAccel->Write((uint8_t) ACCEL_DATA_FMT, (uint8_t) (ACCEL_FULL_RES | ACCEL_2g))))
+                                                                                ^
+..\src\Navigator.cpp: At global scope:
+..\src\Navigator.cpp:230:6: error: redefinition of 'void NAVIGATOR::InitMyGyro()'
+ void NAVIGATOR :: InitMyGyro()
+      ^
+..\src\Navigator.cpp:101:6: note: 'void NAVIGATOR::InitMyGyro()' previously defined here
+ void NAVIGATOR :: InitMyGyro()
+      ^
+..\src\Navigator.cpp:289:6: error: redefinition of 'void NAVIGATOR::InitMyThermostat()'
+ void NAVIGATOR :: InitMyThermostat()
+      ^
+..\src\Navigator.cpp:154:6: note: 'void NAVIGATOR::InitMyThermostat()' previously defined here
+ void NAVIGATOR :: InitMyThermostat()
+      ^
+..\src\Navigator.cpp:297:6: error: redefinition of 'void NAVIGATOR::InitMyAccelerometer()'
+ void NAVIGATOR :: InitMyAccelerometer()
+      ^
+..\src\Navigator.cpp:186:6: note: 'void NAVIGATOR::InitMyAccelerometer()' previously defined here
+ void NAVIGATOR :: InitMyAccelerometer()
+      ^
+..\src\Navigator.cpp: In member function 'void NAVIGATOR::Init(RobotStateBuffer*, INPUT*)':
+..\src\Navigator.cpp:403:43: error: 'initializeMutexRecursive' was not declared in this scope
+  INS_semaphore = initializeMutexRecursive();
+                                           ^
+..\src\Navigator.cpp: In member function 'void NAVIGATOR::ReadGyro()':
+..\src\Navigator.cpp:430:16: error: 'GYRO_Reg_XOUT_H' was not declared in this scope
+   MyGyro->Read(GYRO_Reg_XOUT_H, GYRO_READ_CNT, gyro_rcv_buff); // I mounted the gyro 90 degrees off ?
+                ^
+..\src\Navigator.cpp:430:48: error: 'gyro_rcv_buff' was not declared in this scope
+   MyGyro->Read(GYRO_Reg_XOUT_H, GYRO_READ_CNT, gyro_rcv_buff); // I mounted the gyro 90 degrees off ?
+                                                ^
+..\src\Navigator.cpp: In member function 'void NAVIGATOR::ReadThermostat()':
+..\src\Navigator.cpp:478:15: error: 'GYRO_Reg_TEMP_OUT_H' was not declared in this scope
+  MyGyro->Read(GYRO_Reg_TEMP_OUT_H, 2, gyro_rcv_buff);
+               ^
+..\src\Navigator.cpp:478:39: error: 'gyro_rcv_buff' was not declared in this scope
+  MyGyro->Read(GYRO_Reg_TEMP_OUT_H, 2, gyro_rcv_buff);
+                                       ^
+..\src\Navigator.cpp: In member function 'void NAVIGATOR::ReadAccel()':
+..\src\Navigator.cpp:492:2: error: 'MyAccel' was not declared in this scope
+  MyAccel->Read(ACCEL_INT_SRC, 1, accel_rcv_buff); //read the interupt status to determine if new data is ready
+  ^
+..\src\Navigator.cpp:492:16: error: 'ACCEL_INT_SRC' was not declared in this scope
+  MyAccel->Read(ACCEL_INT_SRC, 1, accel_rcv_buff); //read the interupt status to determine if new data is ready
+                ^
+..\src\Navigator.cpp:492:34: error: 'accel_rcv_buff' was not declared in this scope
+  MyAccel->Read(ACCEL_INT_SRC, 1, accel_rcv_buff); //read the interupt status to determine if new data is ready
+                                  ^
+..\src\Navigator.cpp:493:41: error: 'ACCEL_DATA_RDY' was not declared in this scope
+  accel_data_ready = accel_rcv_buff[0] & ACCEL_DATA_RDY;
+                                         ^
+..\src\Navigator.cpp:507:17: error: 'ACCEL_X0_DATA' was not declared in this scope
+   MyAccel->Read(ACCEL_X0_DATA, ACCEL_READ_CNT, accel_rcv_buff);
+                 ^
+..\src\Navigator.cpp: At global scope:
+..\src\Navigator.cpp:657:6: error: redefinition of 'void NAVIGATOR::ReadGyro()'
+ void NAVIGATOR :: ReadGyro()
+      ^
+..\src\Navigator.cpp:414:6: note: 'void NAVIGATOR::ReadGyro()' previously defined here
+ void NAVIGATOR :: ReadGyro()
+      ^
+..\src\Navigator.cpp:712:6: error: redefinition of 'void NAVIGATOR::ReadAccel()'
+ void NAVIGATOR :: ReadAccel()
+      ^
+..\src\Navigator.cpp:486:6: note: 'void NAVIGATOR::ReadAccel()' previously defined here
+ void NAVIGATOR :: ReadAccel()
+      ^
+..\src\Navigator.cpp: In member function 'void NAVIGATOR::Push_Navigation_Data_Frame(double, double, double, double, double, double, double, double, double)':
+..\src\Navigator.cpp:788:31: error: 'CRITICAL_REGION' was not declared in this scope
+  CRITICAL_REGION(INS_semaphore)  // we need to reference values that are updated outside of this procedure
+                               ^
+..\src\Navigator.cpp:792:2: error: 'END_REGION' was not declared in this scope
+  END_REGION;
+  ^
+..\src\Navigator.cpp:805:4: error: 'Synchronized' was not declared in this scope
+    Synchronized sync(INS_semaphore); // we are going to update values referenced by other procedure.
+    ^
+..\src\Navigator.cpp:818:4: error: 'Synchronized' was not declared in this scope
+    Synchronized sync(INS_semaphore); // we are going to update values referenced by other procedure.
+    ^
+..\src\Navigator.cpp: In member function 'void NAVIGATOR::Zero()':
+..\src\Navigator.cpp:923:3: error: 'Synchronized' was not declared in this scope
+   Synchronized sync(INS_semaphore); // we are going to update values referenced by other procedure.
+   ^
+..\src\Navigator.cpp: In member function 'bool NAVIGATOR::Pop_Navigation_Data_Frame()':
+..\src\Navigator.cpp:948:31: error: 'CRITICAL_REGION' was not declared in this scope
+  CRITICAL_REGION(INS_semaphore)  // we need to reference values that are updated outside of this procedure
+                               ^
+..\src\Navigator.cpp:952:2: error: 'END_REGION' was not declared in this scope
+  END_REGION;
+  ^
+..\src\Navigator.cpp:956:3: error: 'Synchronized' was not declared in this scope
+   Synchronized sync(INS_semaphore); // we are going to update values referenced by other procedure.
+   ^
+..\src\Navigator.cpp:970:3: error: 'Synchronized' was not declared in this scope
+   Synchronized sync(INS_semaphore); // we are going to update values referenced by other procedure.
+   ^
+In file included from C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\O2C2015CommSender\src/Navigator.h:5:0,
+                 from ..\src\Navigator.cpp:1:
 C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\O2C2015CommSender\src/xDefinitions.h: At global scope:
 C:\Users\Cryogenica\Documents\GitHub\o2c\robot-dev\RoboRIO_workspace\O2C2015CommSender\src/xDefinitions.h:238:20: warning: 'TestStateBuffer' defined but not used [-Wunused-variable]
  static StatusValue TestStateBuffer[Buffer_Length] = {
                     ^
 
-11:03:37 Build Finished (took 2s.17ms)
+19:56:54 Build Finished (took 3s.340ms)
 
